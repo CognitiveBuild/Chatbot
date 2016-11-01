@@ -4,6 +4,6 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/.apt_generated"/>
         <property name="context-root" value="Chatbot"/>
-        <property name="java-output-path" value="/Chatbot/bin"/>
+        <property name="java-output-path" value="/Chatbot/build/classes"/>
     </wb-module>
 </project-modules>
