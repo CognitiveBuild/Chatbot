@@ -7,7 +7,7 @@ Build your own chatbot on the Innovation Day
 [![GitHub license](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://raw.githubusercontent.com/CognitiveBuild/Chatbot/master/LICENSE)
 
 #Prerequisite
-* Register your [Bluemix](https://console.ng.bluemix.net/) account
+* Register your [Bluemix](https://bluemix.net/) account
 * Create `Java Liberty Runtime`
 * Connect Java Liberty Runtime with `Watson Conversation`, `Speech to Text` and `Text to Speech` services
 * Setup a `Workspace` of `Watson Conversation` and define your dialogs
@@ -16,7 +16,7 @@ Build your own chatbot on the Innovation Day
 * Setup Websphere Application Server Liberty Profile in the **Eclipse** for debugging purpose
 
 #Installation guide
-* Run commands 
+* Run git command
 ```shell
 	git clone git@github.com:CognitiveBuild/Chatbot.git
 ```
