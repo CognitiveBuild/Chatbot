@@ -50,7 +50,7 @@ Build your own chatbot on the Innovation Day
 
 #Issues
 * Watson JavaScript Speech SDK does not support Safari
-* The way of using token is not secured, do not use that way on Production
+* The way of obtaining token is not secured, do not use it on Production
 
 #License
 Copyright 2016 GCG GBS CTO Office under [the Apache 2.0 license](LICENSE).
