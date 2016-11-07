@@ -45,10 +45,17 @@ Build your own chatbot on the Innovation Day
 * Run `bluemix` and `cf` command to deploy the `WAR file` on the Bluemix, please refer `  Getting Started` section of the Java Liberty Runtime. And this is an example of the shell command
 ```shell
 	cd your_new_directory
-	bluemix api https://api.ng.bluemix.net
-	bluemix login -u your_name -o your_organization -s your_space
-	cf push -p your_war_file_directory/your_war_file.war
 ```
+```shell
+	bluemix api https://api.ng.bluemix.net
+```
+```shell
+	bluemix login -u your_name -o your_organization -s your_space
+```
+```shell
+	cf push APP_NAME -p your_war_file_directory/your_war_file.war
+```
+
 * Start chatting using text or microphone with your personal Chatbot and Enjoy!
 
 #Dependencies
