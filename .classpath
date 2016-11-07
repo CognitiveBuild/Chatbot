@@ -13,6 +13,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/com.ibm.ws.st.core.runtimeClasspathProvider/WebSphere Application Server Liberty"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/com.ibm.etools.wdt.server.core.runtimeClasspathProvider/Web Preview Server Runtime"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
