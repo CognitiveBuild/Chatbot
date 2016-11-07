@@ -27,20 +27,19 @@ public class Synthesize extends HttpServlet {
      */
     public Synthesize() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		OutputStream out = null;
-
 		String message = request.getParameter("text");
+
 		System.out.println(message);
-		InputStream inputStream = getVoice(message);
+
+		OutputStream out = response.getOutputStream();
+		InputStream inputStream = getVoiceInputStream(message);
 		response.setContentType("audio/wav");
-		out = response.getOutputStream();
 		byte[] buffer = new byte[2048];
 		int read;
 		while ((read = inputStream.read(buffer)) != -1) {
@@ -51,13 +50,18 @@ public class Synthesize extends HttpServlet {
 		out.close();
 	}
 
-	public InputStream getVoice(String message) {
+	/**
+	 * Get voice stream
+	 * 
+	 * @param message
+	 * @return
+	 */
+	public InputStream getVoiceInputStream(String message) {
 		TextToSpeech service = new TextToSpeech(Consts.TTS_USERNAME, Consts.TTS_PASSWORD);
 		service.setEndPoint(Consts.TTS_API_URL);
 
 		ServiceCall<InputStream> serviceCall = service.synthesize(message, Voice.EN_MICHAEL, AudioFormat.WAV);
 
-		InputStream in = serviceCall.execute();
-		return in;
+		return serviceCall.execute();
 	}
 }
