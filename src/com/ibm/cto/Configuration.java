@@ -103,9 +103,9 @@ public class Configuration {
 	 * @return JSONObject
 	 */
 	private static JSONObject queryObjectByKey(JSONObject config, String key) {
-		JSONArray services = (JSONArray) config.get(key);
-		JSONObject service = (JSONObject) services.get(0);
-		JSONObject queriedObject = (JSONObject) service.get(key);
+		JSONArray services = config.getJSONArray(key);
+		JSONObject service = services.getJSONObject(0);
+		JSONObject queriedObject = service.getJSONObject(key);
 		return queriedObject;
 	}
 
