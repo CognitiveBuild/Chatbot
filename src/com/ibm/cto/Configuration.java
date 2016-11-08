@@ -44,33 +44,37 @@ public class Configuration {
 			instance = new Configuration();
 			instance.CONVERSATION_WORKSPACE_ID = System.getenv("CONVERSATION_WORKSPACE_ID");
 
-			JSONObject vcapConfig = getVCAPServices();
+			System.out.println("Conversation Workspace ID:");
+			System.out.println(instance.CONVERSATION_WORKSPACE_ID);
+
+			JSONObject vcapConfig = getObjectSettings("VCAP_SERVICES");
 
 			if(vcapConfig == null) {
-				
+				System.out.println("VCAP_SERVICES is invalid:");
 				return instance;
 			}
 
 			for (Object key : vcapConfig.keySet()) {
 				String keyString = (String) key;
-	
+				System.out.println(keyString);
+
 				if (keyString.startsWith(SERVICE_CONVERSATION)) {
 					JSONObject credentials = queryObjectByKey(vcapConfig, "credentials");
-					instance.CONVERSATION_USERNAME = credentials.getString("username");
-					instance.CONVERSATION_PASSWORD = credentials.getString("password");
-					instance.CONVERSATION_API_URL = credentials.getString("url");
+					instance.CONVERSATION_USERNAME = credentials.get("username").toString();
+					instance.CONVERSATION_PASSWORD = credentials.get("password").toString();
+					instance.CONVERSATION_API_URL = credentials.get("url").toString();
 				}
 				else if(keyString.startsWith(SERVICE_SPEECH_TO_TEXT)) {
 					JSONObject credentials = queryObjectByKey(vcapConfig, "credentials");
-					instance.SPEECH_TO_TEXT_USERNAME = credentials.getString("username");
-					instance.SPEECH_TO_TEXT_PASSWORD = credentials.getString("password");
-					instance.SPEECH_TO_TEXT_API_URL = credentials.getString("url");
+					instance.SPEECH_TO_TEXT_USERNAME = credentials.get("username").toString();
+					instance.SPEECH_TO_TEXT_PASSWORD = credentials.get("password").toString();
+					instance.SPEECH_TO_TEXT_API_URL = credentials.get("url").toString();
 				}
 				else if(keyString.startsWith(SERVICE_TEXT_TO_SPEECH)) {
 					JSONObject credentials = queryObjectByKey(vcapConfig, "credentials");
-					instance.TEXT_TO_SPEECH_USERNAME = credentials.getString("username");
-					instance.TEXT_TO_SPEECH_PASSWORD = credentials.getString("password");
-					instance.TEXT_TO_SPEECH_API_URL = credentials.getString("url");
+					instance.TEXT_TO_SPEECH_USERNAME = credentials.get("username").toString();
+					instance.TEXT_TO_SPEECH_PASSWORD = credentials.get("password").toString();
+					instance.TEXT_TO_SPEECH_API_URL = credentials.get("url").toString();
 				}
 			}
 		}
@@ -97,9 +101,9 @@ public class Configuration {
 	 * 
 	 * @return JSONObject
 	 */
-	public static JSONObject getVCAPServices() {
-		String envServices = System.getenv("VCAP_SERVICES");
-		System.out.println("VCAP_SERVICES:");
+	public static JSONObject getObjectSettings(String key) {
+		String envServices = System.getenv(key);
+		System.out.println(key);
 		System.out.println(envServices);
 		if (envServices == null)
 			return null;
