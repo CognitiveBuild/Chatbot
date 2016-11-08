@@ -1,6 +1,7 @@
 package com.ibm.cto;
 
 import java.util.Iterator;
+import java.util.Set;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -61,35 +62,74 @@ public class Configuration {
 				System.out.println(vcapConfig);
 				System.out.println("### /VCAP_SERVICES ###");
 			}
-			
-			Iterator<String> iterator = vcapConfig.keySet().iterator();
-			while(iterator.hasNext()){
-				String keyString = iterator.next();
-				JSONObject valueObject = vcapConfig.getJSONObject(keyString);
-				System.out.println("### Key ###");
-				System.out.println(keyString);
-				System.out.println("### /Key ###");
+			Set<String> keySet = vcapConfig.keySet();
 
-				if (keyString.startsWith(SERVICE_CONVERSATION)) {
-					JSONObject credentials = queryObjectByKey(valueObject, "credentials");
-					instance.CONVERSATION_USERNAME = credentials.get("username").toString();
-					instance.CONVERSATION_PASSWORD = credentials.get("password").toString();
-					instance.CONVERSATION_API_URL = credentials.get("url").toString();
+			for (String serviceKey : keySet) {
+				System.out.println("### Iterating key: " + serviceKey + " ###");
+				JSONArray serviceList = vcapConfig.getJSONArray(serviceKey);
+				if(serviceList.size() > 0) {
+					JSONObject serviceItem = serviceList.getJSONObject(0);
+					String credentialsKey = "credentials";
+
+					if(serviceItem.containsKey(credentialsKey)) {
+						JSONObject serviceCredentials = serviceItem.getJSONObject(credentialsKey);
+
+						if (serviceKey.startsWith(SERVICE_CONVERSATION)) {
+							instance.CONVERSATION_USERNAME = serviceCredentials.get("username").toString();
+							instance.CONVERSATION_PASSWORD = serviceCredentials.get("password").toString();
+							instance.CONVERSATION_API_URL = serviceCredentials.get("url").toString();
+						}
+						else if(serviceKey.startsWith(SERVICE_SPEECH_TO_TEXT)) {
+							instance.SPEECH_TO_TEXT_USERNAME = serviceCredentials.get("username").toString();
+							instance.SPEECH_TO_TEXT_PASSWORD = serviceCredentials.get("password").toString();
+							instance.SPEECH_TO_TEXT_API_URL = serviceCredentials.get("url").toString();
+						}
+						else if(serviceKey.startsWith(SERVICE_TEXT_TO_SPEECH)) {
+							instance.TEXT_TO_SPEECH_USERNAME = serviceCredentials.get("username").toString();
+							instance.TEXT_TO_SPEECH_PASSWORD = serviceCredentials.get("password").toString();
+							instance.TEXT_TO_SPEECH_API_URL = serviceCredentials.get("url").toString();
+						}
+						else {
+							System.out.println("### No such key: " + serviceKey);
+						}
+					}
+					else {
+						System.out.println("### No such key: " + credentialsKey);
+					}
+
 				}
-				else if(keyString.startsWith(SERVICE_SPEECH_TO_TEXT)) {
-					JSONObject credentials = queryObjectByKey(valueObject, "credentials");
-					instance.SPEECH_TO_TEXT_USERNAME = credentials.get("username").toString();
-					instance.SPEECH_TO_TEXT_PASSWORD = credentials.get("password").toString();
-					instance.SPEECH_TO_TEXT_API_URL = credentials.get("url").toString();
-				}
-				else if(keyString.startsWith(SERVICE_TEXT_TO_SPEECH)) {
-					JSONObject credentials = queryObjectByKey(valueObject, "credentials");
-					instance.TEXT_TO_SPEECH_USERNAME = credentials.get("username").toString();
-					instance.TEXT_TO_SPEECH_PASSWORD = credentials.get("password").toString();
-					instance.TEXT_TO_SPEECH_API_URL = credentials.get("url").toString();
+				else {
+					System.out.println("### Empty service list ###");
 				}
 			}
 
+//			Iterator<String> iterator = vcapConfig.keySet().iterator();
+//			while(iterator.hasNext()){
+//				String keyString = iterator.next();
+//				JSONObject valueObject = vcapConfig.getJSONObject(keyString);
+//				System.out.println("### Key ###");
+//				System.out.println(keyString);
+//				System.out.println("### /Key ###");
+//
+//				if (keyString.startsWith(SERVICE_CONVERSATION)) {
+//					JSONObject credentials = queryObjectByKey(valueObject, "credentials");
+//					instance.CONVERSATION_USERNAME = credentials.get("username").toString();
+//					instance.CONVERSATION_PASSWORD = credentials.get("password").toString();
+//					instance.CONVERSATION_API_URL = credentials.get("url").toString();
+//				}
+//				else if(keyString.startsWith(SERVICE_SPEECH_TO_TEXT)) {
+//					JSONObject credentials = queryObjectByKey(valueObject, "credentials");
+//					instance.SPEECH_TO_TEXT_USERNAME = credentials.get("username").toString();
+//					instance.SPEECH_TO_TEXT_PASSWORD = credentials.get("password").toString();
+//					instance.SPEECH_TO_TEXT_API_URL = credentials.get("url").toString();
+//				}
+//				else if(keyString.startsWith(SERVICE_TEXT_TO_SPEECH)) {
+//					JSONObject credentials = queryObjectByKey(valueObject, "credentials");
+//					instance.TEXT_TO_SPEECH_USERNAME = credentials.get("username").toString();
+//					instance.TEXT_TO_SPEECH_PASSWORD = credentials.get("password").toString();
+//					instance.TEXT_TO_SPEECH_API_URL = credentials.get("url").toString();
+//				}
+//			}
 		}
 
 		return instance;
