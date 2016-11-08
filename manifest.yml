@@ -2,3 +2,4 @@
 applications:
 - name: cto
   memory: 1024M
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
