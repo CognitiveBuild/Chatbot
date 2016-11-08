@@ -13,8 +13,8 @@ public class Configuration {
 
 	public static final String TOKEN_API_URL = "https://stream.watsonplatform.net/authorization/api/v1/token";
 
-	public String SPEECH_TO_TEXT_API_URL = "https://stream.watsonplatform.net/text-to-speech/api";
-	public String TEXT_TO_SPEECH_API_URL = "https://stream.watsonplatform.net/speech-to-text/api";
+	public String SPEECH_TO_TEXT_API_URL = "https://stream.watsonplatform.net/speech-to-text/api";
+	public String TEXT_TO_SPEECH_API_URL = "https://stream.watsonplatform.net/text-to-speech/api";
 	public String CONVERSATION_API_URL = "https://gateway.watsonplatform.net/conversation/api";
 
 	/**
@@ -22,7 +22,7 @@ public class Configuration {
 	 */
 	public String TEXT_TO_SPEECH_USERNAME = "";
 	public String TEXT_TO_SPEECH_PASSWORD = "";
-	
+
 	public String SPEECH_TO_TEXT_USERNAME = "";
 	public String SPEECH_TO_TEXT_PASSWORD = "";
 
@@ -32,7 +32,7 @@ public class Configuration {
 	/**
 	 * TODO: Get Workspace ID from IBM Watson Conversation: https://ibmwatsonconversation.com
 	 */
-	public String CONVERSATION_WORKSPACE_ID = "2e38d5ef-7506-4e38-804e-e83f3cbe6926";
+	public String CONVERSATION_WORKSPACE_ID = "";
 
 	/**
 	 * Load credentials and URLs
@@ -42,12 +42,13 @@ public class Configuration {
 	public static Configuration getInstance() {
 		if(instance == null) {
 			instance = new Configuration();
+			instance.CONVERSATION_WORKSPACE_ID = System.getenv("CONVERSATION_WORKSPACE_ID");
 
 			JSONObject vcapConfig = getVCAPServices();
 
 			if(vcapConfig == null) {
 				
-				return null;
+				return instance;
 			}
 
 			for (Object key : vcapConfig.keySet()) {
@@ -98,6 +99,8 @@ public class Configuration {
 	 */
 	public static JSONObject getVCAPServices() {
 		String envServices = System.getenv("VCAP_SERVICES");
+		System.out.println("VCAP_SERVICES:");
+		System.out.println(envServices);
 		if (envServices == null)
 			return null;
 		JSONObject sysEnv = null;
