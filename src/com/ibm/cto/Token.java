@@ -85,14 +85,14 @@ public class Token extends HttpServlet {
 		String url = "";
 		String username = "", password = "";
 		if(category.equals(categorySTT)) {
-			url = Consts.TOKEN_API_URL + "?url=" + Consts.STT_API_URL;
-			username = Consts.STT_USERNAME;
-			password = Consts.STT_PASSWORD;
+			url = Configuration.TOKEN_API_URL + "?url=" + Configuration.getInstance().SPEECH_TO_TEXT_API_URL;
+			username = Configuration.getInstance().SPEECH_TO_TEXT_USERNAME;
+			password = Configuration.getInstance().SPEECH_TO_TEXT_PASSWORD;
 		}
 		else if(category.equals(categoryTTS)) {
-			url = Consts.TOKEN_API_URL + "?url=" + Consts.TTS_API_URL;
-			username = Consts.TTS_USERNAME;
-			password = Consts.TTS_PASSWORD;
+			url = Configuration.TOKEN_API_URL + "?url=" + Configuration.getInstance().TEXT_TO_SPEECH_API_URL;
+			username = Configuration.getInstance().TEXT_TO_SPEECH_USERNAME;
+			password = Configuration.getInstance().TEXT_TO_SPEECH_PASSWORD;
 		}
 
 		System.out.println("url: "+url);

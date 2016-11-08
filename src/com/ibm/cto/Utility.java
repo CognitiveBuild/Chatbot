@@ -33,7 +33,6 @@ import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
-
 public class Utility {
 
 	public static HttpResponse invokeRequest(Request request, String username, String password, boolean useSSL) throws ClientProtocolException, IOException, KeyManagementException, NoSuchAlgorithmException {

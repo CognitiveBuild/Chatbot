@@ -54,11 +54,11 @@ public class Talk extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 
 		ConversationService service = new ConversationService(ConversationService.VERSION_DATE_2016_09_20);
-		service.setUsernameAndPassword(Consts.CONVERSATION_USERNAME, Consts.CONVERSATION_PASSWORD);
+		service.setUsernameAndPassword(Configuration.getInstance().CONVERSATION_USERNAME, Configuration.getInstance().CONVERSATION_PASSWORD);
 
 		MessageRequest newMessage = new MessageRequest.Builder().context(contextMap).inputText(requestMessage).build();
 
-		MessageResponse r = service.message(Consts.WORKSPACE_ID, newMessage).execute();
+		MessageResponse r = service.message(Configuration.getInstance().CONVERSATION_WORKSPACE_ID, newMessage).execute();
 
 		response.getWriter().append(r.toString());
 	}

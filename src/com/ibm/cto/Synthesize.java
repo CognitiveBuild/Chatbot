@@ -57,8 +57,8 @@ public class Synthesize extends HttpServlet {
 	 * @return
 	 */
 	public InputStream getVoiceInputStream(String message) {
-		TextToSpeech service = new TextToSpeech(Consts.TTS_USERNAME, Consts.TTS_PASSWORD);
-		service.setEndPoint(Consts.TTS_API_URL);
+		TextToSpeech service = new TextToSpeech(Configuration.getInstance().TEXT_TO_SPEECH_USERNAME, Configuration.getInstance().TEXT_TO_SPEECH_PASSWORD);
+		service.setEndPoint(Configuration.getInstance().TEXT_TO_SPEECH_API_URL);
 
 		ServiceCall<InputStream> serviceCall = service.synthesize(message, Voice.EN_MICHAEL, AudioFormat.WAV);
 

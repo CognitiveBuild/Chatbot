@@ -1,22 +1,107 @@
 package com.ibm.cto;
 
-public class Consts {
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 
-	public static String TOKEN_API_URL = "https://stream.watsonplatform.net/authorization/api/v1/token";
-	public static final String TTS_API_URL = "https://stream.watsonplatform.net/text-to-speech/api";
-	public static final String STT_API_URL = "https://stream.watsonplatform.net/speech-to-text/api";
+public class Configuration {
+
+	private static Configuration instance = null;
+
+	public static final String SERVICE_SPEECH_TO_TEXT = "speech_to_text";
+	public static final String SERVICE_TEXT_TO_SPEECH = "text_to_speech";
+	public static final String SERVICE_CONVERSATION = "conversation";
+
+	public static final String TOKEN_API_URL = "https://stream.watsonplatform.net/authorization/api/v1/token";
+
+	public String SPEECH_TO_TEXT_API_URL = "https://stream.watsonplatform.net/text-to-speech/api";
+	public String TEXT_TO_SPEECH_API_URL = "https://stream.watsonplatform.net/speech-to-text/api";
+	public String CONVERSATION_API_URL = "https://gateway.watsonplatform.net/conversation/api";
 
 	/**
-	 * TODO: Get the credentials from Bluemix
+	 * TODO: If you're testing this application locally, please get the credentials from Bluemix
 	 */
-	public static final String TTS_USERNAME = "";
-	public static final String TTS_PASSWORD = "";
+	public String TEXT_TO_SPEECH_USERNAME = "";
+	public String TEXT_TO_SPEECH_PASSWORD = "";
 	
-	public static final String STT_USERNAME = "";
-	public static final String STT_PASSWORD = "";
+	public String SPEECH_TO_TEXT_USERNAME = "";
+	public String SPEECH_TO_TEXT_PASSWORD = "";
 
-	public static final String CONVERSATION_USERNAME = "";
-	public static final String CONVERSATION_PASSWORD = "";
-	public static final String WORKSPACE_ID = "";
+	public String CONVERSATION_USERNAME = "";
+	public String CONVERSATION_PASSWORD = "";
 
+	/**
+	 * TODO: Get Workspace ID from IBM Watson Conversation: https://ibmwatsonconversation.com
+	 */
+	public String CONVERSATION_WORKSPACE_ID = "2e38d5ef-7506-4e38-804e-e83f3cbe6926";
+
+	/**
+	 * Load credentials and URLs
+	 * 
+	 * @return VCAPConfiguration
+	 */
+	public static Configuration getInstance() {
+		if(instance == null) {
+			instance = new Configuration();
+
+			JSONObject vcapConfig = getVCAPServices();
+
+			if(vcapConfig == null) {
+				
+				return null;
+			}
+
+			for (Object key : vcapConfig.keySet()) {
+				String keyString = (String) key;
+	
+				if (keyString.startsWith(SERVICE_CONVERSATION)) {
+					JSONObject credentials = queryObjectByKey(vcapConfig, "credentials");
+					instance.CONVERSATION_USERNAME = credentials.getString("username");
+					instance.CONVERSATION_PASSWORD = credentials.getString("password");
+					instance.CONVERSATION_API_URL = credentials.getString("url");
+				}
+				else if(keyString.startsWith(SERVICE_SPEECH_TO_TEXT)) {
+					JSONObject credentials = queryObjectByKey(vcapConfig, "credentials");
+					instance.SPEECH_TO_TEXT_USERNAME = credentials.getString("username");
+					instance.SPEECH_TO_TEXT_PASSWORD = credentials.getString("password");
+					instance.SPEECH_TO_TEXT_API_URL = credentials.getString("url");
+				}
+				else if(keyString.startsWith(SERVICE_TEXT_TO_SPEECH)) {
+					JSONObject credentials = queryObjectByKey(vcapConfig, "credentials");
+					instance.TEXT_TO_SPEECH_USERNAME = credentials.getString("username");
+					instance.TEXT_TO_SPEECH_PASSWORD = credentials.getString("password");
+					instance.TEXT_TO_SPEECH_API_URL = credentials.getString("url");
+				}
+			}
+		}
+
+		return instance;
+	}
+
+	/**
+	 * Query JSONObject by indicating a key
+	 * 
+	 * @param config
+	 * @param key
+	 * @return JSONObject
+	 */
+	private static JSONObject queryObjectByKey(JSONObject config, String key) {
+		JSONArray services = (JSONArray) config.get(key);
+		JSONObject service = (JSONObject) services.get(0);
+		JSONObject queriedObject = (JSONObject) service.get(key);
+		return queriedObject;
+	}
+
+	/**
+	 * Get VCAP configurations
+	 * 
+	 * @return JSONObject
+	 */
+	public static JSONObject getVCAPServices() {
+		String envServices = System.getenv("VCAP_SERVICES");
+		if (envServices == null)
+			return null;
+		JSONObject sysEnv = null;
+		sysEnv = JSONObject.parseObject(envServices);
+		return sysEnv;
+	}
 }
