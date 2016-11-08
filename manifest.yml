@@ -3,4 +3,4 @@ applications:
 - name: cto
   memory: 1024M
   path: target/Chatbot-0.0.1.war
-  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  buildpack: liberty-for-java
