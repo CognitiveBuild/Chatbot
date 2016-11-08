@@ -65,24 +65,25 @@ public class Configuration {
 			Iterator<String> iterator = vcapConfig.keySet().iterator();
 			while(iterator.hasNext()){
 				String keyString = iterator.next();
+				JSONObject valueObject = vcapConfig.getJSONObject(keyString);
 				System.out.println("### Key ###");
 				System.out.println(keyString);
 				System.out.println("### /Key ###");
 
 				if (keyString.startsWith(SERVICE_CONVERSATION)) {
-					JSONObject credentials = queryObjectByKey(vcapConfig, "credentials");
+					JSONObject credentials = queryObjectByKey(valueObject, "credentials");
 					instance.CONVERSATION_USERNAME = credentials.get("username").toString();
 					instance.CONVERSATION_PASSWORD = credentials.get("password").toString();
 					instance.CONVERSATION_API_URL = credentials.get("url").toString();
 				}
 				else if(keyString.startsWith(SERVICE_SPEECH_TO_TEXT)) {
-					JSONObject credentials = queryObjectByKey(vcapConfig, "credentials");
+					JSONObject credentials = queryObjectByKey(valueObject, "credentials");
 					instance.SPEECH_TO_TEXT_USERNAME = credentials.get("username").toString();
 					instance.SPEECH_TO_TEXT_PASSWORD = credentials.get("password").toString();
 					instance.SPEECH_TO_TEXT_API_URL = credentials.get("url").toString();
 				}
 				else if(keyString.startsWith(SERVICE_TEXT_TO_SPEECH)) {
-					JSONObject credentials = queryObjectByKey(vcapConfig, "credentials");
+					JSONObject credentials = queryObjectByKey(valueObject, "credentials");
 					instance.TEXT_TO_SPEECH_USERNAME = credentials.get("username").toString();
 					instance.TEXT_TO_SPEECH_PASSWORD = credentials.get("password").toString();
 					instance.TEXT_TO_SPEECH_API_URL = credentials.get("url").toString();
