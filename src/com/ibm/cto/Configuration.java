@@ -1,5 +1,7 @@
 package com.ibm.cto;
 
+import java.util.Iterator;
+
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
@@ -44,8 +46,9 @@ public class Configuration {
 			instance = new Configuration();
 			instance.CONVERSATION_WORKSPACE_ID = System.getenv("CONVERSATION_WORKSPACE_ID");
 
-			System.out.println("Conversation Workspace ID:");
+			System.out.println("### Conversation Workspace ID ###");
 			System.out.println(instance.CONVERSATION_WORKSPACE_ID);
+			System.out.println("### /Conversation Workspace ID ###");
 
 			JSONObject vcapConfig = getObjectSettings("VCAP_SERVICES");
 
@@ -53,10 +56,18 @@ public class Configuration {
 				System.out.println("VCAP_SERVICES is invalid:");
 				return instance;
 			}
-
-			for (Object key : vcapConfig.keySet()) {
-				String keyString = (String) key;
+			else {
+				System.out.println("### VCAP_SERVICES ###");
+				System.out.println(vcapConfig);
+				System.out.println("### /VCAP_SERVICES ###");
+			}
+			
+			Iterator<String> iterator = vcapConfig.keySet().iterator();
+			while(iterator.hasNext()){
+				String keyString = iterator.next();
+				System.out.println("### Key ###");
 				System.out.println(keyString);
+				System.out.println("### /Key ###");
 
 				if (keyString.startsWith(SERVICE_CONVERSATION)) {
 					JSONObject credentials = queryObjectByKey(vcapConfig, "credentials");
@@ -77,6 +88,7 @@ public class Configuration {
 					instance.TEXT_TO_SPEECH_API_URL = credentials.get("url").toString();
 				}
 			}
+
 		}
 
 		return instance;
@@ -103,8 +115,6 @@ public class Configuration {
 	 */
 	public static JSONObject getObjectSettings(String key) {
 		String envServices = System.getenv(key);
-		System.out.println(key);
-		System.out.println(envServices);
 		if (envServices == null)
 			return null;
 		JSONObject sysEnv = null;
