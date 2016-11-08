@@ -1,3 +1,4 @@
 ---
 applications:
 - name: cto
+  memory: 1024M
