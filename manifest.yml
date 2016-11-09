@@ -6,9 +6,5 @@ applications:
   buildpack: liberty-for-java
   disk_quota: 1024M
   instances: 1
-  services:
-  - Conversation
-  - Speech to Text
-  - Text to Speech
   env:
     CONVERSATION_WORKSPACE_ID: 2e38d5ef-7506-4e38-804e-e83f3cbe6926
