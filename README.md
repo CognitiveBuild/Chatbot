@@ -19,25 +19,27 @@ Build your own chatbot on the Innovation Day
 * Input `CONVERSATION_WORKSPACE_ID` as the `NAME` and paste the `Workspace ID` just copied as the `VALUE`, then click on `Save` button
 
 #Bluemix DevOps guide
-### Using Github
+
+**Using Github**
 * Register your [Github](https://github.com) account, then fork this repository
 * Go to `Overview` of the `Liberty for Java` application, find `Continuous Delivery` panel, and click on `Enable` button
 * Change the settings to use Github
 * Commit your changes then push them on the Github
 * Wait for the automatic deployment
-### Using Jazz on Bluemix
+
+**Using Jazz on Bluemix**
 * TBD
 
-* Start chatting using text or microphone with your personal Chatbot and Enjoy!
+***Start chatting using text or microphone with your personal Chatbot and Enjoy!***
 
 #Setup local environment in case you want to test it locally on your machine (Optional)
-* **Installation**
+**Installation**
 * Install [Bluemix](http://clis.ng.bluemix.net/ui/home.html) and [CF CLI](https://github.com/cloudfoundry/cli/releases)
 * Install **Eclipse Java EE IDE for Web Developers** as your IDE ([Download](http://eclipse.bluemix.net/packages/neon.1/))
 * Install latest [JavaEE SDK](http://www.oracle.com/technetwork/java/javaee/downloads/index.html) or [JavaSE SDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 * Install [Tomcat 9](http://tomcat.apache.org/download-90.cgi) and add it into `Eclipse` as a new Server
 
-* **Run Chatbot application locally**
+**Run Chatbot application locally**
 * Run git command or download the [source code here](https://github.com/CognitiveBuild/Chatbot/archive/master.zip)
 ```shell
 	git clone git@github.com:CognitiveBuild/Chatbot.git
@@ -54,7 +56,7 @@ Build your own chatbot on the Innovation Day
 
 	public String CONVERSATION_USERNAME = "134f9b10-7d4a-4e4f-92a0-7372f67331f7";
 	public String CONVERSATION_PASSWORD = "ijMoZB1vCVW6";
-	public static final String WORKSPACE_ID = "1e28d5ef-7506-4e76-814e-e83f3cbe6816";
+	public String CONVERSATION_WORKSPACE_ID = "1e28d5ef-7506-4e76-814e-e83f3cbe6816";
 ```
 * **Right click** on the `Chatbot` project, choose `Run As` &gt; `Run on Server` to open `http://localhost:8080/Chatbot/`
 
