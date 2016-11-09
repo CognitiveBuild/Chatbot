@@ -32,7 +32,7 @@ Build your own chatbot on the Innovation Day
 
 ***Start chatting using text or microphone with your personal Chatbot and Enjoy!***
 
-#Setup local environment in case you want to test it locally on your machine (Optional)
+#Setup local environment (Optional)
 **Installation**
 * Install [Bluemix](http://clis.ng.bluemix.net/ui/home.html) and [CF CLI](https://github.com/cloudfoundry/cli/releases)
 * Install **Eclipse Java EE IDE for Web Developers** as your IDE ([Download](http://eclipse.bluemix.net/packages/neon.1/))
