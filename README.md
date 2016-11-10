@@ -13,7 +13,7 @@ Build your own chatbot on the Innovation Day
 #Getting started
 * Create application of `Liberty for Java` on `Bluemix`
 
-<img width="730" alt="Create application" src="https://cloud.githubusercontent.com/assets/1511528/20165918/31889dcc-a74c-11e6-9191-eadb001f1cb3.png">
+<img width="730" alt="Create application" src="https://cloud.githubusercontent.com/assets/1511528/20166629/13c7c0c4-a751-11e6-9d86-8c115a405210.png">
 
 <img width="736" alt="Liberty For Java" src="https://cloud.githubusercontent.com/assets/1511528/20165648/1d688ee4-a74a-11e6-8b8b-bb9698bbf338.png">
 
