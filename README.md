@@ -10,6 +10,9 @@ Build your own chatbot on the Innovation Day
 * Register your [Bluemix](https://bluemix.net) account
 * Register your [Github](https://github.com) account and fork this repository
 
+	<img width="730" alt="fork github" src="https://cloud.githubusercontent.com/assets/1511528/20171945/01edad1a-a76e-11e6-83ed-3cd0245ae2d2.png">
+
+
 #Getting started
 * Create application of `Liberty for Java` on `Bluemix`
 
@@ -95,11 +98,11 @@ Build your own chatbot on the Innovation Day
 
 	<img width="665" alt="DevOps Pipeline" src="https://cloud.githubusercontent.com/assets/1511528/20170198/5182d984-a766-11e6-971c-fcae22cd16cd.png">
 
-	<img width="894" alt="DevOps build and deploy" src="https://cloud.githubusercontent.com/assets/1511528/20170470/4c66d9fe-a767-11e6-9fe4-78a041e885c0.png">
+	<img width="730" alt="DevOps build and deploy" src="https://cloud.githubusercontent.com/assets/1511528/20170470/4c66d9fe-a767-11e6-9fe4-78a041e885c0.png">
 
 * Go back to the app and launch it after the deployment is done
 
-	<img width="1158" alt="View app" src="https://cloud.githubusercontent.com/assets/1511528/20171151/5a4a24ce-a76a-11e6-8119-4e01553d31de.png">
+	<img width="730" alt="View app" src="https://cloud.githubusercontent.com/assets/1511528/20171151/5a4a24ce-a76a-11e6-8119-4e01553d31de.png">
 
 ***Start chatting using text or microphone with your personal Chatbot and Enjoy!***
 
