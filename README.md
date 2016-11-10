@@ -13,25 +13,25 @@ Build your own chatbot on the Innovation Day
 #Getting started
 * Create application of `Liberty for Java` on `Bluemix`
 
-<img width="730" alt="Create application" src="https://cloud.githubusercontent.com/assets/1511528/20166629/13c7c0c4-a751-11e6-9d86-8c115a405210.png">
+	<img width="730" alt="Create application" src="https://cloud.githubusercontent.com/assets/1511528/20166629/13c7c0c4-a751-11e6-9d86-8c115a405210.png">
 
-<img width="736" alt="Liberty For Java" src="https://cloud.githubusercontent.com/assets/1511528/20165648/1d688ee4-a74a-11e6-8b8b-bb9698bbf338.png">
+	<img width="736" alt="Liberty For Java" src="https://cloud.githubusercontent.com/assets/1511528/20165648/1d688ee4-a74a-11e6-8b8b-bb9698bbf338.png">
 
-<img width="730" alt="Liberty for Java" src="https://cloud.githubusercontent.com/assets/1511528/20166262/7b5e9184-a74e-11e6-9a5f-49c1776c2a46.png">
+	<img width="730" alt="Liberty for Java" src="https://cloud.githubusercontent.com/assets/1511528/20166262/7b5e9184-a74e-11e6-9a5f-49c1776c2a46.png">
 
 * Connect `Liberty for Java` with `Watson Conversation`, `Speech to Text` and `Text to Speech` services
 
-<img width="730" alt="Connect services" src="https://cloud.githubusercontent.com/assets/1511528/20166344/1900af6c-a74f-11e6-9616-655c7b081137.png">
+	<img width="730" alt="Connect services" src="https://cloud.githubusercontent.com/assets/1511528/20166344/1900af6c-a74f-11e6-9616-655c7b081137.png">
 
-<img width="730" alt="Watson Conversation" src="https://cloud.githubusercontent.com/assets/1511528/20166354/384e816e-a74f-11e6-9936-ab5323f40f8d.png">
+	<img width="730" alt="Watson Conversation" src="https://cloud.githubusercontent.com/assets/1511528/20166354/384e816e-a74f-11e6-9936-ab5323f40f8d.png">
 
-<img width="730" alt="Watson Conversation" src="https://cloud.githubusercontent.com/assets/1511528/20166380/5d65f3ce-a74f-11e6-81d4-d09708e22ed2.png">
+	<img width="730" alt="Watson Conversation" src="https://cloud.githubusercontent.com/assets/1511528/20166380/5d65f3ce-a74f-11e6-81d4-d09708e22ed2.png">
 
-<img width="730" alt="Connected services" src="https://cloud.githubusercontent.com/assets/1511528/20166467/ed80eefa-a74f-11e6-9e2b-fe410d696ff0.png">
+	<img width="730" alt="Connected services" src="https://cloud.githubusercontent.com/assets/1511528/20166467/ed80eefa-a74f-11e6-9e2b-fe410d696ff0.png">
 
 * Click on `Conversation` from the `Connections` tab and click on `Launch tool` to open the [website of IBM Watson Conversation](https://ibmwatsonconversation.com), then click on `Login with IBM ID` to signin
 
-<img width="730" alt="Conversation launch tool" src="https://cloud.githubusercontent.com/assets/1511528/20166549/7d13ea86-a750-11e6-823b-a4dfe05ada6e.png">
+	<img width="730" alt="Conversation launch tool" src="https://cloud.githubusercontent.com/assets/1511528/20166549/7d13ea86-a750-11e6-823b-a4dfe05ada6e.png">
 
 * Setup a `Workspace` of `Watson Conversation` and define dialogs (We will do it together on the Innovation Day)
 
