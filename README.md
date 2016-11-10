@@ -50,19 +50,21 @@ Build your own chatbot on the Innovation Day
 	<img width="730" alt="Toochain template" src="https://cloud.githubusercontent.com/assets/1511528/20168220/b8181ef8-a75b-11e6-8101-ef53ef339779.png">
 
 * Click on `GitHub` button to Authorize the access to the `GitHub`, then you'll be navigated to `GitHub` website
-* On the `GitHub`, click on Authorize button to grant the access
-* Type `Github` password to confirm the operation
 
 	<img width="730" alt="Authorize GitHub" src="https://cloud.githubusercontent.com/assets/1511528/20168241/e420d210-a75b-11e6-851d-8b053f3786a4.png">
 
+* On the `GitHub`, click on `Authorize application` button to grant the access from Bluemix DevOps service
+
 	<img width="730" alt="GitHub - Authroizing" src="https://cloud.githubusercontent.com/assets/1511528/20168256/ffe74416-a75b-11e6-9a1a-e80d348ff164.png">
+
+* Type `Github` password to confirm the operation
 
 	<img width="342" alt="GitHub - Authorizing" src="https://cloud.githubusercontent.com/assets/1511528/20168277/224dc4da-a75c-11e6-9eb5-db9351a06ec0.png">
 
 * After authorization, select `Existing` as Repository type, and forked `Github URL` as Source repository URL, then click on `Create` button
 
 	<img width="730" alt="Configuring GitHub" src="https://cloud.githubusercontent.com/assets/1511528/20168420/1656583a-a75d-11e6-8a64-d6448647f143.png">
-	
+
 	<img width="658" alt="Checking" src="https://cloud.githubusercontent.com/assets/1511528/20168434/34452c7c-a75d-11e6-9ee9-6cd7af69d983.png">
 
 	<img width="608" alt="Toolchain created" src="https://cloud.githubusercontent.com/assets/1511528/20168439/3a19c19e-a75d-11e6-82ed-a7b12cc4595b.png">
