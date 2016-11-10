@@ -38,17 +38,66 @@ Build your own chatbot on the Innovation Day
 #Bluemix DevOps guide
 * Register your [Github](https://github.com) account, then fork this repository
 * Go to `Overview` of the `Liberty for Java` application, find `Continuous Delivery` panel, and click on `Enable` button
+
+	<img width="730" alt="Enable Continous Delivery" src="https://cloud.githubusercontent.com/assets/1511528/20168055/9a6de398-a75a-11e6-9d88-6a2d86271409.png">
+
+	<img width="730" alt="Getting started" src="https://cloud.githubusercontent.com/assets/1511528/20167403/582e8cd4-a756-11e6-8218-d8fd9d367d94.png">
+
 * Click on `Create Toolchain from Template` for the first time you enable the Toolchains, and click on `Simple Cloud Foundry toolchain`
+
+	<img width="466" alt="Toolchains are enabled" src="https://cloud.githubusercontent.com/assets/1511528/20168096/d7e67da2-a75a-11e6-84f5-22fd0deb971f.png">
+
+	<img width="730" alt="Toochain template" src="https://cloud.githubusercontent.com/assets/1511528/20168220/b8181ef8-a75b-11e6-8101-ef53ef339779.png">
+
 * Click on `GitHub` button to Authorize the access to the `GitHub`, then you'll be navigated to `GitHub` website
 * On the `GitHub`, click on Authorize button to grant the access
 * Type `Github` password to confirm the operation
+
+	<img width="730" alt="Authorize GitHub" src="https://cloud.githubusercontent.com/assets/1511528/20168241/e420d210-a75b-11e6-851d-8b053f3786a4.png">
+
+	<img width="730" alt="GitHub - Authroizing" src="https://cloud.githubusercontent.com/assets/1511528/20168256/ffe74416-a75b-11e6-9a1a-e80d348ff164.png">
+
+	<img width="342" alt="GitHub - Authorizing" src="https://cloud.githubusercontent.com/assets/1511528/20168277/224dc4da-a75c-11e6-9eb5-db9351a06ec0.png">
+
 * After authorization, select `Existing` as Repository type, and forked `Github URL` as Source repository URL, then click on `Create` button
-* Click on `Eclipse Orion Web IDE` to open the repository on the DevOps service
-* Go back to Watson Conversation website, copy `Workspace ID` from the created `Workspace` by clicking on the menu on the top right of the `Workspace panel`, then click on `View details` and copy the `Workspace ID`
-* Switch to `Eclipse Orion Web IDE`, and select `manifest.yml` for editing. Change `name` to your app name then update `CONVERSATION_WORKSPACE_ID` to  copied `Workspace ID`
+
+	<img width="730" alt="Configuring GitHub" src="https://cloud.githubusercontent.com/assets/1511528/20168420/1656583a-a75d-11e6-8a64-d6448647f143.png">
+	
+	<img width="658" alt="Checking" src="https://cloud.githubusercontent.com/assets/1511528/20168434/34452c7c-a75d-11e6-9ee9-6cd7af69d983.png">
+
+	<img width="608" alt="Toolchain created" src="https://cloud.githubusercontent.com/assets/1511528/20168439/3a19c19e-a75d-11e6-82ed-a7b12cc4595b.png">
+
+* On this step, assuming you have already created one Watson Conversation, so switch back to Watson Conversation website, copy `Workspace ID` from the created `Workspace` by clicking on the menu on the top right of the `Workspace panel`, then click on `View details` and copy the `Workspace ID`
+
+	<img width="488" alt="Conversation Workplace" src="https://cloud.githubusercontent.com/assets/1511528/20168895/6beab0d2-a75f-11e6-9acc-d55aa6be15ac.png">
+
+	<img width="472" alt="Conversation Workplace ID" src="https://cloud.githubusercontent.com/assets/1511528/20168898/716966ca-a75f-11e6-8adc-6fef6a9eb19a.png">
+
+* Switch back to `DevOps service` and click on `Eclipse Orion Web IDE`, and select `manifest.yml` for editing. Change `name` to your app name then update `CONVERSATION_WORKSPACE_ID` to  copied `Workspace ID`
+
+	<img width="730" alt="manifest.yml" src="https://cloud.githubusercontent.com/assets/1511528/20168506/8b3cbefa-a75d-11e6-97b4-d186b252e716.png">
+
 * Click `File` menu and select `Save`
+
+	<img width="730" alt="Save yml file" src="https://cloud.githubusercontent.com/assets/1511528/20169273/8cbe31c4-a761-11e6-80b3-c70ecf40bbc5.png">
+
 * Click on `Git` tab on the left, add commit comments and click on `Commit` button, after that click on `Push` button to update changes on the `GitHub`
+
+	<img width="225" alt="GitHub menu" src="https://cloud.githubusercontent.com/assets/1511528/20169303/c6bfe458-a761-11e6-9ae9-70c094d0b010.png">
+
+	<img width="730" alt="GitHub commit" src="https://cloud.githubusercontent.com/assets/1511528/20169340/f2b5b15a-a761-11e6-92c1-97ffaa46a174.png">
+
+	<img width="730" alt="GitHub push" src="https://cloud.githubusercontent.com/assets/1511528/20169861/bc0bf742-a764-11e6-8950-9d75a0fd8da5.png">
+
 * Go back to toolchain then click on `Delivery Pipeline`, click `Run Stage` icon and wait for the build and deployment process
+
+	<img width="665" alt="DevOps Pipeline" src="https://cloud.githubusercontent.com/assets/1511528/20170198/5182d984-a766-11e6-971c-fcae22cd16cd.png">
+
+	<img width="894" alt="DevOps build and deploy" src="https://cloud.githubusercontent.com/assets/1511528/20170470/4c66d9fe-a767-11e6-9fe4-78a041e885c0.png">
+
+* Go back to the app and launch it after the deployment is done
+
+	<img width="1158" alt="View app" src="https://cloud.githubusercontent.com/assets/1511528/20171151/5a4a24ce-a76a-11e6-8119-4e01553d31de.png">
 
 ***Start chatting using text or microphone with your personal Chatbot and Enjoy!***
 
