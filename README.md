@@ -12,13 +12,12 @@ Build your own chatbot on the Innovation Day
 
 	<img width="730" alt="fork github" src="https://cloud.githubusercontent.com/assets/1511528/20171945/01edad1a-a76e-11e6-83ed-3cd0245ae2d2.png">
 
-
 #Getting started
 * Create application of `Liberty for Java` on `Bluemix`
 
-	<img width="730" alt="Create application" src="https://cloud.githubusercontent.com/assets/1511528/20166629/13c7c0c4-a751-11e6-9d86-8c115a405210.png">
+	<img width="730" alt="Create application" src="https://cloud.githubusercontent.com/assets/1511528/20180428/6c673cf2-a795-11e6-9424-fff51c0e28e9.png">
 
-	<img width="736" alt="Liberty For Java" src="https://cloud.githubusercontent.com/assets/1511528/20165648/1d688ee4-a74a-11e6-8b8b-bb9698bbf338.png">
+	<img width="730" alt="Liberty For Java" src="https://cloud.githubusercontent.com/assets/1511528/20165648/1d688ee4-a74a-11e6-8b8b-bb9698bbf338.png">
 
 	<img width="730" alt="Liberty for Java" src="https://cloud.githubusercontent.com/assets/1511528/20166262/7b5e9184-a74e-11e6-9a5f-49c1776c2a46.png">
 
@@ -35,6 +34,8 @@ Build your own chatbot on the Innovation Day
 * Click on `Conversation` from the `Connections` tab and click on `Launch tool` to open the [website of IBM Watson Conversation](https://ibmwatsonconversation.com), then click on `Login with IBM ID` to signin
 
 	<img width="730" alt="Conversation launch tool" src="https://cloud.githubusercontent.com/assets/1511528/20166549/7d13ea86-a750-11e6-823b-a4dfe05ada6e.png">
+	
+	<img width="730" alt="Sign in conversation" src="https://cloud.githubusercontent.com/assets/1511528/20182253/1d6586fc-a79c-11e6-8423-af8dc921eb2d.png">
 
 * Setup a `Workspace` of `Watson Conversation` and define dialogs (We will do it together on the Innovation Day)
 
