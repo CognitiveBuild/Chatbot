@@ -119,21 +119,12 @@ Build your own chatbot on the Innovation Day
 ```shell
 	git clone git@github.com:CognitiveBuild/Chatbot.git
 ```
-* Import **Chatbot** into your Eclipse workspace
-* Add credentials into the file: `/Chatbot/src/com/ibm/cto/Consts.java`
-```java
-	// Sample only, please use your own credentials
-	public String TEXT_TO_SPEECH_USERNAME =  "9a5bfa13-624f-436e-8af1-fc677a59a123";
-	public String TEXT_TO_SPEECH_PASSWORD = "berqyZXJ2J7f";
-
-	public String SPEECH_TO_TEXT_USERNAME = "af3a6ecc-2f35-4672-2595-35e15bcd758a";
-	public String SPEECH_TO_TEXT_PASSWORD = "KQ3itZUslHsc";
-
-	public String CONVERSATION_USERNAME = "134f9b10-7d4a-4e4f-92a0-7372f67331f7";
-	public String CONVERSATION_PASSWORD = "ijMoZB1vCVW6";
-	public String CONVERSATION_WORKSPACE_ID = "1e28d5ef-7506-4e76-814e-e83f3cbe6816";
+* Execute the following command to pick up the environment specified for your application based on its name in your `manifest.yml` file:
+```shell
+	cf env <application-name>
 ```
-* **Right click** on the `Chatbot` project, choose `Run As` &gt; `Run on Server` to open `http://localhost:8080/Chatbot/`
+* Import **Chatbot** into your Eclipse workspace
+* **Right click** on the `Chatbot` project, choose `Run As` &gt; `Run on Server` to open `http://localhost:8080/Chatbot/` and see the running application
 
 * **Deploy your Chatbot on the Bluemix**
 * **Right click** on the Chatbot project, choose `Export` &gt; `WAR file`, then save the `WAR file` into `Destination`
