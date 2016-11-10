@@ -8,27 +8,28 @@ Build your own chatbot on the Innovation Day
 
 #Prerequisite
 * Register your [Bluemix](https://bluemix.net) account
+* Register your [Github](https://github.com) account and fork this repository
 
 #Getting started
 * Create application of `Liberty for Java` on `Bluemix`
 * Connect `Liberty for Java` with `Watson Conversation`, `Speech to Text` and `Text to Speech` services
 * Click on `Conversation` from the `Connections` tab and click on `Launch tool` to open the [website of IBM Watson Conversation](https://ibmwatsonconversation.com), then click on `Login with IBM ID` to signin
 * Setup a `Workspace` of `Watson Conversation` and define dialogs (We will do it together on the Innovation Day)
-* Get `Workspace ID` from the created `Workspace` by clicking on the menu on the top right of the `Workspace panel`, then click on `View details` and copy the `Workspace ID`
-* Go back to the created `Liberty for Java` application, click on the `Runtime` menu on the left, then click on `Environment Variables` tab on the right, click `Add` button
-* Input `CONVERSATION_WORKSPACE_ID` as the `NAME` and paste the `Workspace ID` just copied as the `VALUE`, then click on `Save` button
 
 #Bluemix DevOps guide
-
-**Using Github**
 * Register your [Github](https://github.com) account, then fork this repository
 * Go to `Overview` of the `Liberty for Java` application, find `Continuous Delivery` panel, and click on `Enable` button
-* Change the settings to use Github
-* Commit your changes then push them on the Github
-* Wait for the automatic deployment
-
-**Using Jazz on Bluemix**
-* TBD
+* Click on `Create Toolchain from Template` for the first time you enable the Toolchains, and click on `Simple Cloud Foundry toolchain`
+* Click on `GitHub` button to Authorize the access to the `GitHub`, then you'll be navigated to `GitHub` website
+* On the `GitHub`, click on Authorize button to grant the access
+* Type `Github` password to confirm the operation
+* After authorization, select `Existing` as Repository type, and forked `Github URL` as Source repository URL, then click on `Create` button
+* Click on `Eclipse Orion Web IDE` to open the repository on the DevOps service
+* Go back to Watson Conversation website, copy `Workspace ID` from the created `Workspace` by clicking on the menu on the top right of the `Workspace panel`, then click on `View details` and copy the `Workspace ID`
+* Switch to `Eclipse Orion Web IDE`, and select `manifest.yml` for editing. Change `name` to your app name then update `CONVERSATION_WORKSPACE_ID` to  copied `Workspace ID`
+* Click `File` menu and select `Save`
+* Click on `Git` tab on the left, add commit comments and click on `Commit` button, after that click on `Push` button to update changes on the `GitHub`
+* Go back to toolchain then click on `Delivery Pipeline`, click `Run Stage` icon and wait for the build and deployment process
 
 ***Start chatting using text or microphone with your personal Chatbot and Enjoy!***
 
