@@ -53,9 +53,9 @@ Build your own chatbot on the Innovation Day
 
 	<img width="466" alt="Toolchains are enabled" src="https://cloud.githubusercontent.com/assets/1511528/20168096/d7e67da2-a75a-11e6-84f5-22fd0deb971f.png">
 
-	<img width="730" alt="Toolchain template" src="https://cloud.githubusercontent.com/assets/1511528/20168220/b8181ef8-a75b-11e6-8101-ef53ef339779.png">
-
 	<img width="730" alt="Choose Toolchain" src="https://cloud.githubusercontent.com/assets/1511528/20216896/1390db4c-a858-11e6-8272-c83843717659.png">
+
+	<img width="730" alt="Toolchain template" src="https://cloud.githubusercontent.com/assets/1511528/20168220/b8181ef8-a75b-11e6-8101-ef53ef339779.png">
 
 * Click on `GitHub` button to Authorize the access to the `GitHub`, then you'll be navigated to `GitHub` website
 
