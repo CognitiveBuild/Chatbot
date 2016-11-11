@@ -123,13 +123,22 @@ Build your own chatbot on the Innovation Day
 ```shell
 	git clone git@github.com:CognitiveBuild/Chatbot.git
 ```
-* Execute the following command to pick up the environment specified for your application based on its name in your `manifest.yml` file:
-```shell
-	cf env <application-name>
-```
 * Import **Chatbot** into your Eclipse workspace
-* **Right click** on the `Chatbot` project, choose `Run As` &gt; `Run on Server` to open `http://localhost:8080/Chatbot/` and see the running application
+* Add credentials into the file: `/Chatbot/src/com/ibm/cto/Consts.java`
+```java
+ 	// Sample only, please USE YOUR CREDENTIALS instead
+	public String TEXT_TO_SPEECH_USERNAME =  "9a5bfa13-624f-436e-8af1-fc677a59a123";
+	public String TEXT_TO_SPEECH_PASSWORD = "berqyZXJ2J7f";
 
+	public String SPEECH_TO_TEXT_USERNAME = "af3a6ecc-2f35-4672-2595-35e15bcd758a";
+	public String SPEECH_TO_TEXT_PASSWORD = "KQ3itZUslHsc";
+ 
+	public String CONVERSATION_USERNAME = "134f9b10-7d4a-4e4f-92a0-7372f67331f7";
+	public String CONVERSATION_PASSWORD = "ijMoZB1vCVW6";
+
+	public String CONVERSATION_WORKSPACE_ID = "1e28d5ef-7506-4e76-814e-e83f3cbe6816";
+```
+* **Right click** on the `Chatbot` project, choose `Run As` &gt; `Run on Server`, then choose `Tomcat v9.0 Server at localhost` to open `http://localhost:8080/Chatbot/` and see the running application
 * **Deploy your Chatbot on the Bluemix**
 * **Right click** on the Chatbot project, choose `Export` &gt; `WAR file`, then save the `WAR file` into `Destination`
 * Run `bluemix` and `cf` command to deploy the `WAR file` on the Bluemix, please refer `Getting Started` section of the `Liberty for Java`. And this is an example of the shell command
@@ -154,7 +163,7 @@ Build your own chatbot on the Innovation Day
 * Watson Speech JavaScript SDK
 
 #Issues
-* Watson JavaScript Speech SDK does not support Safari
+* Watson JavaScript Speech SDK does not support **Safari**
 * The way of obtaining token is not secured, do not use it on Production
 
 #License
