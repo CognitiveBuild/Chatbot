@@ -46,12 +46,16 @@ Build your own chatbot on the Innovation Day
 	<img width="730" alt="Enable Continous Delivery" src="https://cloud.githubusercontent.com/assets/1511528/20168055/9a6de398-a75a-11e6-9d88-6a2d86271409.png">
 
 	<img width="730" alt="Getting started" src="https://cloud.githubusercontent.com/assets/1511528/20167403/582e8cd4-a756-11e6-8218-d8fd9d367d94.png">
+	
+	<img width="527" alt="Enable toolchains" src="https://cloud.githubusercontent.com/assets/1511528/20216876/fb6e5904-a857-11e6-8c57-5ffd1d0874b2.png">
 
 * Click on `Create Toolchain from Template` for the first time you enable the Toolchains, and click on `Simple Cloud Foundry toolchain`
 
 	<img width="466" alt="Toolchains are enabled" src="https://cloud.githubusercontent.com/assets/1511528/20168096/d7e67da2-a75a-11e6-84f5-22fd0deb971f.png">
 
-	<img width="730" alt="Toochain template" src="https://cloud.githubusercontent.com/assets/1511528/20168220/b8181ef8-a75b-11e6-8101-ef53ef339779.png">
+	<img width="730" alt="Toolchain template" src="https://cloud.githubusercontent.com/assets/1511528/20168220/b8181ef8-a75b-11e6-8101-ef53ef339779.png">
+
+	<img width="730" alt="Choose Toolchain" src="https://cloud.githubusercontent.com/assets/1511528/20216896/1390db4c-a858-11e6-8272-c83843717659.png">
 
 * Click on `GitHub` button to Authorize the access to the `GitHub`, then you'll be navigated to `GitHub` website
 
