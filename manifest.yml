@@ -1,6 +1,6 @@
 ---
 applications:
-- name: mikechatbot
+- name: mikeChatBot
   path: target/Chatbot-0.0.1.war
   buildpack: liberty-for-java
   env:
