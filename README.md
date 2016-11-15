@@ -46,12 +46,16 @@ Build your own chatbot on the Innovation Day
 	<img width="730" alt="Enable Continous Delivery" src="https://cloud.githubusercontent.com/assets/1511528/20168055/9a6de398-a75a-11e6-9d88-6a2d86271409.png">
 
 	<img width="730" alt="Getting started" src="https://cloud.githubusercontent.com/assets/1511528/20167403/582e8cd4-a756-11e6-8218-d8fd9d367d94.png">
+	
+	<img width="527" alt="Enable toolchains" src="https://cloud.githubusercontent.com/assets/1511528/20216876/fb6e5904-a857-11e6-8c57-5ffd1d0874b2.png">
 
 * Click on `Create Toolchain from Template` for the first time you enable the Toolchains, and click on `Simple Cloud Foundry toolchain`
 
 	<img width="466" alt="Toolchains are enabled" src="https://cloud.githubusercontent.com/assets/1511528/20168096/d7e67da2-a75a-11e6-84f5-22fd0deb971f.png">
 
-	<img width="730" alt="Toochain template" src="https://cloud.githubusercontent.com/assets/1511528/20168220/b8181ef8-a75b-11e6-8101-ef53ef339779.png">
+	<img width="730" alt="Choose Toolchain" src="https://cloud.githubusercontent.com/assets/1511528/20216896/1390db4c-a858-11e6-8272-c83843717659.png">
+
+	<img width="730" alt="Toolchain template" src="https://cloud.githubusercontent.com/assets/1511528/20168220/b8181ef8-a75b-11e6-8101-ef53ef339779.png">
 
 * Click on `GitHub` button to Authorize the access to the `GitHub`, then you'll be navigated to `GitHub` website
 
@@ -122,19 +126,19 @@ Build your own chatbot on the Innovation Day
 * Import **Chatbot** into your Eclipse workspace
 * Add credentials into the file: `/Chatbot/src/com/ibm/cto/Consts.java`
 ```java
-	// Sample only, please use your own credentials
+ 	// Sample only, please USE YOUR CREDENTIALS instead
 	public String TEXT_TO_SPEECH_USERNAME =  "9a5bfa13-624f-436e-8af1-fc677a59a123";
 	public String TEXT_TO_SPEECH_PASSWORD = "berqyZXJ2J7f";
 
 	public String SPEECH_TO_TEXT_USERNAME = "af3a6ecc-2f35-4672-2595-35e15bcd758a";
 	public String SPEECH_TO_TEXT_PASSWORD = "KQ3itZUslHsc";
-
+ 
 	public String CONVERSATION_USERNAME = "134f9b10-7d4a-4e4f-92a0-7372f67331f7";
 	public String CONVERSATION_PASSWORD = "ijMoZB1vCVW6";
+
 	public String CONVERSATION_WORKSPACE_ID = "1e28d5ef-7506-4e76-814e-e83f3cbe6816";
 ```
-* **Right click** on the `Chatbot` project, choose `Run As` &gt; `Run on Server` to open `http://localhost:8080/Chatbot/`
-
+* **Right click** on the `Chatbot` project, choose `Run As` &gt; `Run on Server`, then choose `Tomcat v9.0 Server at localhost` to open `http://localhost:8080/Chatbot/` and see the running application
 * **Deploy your Chatbot on the Bluemix**
 * **Right click** on the Chatbot project, choose `Export` &gt; `WAR file`, then save the `WAR file` into `Destination`
 * Run `bluemix` and `cf` command to deploy the `WAR file` on the Bluemix, please refer `Getting Started` section of the `Liberty for Java`. And this is an example of the shell command
@@ -159,7 +163,7 @@ Build your own chatbot on the Innovation Day
 * Watson Speech JavaScript SDK
 
 #Issues
-* Watson JavaScript Speech SDK does not support Safari
+* Watson JavaScript Speech SDK does not support **Safari**
 * The way of obtaining token is not secured, do not use it on Production
 
 #License
