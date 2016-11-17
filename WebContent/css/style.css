@@ -1262,3 +1262,46 @@ pre[class*=" language-"] {
 	margin: 10px 0px 20px;
 	background:#fafafa;
 }
+
+.car-controller{
+	margin-top: 0rem;
+    min-height: 29rem;
+
+    background-color: #fff;
+    border: 2px solid #ececec;
+    font-size: 1em;
+    font-weight: 300;
+    padding: 0.6em 1em;
+    width: 100%;
+}
+.car-controller .row{
+	margin: 30px 10px;
+}
+.car-controller .item{
+	width: 100px;
+	height: 100px;
+	cursor: pointer;
+	border: 1px solid #ddd;
+	background: #fff;
+	padding: 10px;
+	margin: 0px auto;
+	display:block;
+}
+	.car-controller .item.active, 
+	.car-controller .item:hover{
+		background:#5596e6;
+		color:#fff;
+	}
+	.car-controller .item i{
+		font-size:3rem;
+		margin: 0px auto;
+		text-align:center;
+		font-size: 3.5rem;
+		display:block;
+	}
+.car-controller .item-left{
+	float: left;
+}
+.car-controller .item-right{
+	float: right;
+}
