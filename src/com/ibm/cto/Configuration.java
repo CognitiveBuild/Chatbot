@@ -49,14 +49,14 @@ public class Configuration {
 		if(instance == null) {
 			instance = new Configuration();
 			String CONVERSATION_WORKSPACE_STRING = System.getenv("CONVERSATION_WORKSPACE_ID");
-			String CAR_SERVICE_HOST_NAME_STRING = System.getenv("CAR_SERVICE_HOST_NAME");
+			String CAR_SERVICE_HOST_STRING = System.getenv("CAR_SERVICE_HOST");
 
-			if(CONVERSATION_WORKSPACE_STRING == null || CAR_SERVICE_HOST_NAME_STRING == null) {
+			if(CONVERSATION_WORKSPACE_STRING == null || CAR_SERVICE_HOST_STRING == null) {
 				return instance;
 			}
 			else {
 				instance.CONVERSATION_WORKSPACE_ID = CONVERSATION_WORKSPACE_STRING;
-				instance.CAR_SERVICE_HOST = CAR_SERVICE_HOST_NAME_STRING;
+				instance.CAR_SERVICE_HOST = CAR_SERVICE_HOST_STRING;
 			}
 
 			System.out.println("### Conversation Workspace ID ###");
