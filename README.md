@@ -77,7 +77,7 @@ Build your own chatbot on the Innovation Day
 
 	<img width="658" alt="Checking" src="https://cloud.githubusercontent.com/assets/1511528/20168434/34452c7c-a75d-11e6-9ee9-6cd7af69d983.png">
 	
-* Verify configurations to ensure the Pipeline deploys on right runtime
+* Verify configurations to ensure the Pipeline deploys on right runtime with the correct application name
 	
 	<img width="615" alt="Verify Pipeline Configuration" src="https://cloud.githubusercontent.com/assets/1511528/20418428/49f5a57a-ad88-11e6-895b-26ce3556bf8a.png">
 
