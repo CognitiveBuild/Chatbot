@@ -8,9 +8,10 @@ Build your own chatbot on the Innovation Day
 
 #Prerequisite
 * Register your [Bluemix](https://bluemix.net) account
-* Register your [Github](https://github.com) account and fork this repository
+* Register your [Github](https://github.com) account 
+* Fork this repository and https://github.com/ChristiaL/IOTCar and deploy the nodejs web application
 
-	<img width="730" alt="fork github" src="https://cloud.githubusercontent.com/assets/1511528/20171945/01edad1a-a76e-11e6-83ed-3cd0245ae2d2.png">
+	<img width="730" alt="Fork github" src="https://cloud.githubusercontent.com/assets/1511528/20171945/01edad1a-a76e-11e6-83ed-3cd0245ae2d2.png">
 
 #Getting started
 * Create application of `Liberty for Java` on `Bluemix`
@@ -40,7 +41,8 @@ Build your own chatbot on the Innovation Day
 * Setup a `Workspace` of `Watson Conversation` and define dialogs (We will do it together on the Innovation Day)
 
 #Bluemix DevOps guide
-* Register your [Github](https://github.com) account, then fork this repository
+* Register your [Github](https://github.com) account
+* Fork this repository and https://github.com/ChristiaL/IOTCar and deploy the nodejs web application
 * Go to `Overview` of the `Liberty for Java` application, find `Continuous Delivery` panel, and click on `Enable` button
 
 	<img width="730" alt="Enable Continous Delivery" src="https://cloud.githubusercontent.com/assets/1511528/20168055/9a6de398-a75a-11e6-9d88-6a2d86271409.png">
@@ -76,6 +78,14 @@ Build your own chatbot on the Innovation Day
 	<img width="658" alt="Checking" src="https://cloud.githubusercontent.com/assets/1511528/20168434/34452c7c-a75d-11e6-9ee9-6cd7af69d983.png">
 
 	<img width="608" alt="Toolchain created" src="https://cloud.githubusercontent.com/assets/1511528/20168439/3a19c19e-a75d-11e6-82ed-a7b12cc4595b.png">
+	
+* Verify configurations to ensure the Pipeline deploys on right runtime
+	
+	<img width="615" alt="Verify Pipeline Configuration" src="https://cloud.githubusercontent.com/assets/1511528/20418428/49f5a57a-ad88-11e6-895b-26ce3556bf8a.png">
+
+	<img width="1081" alt="Verify Pipeline Configuration" src="https://cloud.githubusercontent.com/assets/1511528/20419428/4d11de00-ad91-11e6-9ef2-4a12c58012c3.png">
+
+	<img width="765" alt="Verify Pipeline Configuration" src="https://cloud.githubusercontent.com/assets/1511528/20419582/72efe648-ad92-11e6-88fd-613f502b9be4.png">
 
 * On this step, assuming you have already created one Watson Conversation, so switch back to Watson Conversation website, copy `Workspace ID` from the created `Workspace` by clicking on the menu on the top right of the `Workspace panel`, then click on `View details` and copy the `Workspace ID`
 
