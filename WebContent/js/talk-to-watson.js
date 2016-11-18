@@ -319,19 +319,19 @@ var conversation_result, is_wating = false, methods = {
 		var keyToCommand = function(key){
 			var direction = '';
 			switch(key){
-			case 'w':
+
 			case 'ArrowUp':
 				direction = 'w';
 				break;
-			case 'a':
+
 			case 'ArrowLeft':
 				direction = 'a';
 				break;
-			case 's':
+
 			case 'ArrowDown':
 				direction = 's';
 				break;
-			case 'd':
+
 			case 'ArrowRight':
 				direction = 'd';
 				break;
