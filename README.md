@@ -76,8 +76,6 @@ Build your own chatbot on the Innovation Day
 	<img width="730" alt="Configuring GitHub" src="https://cloud.githubusercontent.com/assets/1511528/20168420/1656583a-a75d-11e6-8a64-d6448647f143.png">
 
 	<img width="658" alt="Checking" src="https://cloud.githubusercontent.com/assets/1511528/20168434/34452c7c-a75d-11e6-9ee9-6cd7af69d983.png">
-
-	<img width="608" alt="Toolchain created" src="https://cloud.githubusercontent.com/assets/1511528/20168439/3a19c19e-a75d-11e6-82ed-a7b12cc4595b.png">
 	
 * Verify configurations to ensure the Pipeline deploys on right runtime
 	
