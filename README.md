@@ -76,7 +76,7 @@ Build your own chatbot on the Innovation Day
 
 * After authorization, select `Existing` as Repository type, and forked `Github URL` as Source repository URL, then click on `Create` button
 
-	<img width="820" alt="Configuring GitHub" src="https://cloud.githubusercontent.com/assets/1511528/20476375/9c491b38-b00b-11e6-8efa-75a7944b3f89.png">
+	<img width="730" alt="Configuring GitHub" src="https://cloud.githubusercontent.com/assets/1511528/20476375/9c491b38-b00b-11e6-8efa-75a7944b3f89.png">
 
 	<img width="658" alt="Checking" src="https://cloud.githubusercontent.com/assets/1511528/20168434/34452c7c-a75d-11e6-9ee9-6cd7af69d983.png">
 	
@@ -84,9 +84,9 @@ Build your own chatbot on the Innovation Day
 	
 	<img width="615" alt="Verify Pipeline Configuration" src="https://cloud.githubusercontent.com/assets/1511528/20418428/49f5a57a-ad88-11e6-895b-26ce3556bf8a.png">
 
-	<img width="1081" alt="Verify Pipeline Configuration" src="https://cloud.githubusercontent.com/assets/1511528/20419428/4d11de00-ad91-11e6-9ef2-4a12c58012c3.png">
+	<img width="730" alt="Verify Pipeline Configuration" src="https://cloud.githubusercontent.com/assets/1511528/20419428/4d11de00-ad91-11e6-9ef2-4a12c58012c3.png">
 
-	<img width="765" alt="Verify Pipeline Configuration" src="https://cloud.githubusercontent.com/assets/1511528/20419582/72efe648-ad92-11e6-88fd-613f502b9be4.png">
+	<img width="730" alt="Verify Pipeline Configuration" src="https://cloud.githubusercontent.com/assets/1511528/20419582/72efe648-ad92-11e6-88fd-613f502b9be4.png">
 
 * On this step, assuming you have already created one Watson Conversation, so switch back to Watson Conversation website, copy `Workspace ID` from the created `Workspace` by clicking on the menu on the top right of the `Workspace panel`, then click on `View details` and copy the `Workspace ID`
 
