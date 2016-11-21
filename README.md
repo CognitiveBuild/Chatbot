@@ -9,9 +9,12 @@ Build your own chatbot on the Innovation Day
 #Prerequisite
 * Register your [Bluemix](https://bluemix.net) account
 * Register your [Github](https://github.com) account 
-* Fork this repository and https://github.com/ChristiaL/IOTCar and deploy the nodejs web application
+* Forked the IoTCar repository https://github.com/ChristiaL/IOTCar and deployed the node.js application
+* Fork this repository and remember the link of forked application
 
-	<img width="730" alt="Fork github" src="https://cloud.githubusercontent.com/assets/1511528/20171945/01edad1a-a76e-11e6-83ed-3cd0245ae2d2.png">
+	<img width="730" alt="Fork GitHub" src="https://cloud.githubusercontent.com/assets/1511528/20171945/01edad1a-a76e-11e6-83ed-3cd0245ae2d2.png">
+
+	<img width="730" alt="forked result" src="https://cloud.githubusercontent.com/assets/1511528/20475569/7f60d6cc-b007-11e6-870b-87ae0d7b238f.png">
 
 #Getting started
 * Create application of `Liberty for Java` on `Bluemix`
@@ -73,7 +76,7 @@ Build your own chatbot on the Innovation Day
 
 * After authorization, select `Existing` as Repository type, and forked `Github URL` as Source repository URL, then click on `Create` button
 
-	<img width="730" alt="Configuring GitHub" src="https://cloud.githubusercontent.com/assets/1511528/20168420/1656583a-a75d-11e6-8a64-d6448647f143.png">
+	<img width="820" alt="Configuring GitHub" src="https://cloud.githubusercontent.com/assets/1511528/20476375/9c491b38-b00b-11e6-8efa-75a7944b3f89.png">
 
 	<img width="658" alt="Checking" src="https://cloud.githubusercontent.com/assets/1511528/20168434/34452c7c-a75d-11e6-9ee9-6cd7af69d983.png">
 	
