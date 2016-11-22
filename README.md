@@ -113,12 +113,12 @@ Build your own chatbot on the Innovation Day
 	<img width="472" alt="Conversation Workplace ID" src="https://cloud.githubusercontent.com/assets/1511528/20168898/716966ca-a75f-11e6-8adc-6fef6a9eb19a.png">
 
 * Switch back to `DevOps service` and click on `Eclipse Orion Web IDE`, and select `manifest.yml` for editing. Change `name` to your app name then update `CONVERSATION_WORKSPACE_ID` to  copied `Workspace ID`
-
-	<img width="730" alt="manifest.yml" src="https://cloud.githubusercontent.com/assets/1511528/20168506/8b3cbefa-a75d-11e6-97b4-d186b252e716.png">
+	
+	<img width="730" alt="Edit manifest.yml" src="https://cloud.githubusercontent.com/assets/1511528/20534437/32caef94-b11c-11e6-950b-32e4a8190bae.png">
 
 * Click `File` menu and select `Save`
-
-	<img width="730" alt="Save yml file" src="https://cloud.githubusercontent.com/assets/1511528/20169273/8cbe31c4-a761-11e6-80b3-c70ecf40bbc5.png">
+	
+	<img width="730" alt="Save yml file" src="https://cloud.githubusercontent.com/assets/1511528/20534840/aa8c6de0-b11d-11e6-89e7-9e6e407fc163.png">
 
 * Click on `Git` tab on the left, add commit comments and click on `Commit` button, after that click on `Push` button to update changes on the `GitHub`
 
