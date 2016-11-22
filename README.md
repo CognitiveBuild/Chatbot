@@ -29,11 +29,29 @@ Build your own chatbot on the Innovation Day
 
 	<img width="730" alt="Connect services" src="https://cloud.githubusercontent.com/assets/1511528/20166344/1900af6c-a74f-11e6-9616-655c7b081137.png">
 
-	<img width="730" alt="Watson Conversation" src="https://cloud.githubusercontent.com/assets/1511528/20166354/384e816e-a74f-11e6-9936-ab5323f40f8d.png">
+	<img width="730" alt="Watson Conversation" src="https://cloud.githubusercontent.com/assets/1511528/20531887/1d4873f2-b113-11e6-891c-159bf84174b7.png">
 
-	<img width="730" alt="Watson Conversation" src="https://cloud.githubusercontent.com/assets/1511528/20166380/5d65f3ce-a74f-11e6-81d4-d09708e22ed2.png">
+	<img width="730" alt="Watson Conversation" src="https://cloud.githubusercontent.com/assets/1511528/20531913/35bea456-b113-11e6-9a55-1dca35a9ae19.png">
 
-	<img width="730" alt="Connected services" src="https://cloud.githubusercontent.com/assets/1511528/20166467/ed80eefa-a74f-11e6-9e2b-fe410d696ff0.png">
+	<img width="411" alt="Cancel Restage" src="https://cloud.githubusercontent.com/assets/1511528/20531502/f1fb9f22-b111-11e6-8199-419437da07c7.png">
+
+	<img width="730" alt="Connect new" src="https://cloud.githubusercontent.com/assets/1511528/20532520/4720aada-b115-11e6-9147-7d7ce35142ef.png">
+	
+	<img width="730" alt="Speech to Text" src="https://cloud.githubusercontent.com/assets/1511528/20532556/67a09c84-b115-11e6-9e33-9c3bbd60f9b5.png">
+
+	<img width="730" alt="Speech to Text" src="https://cloud.githubusercontent.com/assets/1511528/20532569/7185d480-b115-11e6-9b6d-6c74337eb8a1.png">
+
+	<img width="411" alt="Cancel Restage" src="https://cloud.githubusercontent.com/assets/1511528/20531502/f1fb9f22-b111-11e6-8199-419437da07c7.png">
+
+	<img width="730" alt="Connect new" src="https://cloud.githubusercontent.com/assets/1511528/20532603/92e2dbaa-b115-11e6-97a3-98630c639a3b.png">
+
+	<img width="730" alt="Text to Speech" src="https://cloud.githubusercontent.com/assets/1511528/20532611/981d427c-b115-11e6-9f39-4d57d0b88709.png">
+
+	<img width="730" alt="Text to Speech" src="https://cloud.githubusercontent.com/assets/1511528/20532637/b2266220-b115-11e6-9afc-8051cd20d6f9.png">
+
+	<img width="411" alt="Cancel Restage" src="https://cloud.githubusercontent.com/assets/1511528/20531502/f1fb9f22-b111-11e6-8199-419437da07c7.png">
+
+	<img width="730" alt="Connected services" src="https://cloud.githubusercontent.com/assets/1511528/20532706/e3e5585c-b115-11e6-8753-594795d1937b.png">
 
 * Click on `Conversation` from the `Connections` tab and click on `Launch tool` to open the [website of IBM Watson Conversation](https://ibmwatsonconversation.com), then click on `Login with IBM ID` to signin
 
