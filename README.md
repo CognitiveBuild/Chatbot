@@ -94,12 +94,12 @@ Build your own chatbot on the Innovation Day
 
 * After authorization, select `Existing` as Repository type, and forked `Github URL` as Source repository URL, then click on `Create` button
 
-	<img width="730" alt="Configuring GitHub" src="https://cloud.githubusercontent.com/assets/1511528/20476375/9c491b38-b00b-11e6-8efa-75a7944b3f89.png">
+	<img width="1029" alt="Create Toolchain" src="https://cloud.githubusercontent.com/assets/1511528/20557452/934f7530-b1a6-11e6-8299-529c9f097e3a.png">
 
 	<img width="658" alt="Checking" src="https://cloud.githubusercontent.com/assets/1511528/20168434/34452c7c-a75d-11e6-9ee9-6cd7af69d983.png">
 	
 * Verify configurations to ensure the Pipeline deploys on right runtime with the correct application name
-	
+
 	<img width="615" alt="Verify Pipeline Configuration" src="https://cloud.githubusercontent.com/assets/1511528/20418428/49f5a57a-ad88-11e6-895b-26ce3556bf8a.png">
 
 	<img width="730" alt="Verify Pipeline Configuration" src="https://cloud.githubusercontent.com/assets/1511528/20419428/4d11de00-ad91-11e6-9ef2-4a12c58012c3.png">
@@ -130,7 +130,7 @@ Build your own chatbot on the Innovation Day
 
 * Go back to toolchain then click on `Delivery Pipeline`, click `Run Stage` icon and wait for the build and deployment process
 
-	<img width="665" alt="DevOps Pipeline" src="https://cloud.githubusercontent.com/assets/1511528/20170198/5182d984-a766-11e6-971c-fcae22cd16cd.png">
+	<img width="615" alt="DevOps Pipeline" src="https://cloud.githubusercontent.com/assets/1511528/20418428/49f5a57a-ad88-11e6-895b-26ce3556bf8a.png">
 
 	<img width="730" alt="DevOps build and deploy" src="https://cloud.githubusercontent.com/assets/1511528/20170470/4c66d9fe-a767-11e6-9fe4-78a041e885c0.png">
 
