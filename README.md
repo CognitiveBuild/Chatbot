@@ -131,14 +131,10 @@ Build your own chatbot on the Innovation Day
 * Go back to toolchain then click on `Delivery Pipeline`, click `Run Stage` icon and wait for the build and deployment process
 
 	<img width="730" alt="Pipeline interface" src="https://cloud.githubusercontent.com/assets/1511528/20592411/41cf7e68-b268-11e6-92c6-ae6ce9cf1e47.png">
-
-	<img width="730" alt="Pipeline interface" src="https://cloud.githubusercontent.com/assets/1511528/20592430/60004958-b268-11e6-9cf6-49890317bf47.png">
+	
+	<img width="730" alt="Pipeline interface" src="https://cloud.githubusercontent.com/assets/1511528/20592956/4499a774-b26b-11e6-9cad-13b78766b287.png">
 	
 	<img width="730" alt="pipeline deployed" src="https://cloud.githubusercontent.com/assets/1511528/20592749/33cf528c-b26a-11e6-8974-ed02a0679b26.png">
-
-* Go back to the app and launch it after the deployment is done
-
-	<img width="730" alt="View app" src="https://cloud.githubusercontent.com/assets/1511528/20171151/5a4a24ce-a76a-11e6-8119-4e01553d31de.png">
 
 ***Start chatting using text or microphone with your personal Chatbot and Enjoy!***
 
