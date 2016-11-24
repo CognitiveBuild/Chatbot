@@ -176,7 +176,7 @@ Build your own chatbot on the Innovation Day
 	public String CAR_SERVICE_HOST = "your_car_host_name.mybluemix.net";
 ```
 * **Right click** on the `Chatbot` project, choose `Run As` &gt; `Run on Server`, then choose `Tomcat v9.0 Server at localhost` to open `http://localhost:8080/Chatbot/` and see the running application
-* **Deploy your Chatbot on the Bluemix**
+**Deploy your Chatbot on the Bluemix**
 * **Right click** on the Chatbot project, choose `Export` &gt; `WAR file`, then save the `WAR file` into `Destination`
 * Run `bluemix` and `cf` command to deploy the `WAR file` on the Bluemix, please refer `Getting Started` section of the `Liberty for Java`. And this is an example of the shell command
 ```shell
