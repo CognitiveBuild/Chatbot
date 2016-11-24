@@ -104,7 +104,7 @@ Build your own chatbot on the Innovation Day
 
 	<img width="730" alt="Verify Pipeline Configuration" src="https://cloud.githubusercontent.com/assets/1511528/20419428/4d11de00-ad91-11e6-9ef2-4a12c58012c3.png">
 	
-	<img width="730" alt="Verify Pipeline Configuration" src="https://cloud.githubusercontent.com/assets/1511528/20589363/ee97be56-b256-11e6-893b-f0093c8ce52a.png">
+	<img width="730" alt="Verify Pipeline Configuration" src="https://cloud.githubusercontent.com/assets/1511528/20589470/b4bb3c84-b257-11e6-8ed4-edc5179805e1.png">
 
 * On this step, assuming you have already created one Watson Conversation, so switch back to Watson Conversation website, copy `Workspace ID` from the created `Workspace` by clicking on the menu on the top right of the `Workspace panel`, then click on `View details` and copy the `Workspace ID`
 
@@ -130,9 +130,11 @@ Build your own chatbot on the Innovation Day
 
 * Go back to toolchain then click on `Delivery Pipeline`, click `Run Stage` icon and wait for the build and deployment process
 
-	<img width="615" alt="DevOps Pipeline" src="https://cloud.githubusercontent.com/assets/1511528/20418428/49f5a57a-ad88-11e6-895b-26ce3556bf8a.png">
+	<img width="730" alt="Pipeline interface" src="https://cloud.githubusercontent.com/assets/1511528/20592411/41cf7e68-b268-11e6-92c6-ae6ce9cf1e47.png">
 
-	<img width="730" alt="DevOps build and deploy" src="https://cloud.githubusercontent.com/assets/1511528/20170470/4c66d9fe-a767-11e6-9fe4-78a041e885c0.png">
+	<img width="730" alt="Pipeline interface" src="https://cloud.githubusercontent.com/assets/1511528/20592430/60004958-b268-11e6-9cf6-49890317bf47.png">
+	
+	<img width="730" alt="pipeline deployed" src="https://cloud.githubusercontent.com/assets/1511528/20592749/33cf528c-b26a-11e6-8974-ed02a0679b26.png">
 
 * Go back to the app and launch it after the deployment is done
 
