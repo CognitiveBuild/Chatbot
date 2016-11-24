@@ -35,7 +35,7 @@
     </plugins>
   </build>
   <scm>
-  	<url>https://github.com/CognitiveBuild/Chatbot</url>
+  	<url>https://github.com/Kangzhiping/Chatbot</url>
   </scm>
   <dependencies>
   	<dependency>
