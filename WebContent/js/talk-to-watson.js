@@ -192,6 +192,7 @@ $(document).ready(function () {
 			  stream.on('data', function(data) {
 				  console.log('data:');
 				  console.log(data);
+				  console.log('mike kang testing!');
 				  var transcript = data.alternatives[0].transcript;
 				  $('.ui-transcription').html('<div class="text">'+transcript+'</div>');
 
