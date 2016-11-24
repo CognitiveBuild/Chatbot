@@ -128,7 +128,7 @@ Build your own chatbot on the Innovation Day
 
 	<img width="730" alt="GitHub push" src="https://cloud.githubusercontent.com/assets/1511528/20169861/bc0bf742-a764-11e6-8950-9d75a0fd8da5.png">
 
-* Go back to toolchain then click on `Delivery Pipeline`, click `Run Stage` icon and wait for the build and deployment process
+* Go back to toolchain then click on `Delivery Pipeline`, if it does not automatically start, click `Run Stage` icon and wait for the build and deployment process
 
 	<img width="730" alt="Pipeline interface" src="https://cloud.githubusercontent.com/assets/1511528/20592411/41cf7e68-b268-11e6-92c6-ae6ce9cf1e47.png">
 	
@@ -153,17 +153,27 @@ Build your own chatbot on the Innovation Day
 * Import **Chatbot** into your Eclipse workspace
 * Add credentials into the file: `/Chatbot/src/com/ibm/cto/Consts.java`
 ```java
- 	// Sample only, please USE YOUR CREDENTIALS instead
-	public String TEXT_TO_SPEECH_USERNAME =  "9a5bfa13-624f-436e-8af1-fc677a59a123";
+	/**
+	 * TODO: If you're testing this application locally, please get the credentials from Bluemix
+	 */
+	public String TEXT_TO_SPEECH_USERNAME = "9a5bfa13-624f-436e-8af1-fc677a59a123";
 	public String TEXT_TO_SPEECH_PASSWORD = "berqyZXJ2J7f";
 
 	public String SPEECH_TO_TEXT_USERNAME = "af3a6ecc-2f35-4672-2595-35e15bcd758a";
 	public String SPEECH_TO_TEXT_PASSWORD = "KQ3itZUslHsc";
- 
+
 	public String CONVERSATION_USERNAME = "134f9b10-7d4a-4e4f-92a0-7372f67331f7";
 	public String CONVERSATION_PASSWORD = "ijMoZB1vCVW6";
 
+	/**
+	 * TODO: Get Workspace ID from IBM Watson Conversation: https://ibmwatsonconversation.com
+	 */
 	public String CONVERSATION_WORKSPACE_ID = "1e28d5ef-7506-4e76-814e-e83f3cbe6816";
+
+	/**
+	 * TODO: After deploy your nodejs service for controlling robot car, fill in the host name here
+	 */
+	public String CAR_SERVICE_HOST = "your_car_host_name.mybluemix.net";
 ```
 * **Right click** on the `Chatbot` project, choose `Run As` &gt; `Run on Server`, then choose `Tomcat v9.0 Server at localhost` to open `http://localhost:8080/Chatbot/` and see the running application
 * **Deploy your Chatbot on the Bluemix**
