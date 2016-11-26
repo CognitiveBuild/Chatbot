@@ -204,5 +204,20 @@ Build your own chatbot on the Innovation Day
 * Watson JavaScript Speech SDK does not support **Safari**
 * The way of obtaining token is not secured, do not use it on Production
 
+#Sample data for Conversation
+**City entities and company locations**
+* **Shenzhen**: Technology Building II, No.1057, Nanhai Avenue
+* **Shanghai**: KIC Technology Center
+* **Dalian**: Hi-Tech Zone District, TianDi Software Park
+* **Wuhan**: Donghu HiTech Development Zone
+* **Chengdu**: Tianfu Software Park
+* **Beijing**: Pangudaguan Building
+
+**Direction entities**
+* forward
+* backward
+* left
+* right
+
 #License
 Copyright 2016 GCG GBS CTO Office under [the Apache 2.0 license](LICENSE).
