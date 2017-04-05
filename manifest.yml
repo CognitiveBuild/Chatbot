@@ -5,4 +5,4 @@ applications:
   buildpack: liberty-for-java
   env:
     CONVERSATION_WORKSPACE_ID: 8d060bfe-e1fb-4f71-982b-3206cced56d6
-    CAR_SERVICE_HOST: webchatbotcar.mybluemix.net
+    CAR_SERVICE_HOST: 1stchatbot.mybluemix.net
