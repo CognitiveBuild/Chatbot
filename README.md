@@ -6,7 +6,7 @@ Build your own chatbot on the Innovation Day
 [![Watson: Text-to-Speech](https://img.shields.io/badge/watson-text--to--speech-994fd7.svg?style=flat)](https://github.com/CognitiveBuild/Chatbot)
 [![GitHub license](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://raw.githubusercontent.com/CognitiveBuild/Chatbot/master/LICENSE)
 
-#Prerequisite
+# Prerequisite
 * Register your [Bluemix](https://bluemix.net) account
 * Register your [Github](https://github.com) account 
 * Forked the IoTCar repository https://github.com/ChristiaL/IOTCar and deployed the node.js application
@@ -16,7 +16,7 @@ Build your own chatbot on the Innovation Day
 
 	<img width="730" alt="forked result" src="https://cloud.githubusercontent.com/assets/1511528/20475569/7f60d6cc-b007-11e6-870b-87ae0d7b238f.png">
 
-#Getting started
+# Getting started
 * Create application of `Liberty for Java` on `Bluemix`
 
 	<img width="730" alt="Create application" src="https://cloud.githubusercontent.com/assets/1511528/20180428/6c673cf2-a795-11e6-9424-fff51c0e28e9.png">
@@ -61,7 +61,7 @@ Build your own chatbot on the Innovation Day
 
 * Setup a `Workspace` of `Watson Conversation` and define dialogs (We will do it together on the Innovation Day)
 
-#Bluemix DevOps guide
+# Bluemix DevOps guide
 * Register your [Github](https://github.com) account
 * Fork this repository and https://github.com/ChristiaL/IOTCar and deploy the nodejs web application
 * Go to `Overview` of the `Liberty for Java` application, find `Continuous Delivery` panel, and click on `Enable` button
@@ -138,7 +138,7 @@ Build your own chatbot on the Innovation Day
 
 ***Start chatting using text or microphone with your personal Chatbot and Enjoy!***
 
-#Setup local environment (Optional)
+# Setup local environment (Optional)
 **Installation**
 * Install [Bluemix](http://clis.ng.bluemix.net/ui/home.html) and [CF CLI](https://github.com/cloudfoundry/cli/releases)
 * Install **Eclipse Java EE IDE for Web Developers** as your IDE ([Download](http://eclipse.bluemix.net/packages/neon.1/))
@@ -193,18 +193,18 @@ Build your own chatbot on the Innovation Day
 	cf push your_app_name -p your_war_file_directory/your_war_file.war
 ```
 
-#Dependencies
+# Dependencies
 * Apache Common Codec
 * Apache HTTP Client
 * FastJSON
 * Watson Java SDK
 * Watson Speech JavaScript SDK
 
-#Issues
+# Issues
 * Watson JavaScript Speech SDK does not support **Safari**
 * The way of obtaining token is not secured, do not use it on Production
 
-#Sample data for Conversation
+# Sample data for Conversation
 **City entities and company locations**
 * **Shenzhen**: Technology Building II, No.1057, Nanhai Avenue
 * **Shanghai**: KIC Technology Center
@@ -219,5 +219,5 @@ Build your own chatbot on the Innovation Day
 * left
 * right
 
-#License
+# License
 Copyright 2016 GCG GBS CTO Office under [the Apache 2.0 license](LICENSE).
