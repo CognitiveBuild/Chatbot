@@ -32,42 +32,6 @@ var conversation_result, is_wating = false, methods = {
 		});
 
 		/**
-		 * Convert response context to car command
-		 */
-		var contextToCommand = function(conversation_result){
-			var direction = '';
-			var entities = conversation_result.entities;
-			var intents = conversation_result.intents;
-			for(var index in intents){
-				var intent = intents[index];
-				if(intent.confidence > 0.7 && intent.intent === 'move'){
-					for(var key in entities){
-						var entity = entities[key];
-						if(entity.entity === 'direction') {
-							switch(entity.value) {
-							case 'right':
-								direction = 'd';
-								break;
-							case 'forward':
-								direction = 'w';
-								break;
-							case 'backward':
-								direction = 's';
-								break;
-							case 'left':
-								direction = 'a';
-								break;
-							}
-							break;
-						}
-					}
-					break;
-				}
-			}
-			return direction;
-		};
-
-		/**
 		 * Synthesize
 		 */
 		var synthesize = function(val) {
@@ -124,8 +88,6 @@ var conversation_result, is_wating = false, methods = {
 
 		        talk('WATSON', response); // show
 
-		        var command = contextToCommand(conversation_result);
-		        onSendingCommand(command);
 		      })
 		      .fail(function onError(error) {
 		        talk('WATSON', error.responseJSON ? error.responseJSON.error : error.statusText);
@@ -304,62 +266,6 @@ var conversation_result, is_wating = false, methods = {
 		});
 		scrollToInput();
 
-		// car control
-		var socket = io.connect(carServiceHost);
-
-		socket.on("message", function (data) {
-			console.log("socket data: " + data);
-		});
-
-		var onSendingCommand = function(command){
-			if(command === '') {
-				return;
-			}
-			console.log(command);
-			socket.emit("String", command);
-		};
-		var keyToCommand = function(key){
-			var direction = '';
-			switch(key){
-
-			case 'ArrowUp':
-				direction = 'w';
-				break;
-
-			case 'ArrowLeft':
-				direction = 'a';
-				break;
-
-			case 'ArrowDown':
-				direction = 's';
-				break;
-
-			case 'ArrowRight':
-				direction = 'd';
-				break;
-			}
-			return direction;
-		};
-
-		var keys = $('.car-controller a');
-		keys.on('click', function(evt){
-			var command = $(this).attr('ref');
-			// call Socket-IO
-			onSendingCommand(command);
-		});
-
-		$(document).on('keyup', function(evt){
-			var command = keyToCommand(evt.key);
-			onSendingCommand(command);
-			keys.removeClass('active');
-		});
-		$(document).on('keydown', function(evt){
-			var command = keyToCommand(evt.key);
-			if(command === ''){
-				return;
-			}
-			keys.parent().find('[ref='+command+']').addClass('active');
-		});
 	}
 };
 

@@ -6,11 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-<link rel="stylesheet" href="css/ionicons.min.css" />
 <link rel="stylesheet" href="css/style.css" />
-<script>
-	var carServiceHost = '<%=com.ibm.cto.Configuration.getInstance().CAR_SERVICE_HOST %>';
-</script>
+
 </head>
 <body>
 	<header class="_demo--heading">
@@ -73,7 +70,7 @@
 				<div class="tab-panels" role="tabpanel">
 					<ul class="tab-panels--tab-list" role="tablist">
 						<li class="tab-panels--tab-list-item base-li" role="presentation">
-							<a class="tab-panels--tab base--a active" href="#control-panel" aria-controls="control" role="tab">Controller</a>
+							<a class="tab-panels--tab base--a active" href="#control-panel" aria-controls="control" role="tab">Orders</a>
 						</li>
 						<li class="tab-panels--tab-list-item base-li" role="presentation">
 							<a class="tab-panels--tab base--a" href="#json-panel" aria-controls="json" role="tab">JSON</a>
@@ -84,18 +81,35 @@
 							<textarea class="base--textarea"></textarea>
 						</div>
 						<div id="control-panel" class="tab-panels--tab-pane active" role="tab-panel">
-							<div class="car-controller">
-								<div class="row">
-									<a class="item item-up" ref="w"><i class="ion-arrow-up-b"></i></a>
+							<form class="icecream-controller">
+								<h2>Watson Ice Cream Delivery</h2>
+								
+								<div class="form-item">
+									<label>Qty:</label>
+									<div>
+										<input type="number" name="qty" placeholder="Qty" value="1" min="1" max="999" class="input" />
+									</div>
 								</div>
-								<div class="row">
-									<a class="item item-left" ref="a"><i class="ion-arrow-left-b"></i></a>
-									<a class="item item-right" ref="d"><i class="ion-arrow-right-b"></i></a>
+								
+								<div class="form-item">
+									<label>Flavour</label>
+									<div>
+										<select name="flavour" class="input">
+											<option value="Chocolate">Chocolate</option>
+											<option value="Vanilla">Vanilla</option>
+											<option value="Coffee">Coffee</option>
+											<option value="Mango">Mango</option>
+											<option value="Strawberry">Strawberry</option>
+											<option value="Black sesame">Black sesame</option>
+											<option value="Red beans">Red beans</option>
+										</select>
+									</div>
 								</div>
-								<div class="row">
-									<a class="item item-down" ref="s"><i class="ion-arrow-down-b"></i></a>
+								
+								<div class="form-item">
+									<input type="button" value="Placeorder" class="input" />
 								</div>
-							</div>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -106,7 +120,6 @@
 
 	</div>
 	<script src="js/jquery-3.1.1.min.js"></script>
-	<script src="js/socket.io-1.3.7.js"></script>
 	<script src="js/watson-speech.js"></script>
   	<script src="js/talk-to-watson.js"></script>
 </body>

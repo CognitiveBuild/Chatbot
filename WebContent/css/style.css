@@ -1112,7 +1112,11 @@ pre[class*=" language-"] {
       background-color: #00B2EF; }
   .chat-box--avatar-img {
     width: 100%;
-    height: auto; }
+    height: auto;
+	padding: 8px; }
+  .chat-box--avatar_WATSON .chat-box--avatar-img {
+  	padding:0px;
+  } 
   .chat-box--message {
     display: table-cell;
     vertical-align: middle;
@@ -1263,7 +1267,7 @@ pre[class*=" language-"] {
 	background:#fafafa;
 }
 
-.car-controller{
+.icecream-controller{
 	margin-top: 0rem;
     min-height: 29rem;
 
@@ -1274,10 +1278,10 @@ pre[class*=" language-"] {
     padding: 0.6em 1em;
     width: 100%;
 }
-.car-controller .row{
+.icecream-controller .row{
 	margin: 30px 10px;
 }
-.car-controller .item{
+.icecream-controller .item{
 	width: 100px;
 	height: 100px;
 	cursor: pointer;
@@ -1287,21 +1291,9 @@ pre[class*=" language-"] {
 	margin: 0px auto;
 	display:block;
 }
-	.car-controller .item.active, 
-	.car-controller .item:hover{
-		background:#5596e6;
-		color:#fff;
-	}
-	.car-controller .item i{
-		font-size:3rem;
-		margin: 0px auto;
-		text-align:center;
-		font-size: 3.5rem;
-		display:block;
-	}
-.car-controller .item-left{
-	float: left;
-}
-.car-controller .item-right{
-	float: right;
+
+.icecream-controller .input {
+	display:block;
+	width: 100%;
+	padding: 10px;
 }
