@@ -1113,9 +1113,9 @@ pre[class*=" language-"] {
   .chat-box--avatar-img {
     width: 100%;
     height: auto;
-	padding: 8px; }
+	padding: 0px; }
   .chat-box--avatar_WATSON .chat-box--avatar-img {
-  	padding:0px;
+  	padding:8px;
   } 
   .chat-box--message {
     display: table-cell;
@@ -1296,4 +1296,16 @@ pre[class*=" language-"] {
 	display:block;
 	width: 100%;
 	padding: 10px;
+	border: 1px solid #ccc;
+	-webkit-appearance: none;
+}
+
+.icecream-controller .button-submit {
+	background: #eee;
+	border: 1px solid #ccc;
+	padding: 10px;
+}
+
+.icecream-controller .form-photo-upload {
+	display: none;
 }

@@ -17,7 +17,46 @@
 'use strict';
 
 // conversation variables
-var conversation_result, is_wating = false, methods = {
+var conversation_result, 
+is_wating = false, 
+flavours = [
+	{
+		id: 1,
+		name: 'Chocolate', 
+		rate: 1.00
+	}, 
+	{
+		id: 2,
+		name: 'Vanilla', 
+		rate: 2.00
+	}, 
+	{
+		id: 3,
+		name: 'Coffee', 
+		rate: 3.00
+	}, 
+	{
+		id: 4,
+		name: 'Mango', 
+		rate: 8.00
+	}, 
+	{
+		id: 5,
+		name: 'Strawberry', 
+		rate: 2.00
+	}, 
+	{
+		id: 6,
+		name: 'Black sesame', 
+		rate: 5.00
+	}, 
+	{
+		id: 7,
+		name: 'Red beans', 
+		rate: 10.00
+	}
+], 
+methods = {
 	chatbot: function () {
 		var $chatInput = $('.chat-window--message-input'),
 		$jsonPanel = $('#json-panel .base--textarea'),
@@ -75,6 +114,7 @@ var conversation_result, is_wating = false, methods = {
 		        $jsonPanel.html(JSON.stringify(conversation_result, null, 2));
 
 		        var texts = conversation_result.output ? conversation_result.output.text : [];
+
 		        if(texts.length == 0){
 		        	talk('WATSON', 'Sorry, I did not understand what you just said.');
 		        	return;
@@ -264,9 +304,67 @@ var conversation_result, is_wating = false, methods = {
 				$mic.show();
 			}
 		});
+		
 		scrollToInput();
 
+	}, 
+	icecream: function() {
+
+		var $flavour = $('.input-flavour');
+
+		var getQty = function() {
+			var qty = $('.input-qty').val();
+			return qty;
+		};
+
+		var getIceCream = function() {
+			var obj = $('.input-flavour');
+			var id = obj.val();
+			var opt = obj.find('option:selected');
+			var rate = opt.data('rate');
+			var name = opt.data('name');
+			var price = (getQty() * rate).toFixed(2);
+			var address = $('.input-shipping-address').val();
+
+			return {
+				name: name, 
+				rate: rate, 
+				price: price, 
+				address: address
+			}
+		};
+
+		$('.button-submit').on('click', function(evt) {
+			console.log('### submit ###');
+			var iceCream = getIceCream();
+			console.log(iceCream);
+		});
+
+		$('.input-qty').on('change', function(evt) {
+			var iceCream = getIceCream();
+			$('.price-number').text(iceCream.price);
+			console.log(iceCream);
+		})
+
+		$flavour.on('change', function(evt) {
+			var iceCream = getIceCream();
+			$('.price-number').text(iceCream.price);
+			console.log(iceCream);
+		});
+
+		$flavour.empty();
+		for(var i in flavours) {
+			var opt = $('<option></option>');
+			opt.html(flavours[i].name);
+			opt.data('rate', flavours[i].rate).data('name', flavours[i].name);
+			opt.attr('value', flavours[i].id);
+			$flavour.append(opt);
+		}
+	}, 
+	init: function() {
+		methods.chatbot();
+		methods.icecream();
 	}
 };
 
-$(document).ready(methods.chatbot);
+$(document).ready(methods.init);

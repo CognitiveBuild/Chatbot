@@ -84,31 +84,50 @@
 							<form class="icecream-controller">
 								<h2>Watson Ice Cream Delivery</h2>
 								
-								<div class="form-item">
-									<label>Qty:</label>
-									<div>
-										<input type="number" name="qty" placeholder="Qty" value="1" min="1" max="999" class="input" />
+								<div class="form-ice-cream">
+									<div class="form-item">
+										<label>Qty:</label>
+										<div>
+											<input type="number" name="qty" placeholder="Qty" value="1" min="1" max="999" class="input input-qty" />
+										</div>
+									</div>
+									
+									<div class="form-item">
+										<label>Flavour:</label>
+										<div>
+											<select name="flavour" class="input input-flavour">
+												<option>Loading...</option>
+											</select>
+										</div>
+									</div>
+	
+									<div class="form-item">
+										<label class="note">Shipping address (For free): </label>
+										<div>
+											<input type="text" name="address" placeholder="Shipping address" class="input input-shipping-address" />
+										</div>
+									</div>
+	
+									<div class="form-item">
+										<div class="input input-price">
+											<label>Price: </label>
+											<span class="price-number">1.00</span>
+											<span class="price-unit">$</span>
+										</div>
+									</div>
+	
+									<div class="form-item">
+										<input type="button" value="Place order" class="input button-submit" />
 									</div>
 								</div>
 								
-								<div class="form-item">
-									<label>Flavour</label>
-									<div>
-										<select name="flavour" class="input">
-											<option value="Chocolate">Chocolate</option>
-											<option value="Vanilla">Vanilla</option>
-											<option value="Coffee">Coffee</option>
-											<option value="Mango">Mango</option>
-											<option value="Strawberry">Strawberry</option>
-											<option value="Black sesame">Black sesame</option>
-											<option value="Red beans">Red beans</option>
-										</select>
+								<!-- Photo -->
+								<div class="form-photo-upload">
+									<div class="form-item">
+										<label></label>
 									</div>
 								</div>
-								
-								<div class="form-item">
-									<input type="button" value="Placeorder" class="input" />
-								</div>
+
 							</form>
 						</div>
 					</div>
