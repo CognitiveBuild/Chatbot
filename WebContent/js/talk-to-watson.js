@@ -259,7 +259,7 @@ methods = {
 				if(isSpeaking){
 					return;
 				}
-	
+
 				stream = recognize(sttToken);
 				isSpeaking = true;
 				changeUIState(isSpeaking);
@@ -267,10 +267,10 @@ methods = {
 				stream.on('data', function(data) {
 					console.log('data:');
 					console.log(data);
-					var transcript = data.alternatives[0].transcript;
+					var transcript = data.results[0].alternatives[0].transcript;
 					$('.ui-transcription').html('<div class="text">'+transcript+'</div>');
-	
-					if(data.hasOwnProperty('final') && data['final']){
+
+					if(data.results[0].hasOwnProperty('final') && data.results[0]['final']){
 						isSpeaking = false;
 						changeUIState(isSpeaking);
 						stream.stop();
