@@ -5,13 +5,3 @@ applications:
   buildpack: liberty-for-java
   env:
     CONVERSATION_WORKSPACE_ID: 2e38d5ef-7506-4e38-804e-e83f3cbe6926
-    CAR_SERVICE_HOST: watsonchatbot.eu-de.mybluemix.net
-    TEXT_TO_SPEECH_API_URL: https://stream-fra.watsonplatform.net/text-to-speech/api
-    TEXT_TO_SPEECH_USERNAME: 7e9cb594-a52e-462d-8c73-5a8f208a97bb
-    TEXT_TO_SPEECH_PASSWORD: zyDp2K62ZCHD
-    SPEECH_TO_TEXT_API_URL: https://stream-fra.watsonplatform.net/speech-to-text/api
-    SPEECH_TO_TEXT_USERNAME: 1ec19751-2b95-4bd0-a93f-095113139e14
-    SPEECH_TO_TEXT_PASSWORD: Oeyy7yeS3LQt
-    CONVERSATION_API_URL: https://gateway-fra.watsonplatform.net/conversation/api
-    CONVERSATION_USERNAME: 70545043-1702-4f03-b2e5-66b80da8a7d9
-    CONVERSATION_PASSWORD: kQ8enf7tLu3s
