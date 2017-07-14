@@ -18,9 +18,8 @@ public class Configuration {
 	public String TEXT_TO_SPEECH_API_URL = "https://stream.watsonplatform.net/text-to-speech/api";
 	public String CONVERSATION_API_URL = "https://gateway.watsonplatform.net/conversation/api";
 
-	/**
-	 * TODO: If you're testing this application locally, please get the credentials from Bluemix
-	 */
+	public String APPLICATION_API_URL = "";
+	
 	public String TEXT_TO_SPEECH_USERNAME = "";
 	public String TEXT_TO_SPEECH_PASSWORD = "";
 
@@ -34,11 +33,9 @@ public class Configuration {
 	 * TODO: Get Workspace ID from IBM Watson Conversation: https://ibmwatsonconversation.com
 	 */
 	public String CONVERSATION_WORKSPACE_ID = "";
-
-	/**
-	 * TODO: After deploy your nodejs service for controlling robot car, fill in the host name here
-	 */
-	public String CAR_SERVICE_HOST = "";
+	
+	public String VISUAL_RECOGNITION_API_KEY = "";
+	public String VISUAL_RECOGNITION_CLASSIFIER_ID = "";
 
 	/**
 	 * Load credentials and URLs
@@ -46,25 +43,49 @@ public class Configuration {
 	 * @return VCAPConfiguration
 	 */
 	public static Configuration getInstance() {
+
 		if(instance == null) {
 			instance = new Configuration();
 			String CONVERSATION_WORKSPACE_STRING = System.getenv("CONVERSATION_WORKSPACE_ID");
-			String CAR_SERVICE_HOST_STRING = System.getenv("CAR_SERVICE_HOST");
 
-			if(CONVERSATION_WORKSPACE_STRING == null || CAR_SERVICE_HOST_STRING == null) {
+			if(CONVERSATION_WORKSPACE_STRING == null) {
+				System.out.println("### No environment variables, using default hardcode settings ###");
+
+				// TODO: If you're testing this application locally, please get the credentials from Bluemix
+				instance.TEXT_TO_SPEECH_USERNAME = "";
+				instance.TEXT_TO_SPEECH_PASSWORD = "";
+				instance.SPEECH_TO_TEXT_USERNAME = "";
+				instance.SPEECH_TO_TEXT_PASSWORD = "";
+				instance.CONVERSATION_USERNAME = "";
+				instance.CONVERSATION_PASSWORD = "";
+				instance.CONVERSATION_WORKSPACE_ID = "";
+
+				// Blockchain URL:
+				instance.APPLICATION_API_URL = "https://blockchainlab.mybluemix.net/api/order/newinfo";
+				instance.VISUAL_RECOGNITION_API_KEY = "";
+				instance.VISUAL_RECOGNITION_CLASSIFIER_ID = "";
+				
 				return instance;
 			}
 			else {
+				System.out.println("### Using environment settings ###");
 				instance.CONVERSATION_WORKSPACE_ID = CONVERSATION_WORKSPACE_STRING;
-				instance.CAR_SERVICE_HOST = CAR_SERVICE_HOST_STRING;
+
+				instance.TEXT_TO_SPEECH_USERNAME = System.getenv("TEXT_TO_SPEECH_USERNAME");
+				instance.TEXT_TO_SPEECH_PASSWORD = System.getenv("TEXT_TO_SPEECH_PASSWORD");
+				instance.SPEECH_TO_TEXT_USERNAME = System.getenv("SPEECH_TO_TEXT_USERNAME");
+				instance.SPEECH_TO_TEXT_PASSWORD = System.getenv("SPEECH_TO_TEXT_PASSWORD");
+				instance.CONVERSATION_USERNAME = System.getenv("CONVERSATION_USERNAME");
+				instance.CONVERSATION_PASSWORD = System.getenv("CONVERSATION_PASSWORD");
+				instance.APPLICATION_API_URL = System.getenv("APPLICATION_API_URL");
+				instance.VISUAL_RECOGNITION_API_KEY = System.getenv("VISUAL_RECOGNITION_API_KEY");
+				instance.VISUAL_RECOGNITION_CLASSIFIER_ID = System.getenv("VISUAL_RECOGNITION_CLASSIFIER_ID");
 			}
 
-			System.out.println("### Conversation Workspace ID ###");
+			System.out.println("### Extra settings from manifest.yml ###");
 			System.out.println(instance.CONVERSATION_WORKSPACE_ID);
-			System.out.println("### /Conversation Workspace ID ###");
-			System.out.println("### Car Host ###");
-			System.out.println(instance.CAR_SERVICE_HOST);
-			System.out.println("### /Car Host ###");
+			System.out.println(instance.APPLICATION_API_URL);
+			System.out.println("### /Extra settings from manifest.yml ###");
 
 			JSONObject vcapConfig = getObjectSettings("VCAP_SERVICES");
 
@@ -135,5 +156,19 @@ public class Configuration {
 		JSONObject sysEnv = null;
 		sysEnv = JSONObject.parseObject(envServices);
 		return sysEnv;
+	}
+	
+	public String getLayout() {
+		if(instance.TEXT_TO_SPEECH_USERNAME == "" ||
+		instance.TEXT_TO_SPEECH_PASSWORD == "" || 
+		instance.SPEECH_TO_TEXT_USERNAME == "" ||
+		instance.SPEECH_TO_TEXT_PASSWORD == "" ||
+		instance.CONVERSATION_USERNAME == "" ||
+		instance.CONVERSATION_PASSWORD == "" ||
+		instance.CONVERSATION_WORKSPACE_ID  == "") 
+		{
+			return "non-conversation";
+		}
+		return "conversation";
 	}
 }
