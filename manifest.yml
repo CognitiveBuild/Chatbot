@@ -5,3 +5,4 @@ applications:
   buildpack: liberty-for-java
   env:
     CONVERSATION_WORKSPACE_ID: 2e38d5ef-7506-4e38-804e-e83f3cbe6926
+    APPLICATION_API_URL: https://blockchainlab.mybluemix.net/api/order/newinfo

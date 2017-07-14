@@ -53,7 +53,7 @@ public class Talk extends HttpServlet {
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("utf-8");
 
-		ConversationService service = new ConversationService(ConversationService.VERSION_DATE_2016_09_20);
+		ConversationService service = new ConversationService(ConversationService.VERSION_DATE_2017_02_03);
 		service.setUsernameAndPassword(Configuration.getInstance().CONVERSATION_USERNAME, Configuration.getInstance().CONVERSATION_PASSWORD);
 
 		MessageRequest newMessage = new MessageRequest.Builder().context(contextMap).inputText(requestMessage).build();
