@@ -13,53 +13,122 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 'use strict';
 
-// conversation variables
-var conversation_result, 
-is_wating = false, 
-flavours = [
+// ice cream
+var flavours = [
 	{
 		id: 1,
 		name: 'Chocolate', 
-		rate: 1.00
+		price: 1.00
 	}, 
 	{
 		id: 2,
 		name: 'Vanilla', 
-		rate: 2.00
+		price: 2.00
 	}, 
 	{
 		id: 3,
 		name: 'Coffee', 
-		rate: 3.00
+		price: 3.00
 	}, 
 	{
 		id: 4,
 		name: 'Mango', 
-		rate: 8.00
+		price: 8.00
 	}, 
 	{
 		id: 5,
 		name: 'Strawberry', 
-		rate: 2.00
+		price: 2.00
 	}, 
 	{
 		id: 6,
 		name: 'Black sesame', 
-		rate: 5.00
+		price: 5.00
 	}, 
 	{
 		id: 7,
 		name: 'Red beans', 
-		rate: 10.00
+		price: 10.00
 	}
-], 
-methods = {
+], order = {
+	flavour: null, 
+	amount: 0, 
+	location: null
+}, serial_number = '', consigner_name = '', consigner_phone = '', storage = {
+	save: function(key, val) {
+		console.log('### save ###');
+		window.localStorage.setItem(key, val);
+	},
+	get: function(key) {
+		console.log('### get ###');
+		return window.localStorage.getItem(key);
+	},
+	remove: function(key) {
+		console.log('### remove ###');
+		window.localStorage.removeItem(key);
+	}
+};
+
+// conversation variables
+var conversation_result, is_wating = false, controls = {
+	$signout: $('.heading-nav > .signout'),
+	$sn: $('.input-sn'),
+	$name: $('.input-name'),
+	$phone: $('.input-phone'), 
+	$go: $('.input-go'), 
+	$flavour: $('.input-flavour'), 
+	$qty: $('.input-qty'), 
+	$address: $('.input-shipping-address'),
+	$consignee: $('.input-consignee'),
+	$start: $('.button-start'), 
+	$price: $('.price-number'), 
+	$verify: $('.button-verify'), 
+	$jsonPanel: $('#json-panel .base--textarea')
+}, methods = {
+	sn: function() {
+		controls.$go.on('click', function() {
+			serial_number = controls.$sn.val();
+			consigner_name = controls.$name.val();
+			consigner_phone = controls.$phone.val();
+			if(serial_number === '' || serial_number.length < 6) {
+				controls.$sn.focus();
+				return;
+			}
+			if(consigner_name === '' || consigner_name.length < 4) {
+				controls.$name.focus();
+				return;
+			}
+			if(consigner_phone === '' || consigner_phone.length < 4) {
+				controls.$phone.focus();
+				return;
+			}
+			storage.save('SN', serial_number);
+			storage.save('NAME', consigner_name);
+			storage.save('PHONE', consigner_phone);
+			methods.start();
+		});
+	}, 
+	start: function() {
+		$('._container--sn').addClass('hidden');
+		$('._demo--content').removeClass('hidden');
+		controls.$signout.removeClass('hidden');
+		if(GLOBAL_LAYOUT === 'conversation') {
+			methods.chatbot();
+		}
+	}, 
+	end: function() {
+		$('._container--sn').removeClass('hidden');
+		$('._demo--content').addClass('hidden');
+		controls.$signout.addClass('hidden');
+		storage.remove('SN');
+		storage.remove('NAME');
+		storage.remove('PHONE');
+	}, 
 	chatbot: function () {
 		var $chatInput = $('.chat-window--message-input'),
-		$jsonPanel = $('#json-panel .base--textarea'),
+		
 		$loading = $('.loader'), 
 		$mic = $('.ui-button-microphone');
 
@@ -71,11 +140,54 @@ methods = {
 		});
 
 		/**
+		 * Convert response context to car command
+		 */
+		var contextToCommand = function(conversation_result) {
+
+			var context = conversation_result.context;
+			if(context.flavour) {
+				order.flavour = context.flavour;
+				controls.$flavour.find('option[data-name="'+order.flavour+'"]').prop('selected', true).trigger('change');
+			}
+
+			if(context.amount) {
+				order.amount = context.amount;
+				controls.$qty.val(order.amount).trigger('change');
+			}
+
+			if(context.location) {
+				order.location = context.location;
+				controls.$address.val(order.location).trigger('change');
+			}
+
+			if(context.consignee) {
+				order.consignee = context.consignee;
+				controls.$consignee.val(order.consignee).trigger('change');
+			}
+
+			if(context.reset) {
+				conversation_result.context.flavour = order.flavour = null;
+				conversation_result.context.amount = order.amount = 0;
+				conversation_result.context.location = order.location = null;
+			}
+
+			if(context.placeorder) {
+				controls.$start.trigger('click');
+			}
+		};
+
+		/**
 		 * Synthesize
 		 */
 		var synthesize = function(val) {
+			
+			var url = 'Synthesize?text=' + val;
+			var source = document.createElement('source');
+			source.type = 'audio/wav';
+			source.src = url;
 			var audio = new Audio();
-			audio.src = 'Synthesize?text=' + val;
+			audio.appendChild(source);
+			audio.load();
 			audio.play();
 		};
 
@@ -86,6 +198,7 @@ methods = {
 			if (is_wating) {
 				return;
 			}
+
 			is_wating = true;
 		    $loading.show();
 		    // $chatInput.hide();
@@ -93,10 +206,10 @@ methods = {
 		    // check if the user typed text or not
 		    if (typeof(userText) !== undefined && $.trim(userText) !== '')
 		      submitMessage(userText);
-		
+
 		    // build the conversation parameters
 		    var params = { message : userText };
-		
+
 		    if (conversation_result) {
 		    	params.context = JSON.stringify(conversation_result.context);
 		    }
@@ -111,7 +224,7 @@ methods = {
 
 		        $chatInput.val(''); // clear the text input
 
-		        $jsonPanel.html(JSON.stringify(conversation_result, null, 2));
+		        controls.$jsonPanel.html(JSON.stringify(conversation_result, null, 2));
 
 		        var texts = conversation_result.output ? conversation_result.output.text : [];
 
@@ -127,6 +240,8 @@ methods = {
 		        synthesize(response);
 
 		        talk('WATSON', response); // show
+
+		        contextToCommand(conversation_result);
 
 		      })
 		      .fail(function onError(error) {
@@ -197,20 +312,6 @@ methods = {
 		};
 
 		/**
-		 * Tab switching
-		 */
-		$('.tab-panels--tab').click(function(e){
-			e.preventDefault();
-			var self = $(this);
-			var inputGroup = self.closest('.tab-panels');
-			var idName = null;
-			inputGroup.find('.active').removeClass('active');
-			self.addClass('active');
-			idName = self.attr('href');
-			$(idName).addClass('active');
-		});
-
-		/**
 		 * Speech recognition UI
 		 */
 		var changeUIState = function(isSpeaking) {
@@ -263,7 +364,7 @@ methods = {
 				stream = recognize(sttToken);
 				isSpeaking = true;
 				changeUIState(isSpeaking);
-	
+
 				stream.on('data', function(data) {
 					console.log('data:');
 					console.log(data);
@@ -283,13 +384,13 @@ methods = {
 					isSpeaking = false;
 					changeUIState(isSpeaking);
 				});
-				stream.on('close', function(err) {
-					console.log(err);
+				stream.on('close', function() {
+					console.log('stream close');
 					isSpeaking = false;
 					changeUIState(isSpeaking);
 				});
 				stream.on('connection-close', function(err) {
-					console.log(err);
+					console.log('connection close');
 					isSpeaking = false;
 					changeUIState(isSpeaking);
 				});
@@ -310,59 +411,191 @@ methods = {
 	}, 
 	icecream: function() {
 
-		var $flavour = $('.input-flavour');
-
 		var getQty = function() {
-			var qty = $('.input-qty').val();
+			var qty = controls.$qty.val();
 			return qty;
+		}, sendRequest = function(category, payload) {
+			console.log('### payload ###');
+			console.log(payload);
+			return $.ajax({
+				url : 'Application',
+				method: 'POST', 
+				data : {
+					payload: payload,
+					category : category
+				}
+			});
 		};
 
 		var getIceCream = function() {
-			var obj = $('.input-flavour');
-			var id = obj.val();
-			var opt = obj.find('option:selected');
-			var rate = opt.data('rate');
-			var name = opt.data('name');
-			var price = (getQty() * rate).toFixed(2);
-			var address = $('.input-shipping-address').val();
+
+			var id = controls.$flavour.val();
+			var opt = controls.$flavour.find('option:selected');
+			var price = opt.data('price');
+			var flavour = opt.data('name');
+			var qty = getQty();
+
+			var total = (qty * price).toFixed(2);
+			var address = controls.$address.val();
+			var consignee = controls.$consignee.val();
+
+			var sn = storage.get('SN');
 
 			return {
-				name: name, 
-				rate: rate, 
-				price: price, 
-				address: address
+				name: 'Watson Ice Cream Delivery',
+				consigner_name: consigner_name,
+				consigner_phone: consigner_phone, 
+				consigner_address: '-',
+				serial: sn, 
+				flavour: flavour,
+				price: price,
+				total: total, 
+				consignee_nane: consignee, 
+				consignee_address: address, 
+				consignee_phone: '+86 8888888888',
+				timestamp: new Date().getTime(),
+				enviorment_limit: {
+					temperature_low: -30, 
+					temperature_high: 0, 
+					humidity_low: 20, 
+					humidity_high: 50
+				}
 			}
 		};
 
-		$('.button-submit').on('click', function(evt) {
+		controls.$start.on('click', function(evt) {
 			console.log('### submit ###');
 			var iceCream = getIceCream();
-			console.log(iceCream);
+			
+			controls.$jsonPanel.html(JSON.stringify(iceCream, null, 2));
+
+			if(iceCream.consignee_address === '') {
+				controls.$address.focus();
+				return null;
+			}
+
+			if(iceCream.consignee_nane === '') {
+				controls.$consignee.focus();
+				return null;
+			}
+
+			sendRequest('icecream', JSON.stringify(iceCream)).then(function(xhr, status, code) {
+				console.log('### service response ###');
+				console.log(xhr);
+				var json = JSON.parse(xhr);
+				console.log('### /service response ###');
+				var obj = $('a[href="#vr-panel"]');
+				obj.trigger('click');
+				
+			}, function(error) {
+				console.log('### error ###');
+				console.log(error);
+				console.log('### /error ###');
+			});
 		});
 
-		$('.input-qty').on('change', function(evt) {
+		controls.$qty.on('change', function(evt) {
 			var iceCream = getIceCream();
-			$('.price-number').text(iceCream.price);
-			console.log(iceCream);
-		})
-
-		$flavour.on('change', function(evt) {
-			var iceCream = getIceCream();
-			$('.price-number').text(iceCream.price);
-			console.log(iceCream);
+			controls.$price.text(iceCream.total);
+			controls.$jsonPanel.html(JSON.stringify(iceCream, null, 2));
 		});
 
-		$flavour.empty();
+		controls.$flavour.on('change', function(evt) {
+			var iceCream = getIceCream();
+			controls.$price.text(iceCream.total);
+			controls.$jsonPanel.html(JSON.stringify(iceCream, null, 2));
+		});
+
+		controls.$flavour.empty();
 		for(var i in flavours) {
 			var opt = $('<option></option>');
-			opt.html(flavours[i].name);
-			opt.data('rate', flavours[i].rate).data('name', flavours[i].name);
+			opt.html(flavours[i].name+' ('+ flavours[i].price.toFixed(2) +')');
+			opt.attr('data-price', flavours[i].price.toFixed(2)).attr('data-name', flavours[i].name);
 			opt.attr('value', flavours[i].id);
-			$flavour.append(opt);
+			controls.$flavour.append(opt);
 		}
+
+		controls.$verify.on('click', function() {
+			var form = $('.vr-controller');
+			$('.verify-result .ui-message-failure').addClass('hidden');
+			$('.verify-result .ui-message-succeed').addClass('hidden');
+			$('.verify-result .ui-message-loading').removeClass('hidden');
+			var data = new FormData();
+			data.append("file", form.find('input[type="file"]')[0].files[0]);
+			$.ajax({
+				url: 'Application?category=vr', 
+				method: 'POST', 
+				data: data, 
+				cache: false,
+		        contentType: false,
+		        processData: false,
+
+		        xhr: function() {
+		            var aXhr = $.ajaxSettings.xhr();
+		            if (aXhr.upload) {
+		            	aXhr.upload.addEventListener('progress', function(e) {
+		                    if (e.lengthComputable) {
+		                        $('progress').attr({ value: e.loaded, max: e.total });
+		                    }
+		                } , false);
+		            }
+		            return aXhr;
+		        }, 
+		        success: function(data) {
+		        	controls.$jsonPanel.html(data);
+		        	var response = JSON.parse(data);
+		        	$('.verify-result .ui-message-loading').addClass('hidden');
+		        	if(response.hasOwnProperty('images') && response.images.length > 0) {
+		        		console.log(response.images);
+		        		 if(response.images[0].hasOwnProperty('classifiers') && response.images[0].classifiers.length > 0) {
+		        			 if(response.images[0].classifiers[0].hasOwnProperty('classes') && response.images[0].classifiers[0].classes.length > 0) {
+		        				 var result = response.images[0].classifiers[0].classes[0];
+		        				 var message = $('.verify-result .ui-message-succeed');
+		        				 message.removeClass('hidden');
+		        				 message.find('.score').text('Score: ' + result.score);
+		        				 message.find('.class').text('Class: ' + result['class']);
+		        				 return;
+		        			 }
+		        		 }
+		        	}
+   				 	$('.verify-result .ui-message-failure').removeClass('hidden');
+		        }
+			});
+		});
+		controls.$signout.on('click', function() {
+			methods.end();
+		});
+
+		/**
+		 * Tab switching
+		 */
+		$('.tab-panels--tab').click(function(e){
+			e.preventDefault();
+			var self = $(this);
+			var inputGroup = self.closest('.tab-panels');
+			var idName = null;
+			inputGroup.find('.active').removeClass('active');
+			self.addClass('active');
+			idName = self.attr('href');
+			$(idName).addClass('active');
+		});
+
 	}, 
 	init: function() {
-		methods.chatbot();
+		var sn = storage.get('SN');
+		var name = storage.get('NAME');
+		var phone = storage.get('PHONE');
+
+		if(sn && name && phone) {
+			methods.start();
+			controls.$sn.val(sn);
+			controls.$name.val(name);
+			controls.$phone.val(phone);
+		}
+		else {
+			methods.end();
+		}
+		methods.sn();
 		methods.icecream();
 	}
 };

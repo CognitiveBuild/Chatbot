@@ -7,9 +7,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="css/style.css" />
-
+<script>
+	var GLOBAL_LAYOUT = '<%=com.ibm.cto.Configuration.getInstance().getLayout() %>';
+</script>
 </head>
-<body>
+<body class="<%=com.ibm.cto.Configuration.getInstance().getLayout() %>">
 	<header class="_demo--heading">
 		<div class="_demo--container">
 			<a class="wordmark" href="index.jsp">
@@ -17,15 +19,27 @@
 				<span class="wordmark--right">Watson</span>
 			</a>
 			
-			<!--nav class="heading-nav">
-				<a class="heading-nav--item chatbot" href="./">
-					Chatbot
+			<nav class="heading-nav">
+				<a class="heading-nav--item chatbot signout hidden">
+					Sign out
 				</a>
-			</nav-->
+			</nav>
 		</div>
 	</header>
 	<div class="_demo--container">
-		<article class="_demo--content base--article page" ref="chatbot">
+
+		<div class="_container--sn">
+			<form class="sn-form-container">
+				<div class="sn-form-cell">
+					<div class="sn-input"><label>Your serial number</label><input type="text" value="" placeholder="" class="input-sn" minlength="6" /></div>
+					<div class="sn-input"><label>Your name</label><input type="text" value="" placeholder="" class="input-name" minlength="6" /></div>
+					<div class="sn-input"><label>Your phone number</label><input type="text" value="" placeholder="" class="input-phone" minlength="6" /></div>
+					<div class="sn-button"><input type="button" class="input-go" value="Go" /></div>
+				</div>
+			</form>
+		</div>
+
+		<article class="_demo--content base--article page hidden" ref="chatbot">
 			<div class="_content--dialog">
 				<div class="chat-window">
 					<div class="chat-box">
@@ -70,10 +84,13 @@
 				<div class="tab-panels" role="tabpanel">
 					<ul class="tab-panels--tab-list" role="tablist">
 						<li class="tab-panels--tab-list-item base-li" role="presentation">
-							<a class="tab-panels--tab base--a active" href="#control-panel" aria-controls="control" role="tab">Orders</a>
+							<a class="tab-panels--tab base--a active" href="#control-panel" aria-controls="control" role="tab">Manufacture</a>
 						</li>
 						<li class="tab-panels--tab-list-item base-li" role="presentation">
-							<a class="tab-panels--tab base--a" href="#json-panel" aria-controls="json" role="tab">JSON</a>
+							<a class="tab-panels--tab base--a" href="#vr-panel" aria-controls="json" role="tab" class="">Verification</a>
+						</li>
+						<li class="tab-panels--tab-list-item base-li" role="presentation">
+							<a class="tab-panels--tab base--a" href="#json-panel" aria-controls="vr" role="tab">JSON</a>
 						</li>
 					</ul>
 					<div class="tab-panels--tab-content">
@@ -82,10 +99,10 @@
 						</div>
 						<div id="control-panel" class="tab-panels--tab-pane active" role="tab-panel">
 							<form class="icecream-controller">
-								<h2>Watson Ice Cream Delivery</h2>
-								
+								<h2>Watson Ice Cream Manufacture</h2>
+
 								<div class="form-ice-cream">
-									<div class="form-item">
+									<div class="form-item form-item-inline">
 										<label>Qty:</label>
 										<div>
 											<input type="number" name="qty" placeholder="Qty" value="1" min="1" max="999" class="input input-qty" />
@@ -100,14 +117,21 @@
 											</select>
 										</div>
 									</div>
-	
+
 									<div class="form-item">
-										<label class="note">Shipping address (For free): </label>
+										<label class="note">Shipping address: </label>
 										<div>
-											<input type="text" name="address" placeholder="Shipping address" class="input input-shipping-address" />
+											<input type="text" name="address" placeholder="Shipping address" required="required" class="input input-shipping-address" />
 										</div>
 									</div>
-	
+
+									<div class="form-item">
+										<label class="note">Consignee: </label>
+										<div>
+											<input type="text" name="consignee" placeholder="Consignee" required="required" class="input input-consignee" />
+										</div>
+									</div>
+
 									<div class="form-item">
 										<div class="input input-price">
 											<label>Price: </label>
@@ -117,21 +141,46 @@
 									</div>
 	
 									<div class="form-item">
-										<input type="button" value="Place order" class="input button-submit" />
-									</div>
-								</div>
-								
-								<!-- Photo -->
-								<div class="form-photo-upload">
-									<div class="form-item">
-										<label></label>
+										<input type="button" value="Start" class="input button-submit button-start" />
 									</div>
 								</div>
 
 							</form>
 						</div>
+					
+						<div id="vr-panel" class="tab-panels--tab-pane" role="tab-panel">
+							<form class="vr-controller" enctype="multipart/form-data">
+								<h2>Verify your cooler box after delivery</h2>
+								<div class="form-ice-cream">
+									<div class="form-item">
+										<label class="note">Take a photo of the cooler box then upload it after delivery: </label>
+										<div>
+											<input type="file" name="file" class="input input-file" />
+										</div>
+										<div><progress></progress></div>
+									</div>
+									<div class="form-item">
+										<div class="verify-result">
+											<span class="ui-message-succeed hidden">
+												Congratulations, the ice cream is delivered successfully. 
+												<br /> 
+												<span class="score"></span>
+												<br /> 
+												<span class="class"></span>
+											</span>
+											<span class="ui-message-failure hidden">This is highly possible that this photo is not cooler box.</span>
+											<span class="ui-message-loading hidden">Loading...</span>
+										</div>
+									</div>
+									<div class="form-item">
+										<input type="button" value="Verify the cooler box" class="input button-submit button-verify" />
+									</div>
+								</div>
+							</form>
+						</div>
 					</div>
 				</div>
+			
 			</div>
 
 			<div class="ui-transcription"></div>

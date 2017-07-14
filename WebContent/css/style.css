@@ -1267,7 +1267,7 @@ pre[class*=" language-"] {
 	background:#fafafa;
 }
 
-.icecream-controller{
+.icecream-controller, .vr-controller {
 	margin-top: 0rem;
     min-height: 29rem;
 
@@ -1278,10 +1278,10 @@ pre[class*=" language-"] {
     padding: 0.6em 1em;
     width: 100%;
 }
-.icecream-controller .row{
+.icecream-controller .row {
 	margin: 30px 10px;
 }
-.icecream-controller .item{
+.icecream-controller .item {
 	width: 100px;
 	height: 100px;
 	cursor: pointer;
@@ -1292,15 +1292,26 @@ pre[class*=" language-"] {
 	display:block;
 }
 
-.icecream-controller .input {
+.icecream-controller .input, .vr-controller .input {
 	display:block;
 	width: 100%;
 	padding: 10px;
-	border: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-top: 0;
+   	border-left: 0;
+   	border-right: 0;
+   	box-shadow: 1px 1px 4px #ddd;
 	-webkit-appearance: none;
 }
+	.icecream-controller .input-price {
+		color: #cc0000;
+    	user-select: none;
+    	border: 0px none;
+    	box-shadow: none;
+    	font-weight: bold;
+	}
 
-.icecream-controller .button-submit {
+.icecream-controller .button-submit, .vr-controller .button-submit {
 	background: #eee;
 	border: 1px solid #ccc;
 	padding: 10px;
@@ -1308,4 +1319,90 @@ pre[class*=" language-"] {
 
 .icecream-controller .form-photo-upload {
 	display: none;
+}
+
+.icecream-controller .form-item > div {
+	padding: 0px;
+	margin: 0px;
+}
+
+.icecream-controller .form-item > label {
+	margin-bottom: 5px;
+	display: block;
+	font-weight: 400;
+}
+
+.icecream-controller .form-item-inline > label {
+	display: inline;
+}
+
+.icecream-controller .form-item-inline > label, .icecream-controller .form-item-inline > div{
+	display: table-cell;
+	vertical-align: middle;
+}
+.icecream-controller .form-item-inline > label {
+	padding-right: 10px;
+}
+
+.icecream-controller .input-qty{
+	width: 120px;
+}
+._container--sn {
+	position: relative;
+}
+	._container--sn .sn-form-container {
+		
+	}
+		._container--sn .sn-form-container .sn-form-cell {
+			display: block;
+		    width: 600px;
+		    margin: 40px auto;
+		    box-shadow: 0px 0px 3px #ddd;
+		    padding: 50px;
+		}
+		
+		._container--sn .sn-form-container .sn-form-cell .sn-label, 
+		._container--sn .sn-form-container .sn-form-cell .sn-input, 
+		._container--sn .sn-form-container .sn-form-cell .sn-button {
+			vertical-align: middle;
+			padding: 5px;
+		}
+			._container--sn .sn-form-container .sn-form-cell .sn-label label, 
+			._container--sn .sn-form-container .sn-form-cell .sn-input input, 
+			._container--sn .sn-form-container .sn-form-cell .sn-button input {
+				padding: 10px; 
+				border: 1px solid #ddd;
+				width: 100%;
+			}
+			._container--sn .sn-form-container .sn-form-cell .sn-label label, 
+			._container--sn .sn-form-container .sn-form-cell .sn-input input, 
+			._container--sn .sn-form-container .sn-form-cell .sn-button input {
+				margin-top: 0px;
+			}
+
+progress {
+	width: 100%;
+    display: block;
+    background: #eee;
+}
+.hidden {
+	display: none;
+}
+.visible {
+	display: block;
+}
+
+.ui-message-succeed {
+	color: #008000;
+}
+.ui-message-failure {
+	color: #cc0000;
+}
+
+.non-conversation ._content--dialog {
+	display: none;	
+}
+
+.non-conversation ._content--data {
+	width: 100%;
 }
