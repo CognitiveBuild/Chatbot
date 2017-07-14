@@ -12,6 +12,7 @@ public class Configuration {
 	public static final String SERVICE_SPEECH_TO_TEXT = "speech_to_text";
 	public static final String SERVICE_TEXT_TO_SPEECH = "text_to_speech";
 	public static final String SERVICE_CONVERSATION = "conversation";
+	public static final String SERVICE_VISUAL_RECOGNITION = "watson_vision";
 	public static final String TOKEN_API_URL = "https://stream.watsonplatform.net/authorization/api/v1/token";
 
 	public String SPEECH_TO_TEXT_API_URL = "https://stream.watsonplatform.net/speech-to-text/api";
@@ -124,6 +125,9 @@ public class Configuration {
 							instance.TEXT_TO_SPEECH_USERNAME = serviceCredentials.get("username").toString();
 							instance.TEXT_TO_SPEECH_PASSWORD = serviceCredentials.get("password").toString();
 							instance.TEXT_TO_SPEECH_API_URL = serviceCredentials.get("url").toString();
+						}
+						else if(serviceKey.startsWith(SERVICE_VISUAL_RECOGNITION)) {
+							instance.VISUAL_RECOGNITION_API_KEY = serviceCredentials.get("api_key").toString();
 						}
 						else {
 							System.out.println("### No such key: " + serviceKey);

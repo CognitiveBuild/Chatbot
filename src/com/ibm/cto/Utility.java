@@ -36,21 +36,32 @@ import com.alibaba.fastjson.JSONObject;
 public class Utility {
 
 	public static HttpResponse invokeRequest(Request request, String username, String password, boolean useSSL) throws ClientProtocolException, IOException, KeyManagementException, NoSuchAlgorithmException {
-		Executor executor = null;
-		if (useSSL){
-			executor = Executor.newInstance(getTrustedHttpClient());
-		}
-		else{
-			executor = Executor.newInstance();
-		}
+		Executor executor = getExecutor(useSSL);
 		executor = executor.auth(username, password);
 
 		HttpResponse httpResponse = invokeRequest(request, executor);
 		return httpResponse;
 	}
 
+	private static Executor getExecutor(boolean useSSL) throws KeyManagementException, NoSuchAlgorithmException {
+		Executor executor = null;
+		if (useSSL){
+			executor = Executor.newInstance(Utility.getTrustedHttpClient());
+		}
+		else{
+			executor = Executor.newInstance();
+		}
+		return executor;
+	}
+
 	public static HttpResponse invokeRequest(Request request, Executor executor) throws ClientProtocolException, IOException {
 		Response response = executor.execute(request);
+		HttpResponse httpResponse = response.returnResponse();
+		return httpResponse;
+	}
+	
+	public static HttpResponse invokeRequest(Request request, boolean useSSL) throws ClientProtocolException, IOException, KeyManagementException, NoSuchAlgorithmException {
+		Response response = getExecutor(useSSL).execute(request);
 		HttpResponse httpResponse = response.returnResponse();
 		return httpResponse;
 	}

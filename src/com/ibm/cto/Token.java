@@ -100,7 +100,7 @@ public class Token extends HttpServlet {
 		if(url.length() > 0) {
 			URI converseURI = new URI(url).normalize();
 			Request request = Request.Get(converseURI);
-			HttpResponse httpResponse = Utility.invokeRequest(request, username, password, true);
+			HttpResponse httpResponse = Utility.invokeRequest(request, username, password, url.startsWith("https"));
 			if(httpResponse.getStatusLine().getStatusCode() == 200){
 				HttpEntity entity = httpResponse.getEntity();
 				return entity;
