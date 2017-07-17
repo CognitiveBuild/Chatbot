@@ -450,7 +450,7 @@ var conversation_result, is_wating = false, controls = {
 				flavour: flavour,
 				price: price,
 				total: total, 
-				consignee_nane: consignee, 
+				consignee_name: consignee, 
 				consignee_address: address, 
 				consignee_phone: '+86 8888888888',
 				timestamp: new Date().getTime(),
@@ -474,7 +474,7 @@ var conversation_result, is_wating = false, controls = {
 				return null;
 			}
 
-			if(iceCream.consignee_nane === '') {
+			if(iceCream.consignee_name === '') {
 				controls.$consignee.focus();
 				return null;
 			}
