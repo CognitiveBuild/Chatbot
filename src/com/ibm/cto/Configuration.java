@@ -62,7 +62,7 @@ public class Configuration {
 				instance.CONVERSATION_WORKSPACE_ID = "";
 
 				// Blockchain URL:
-				instance.APPLICATION_API_URL = "https://blockchainlab.mybluemix.net/api/order/newinfo";
+				instance.APPLICATION_API_URL = "https://blockchainlab01.mybluemix.net/api/order/newinfo";
 				instance.VISUAL_RECOGNITION_API_KEY = "";
 				instance.VISUAL_RECOGNITION_CLASSIFIER_ID = "";
 				
