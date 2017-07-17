@@ -65,7 +65,7 @@ public class Configuration {
 				instance.APPLICATION_API_URL = "https://blockchainlab01.mybluemix.net/api/order/newinfo";
 				instance.VISUAL_RECOGNITION_API_KEY = "";
 				instance.VISUAL_RECOGNITION_CLASSIFIER_ID = "";
-				
+
 				return instance;
 			}
 			else {
