@@ -13,13 +13,13 @@ Build your own chatbot on the Innovation Day
 
 	<img width="730" alt="Fork GitHub" src="https://cloud.githubusercontent.com/assets/1511528/20171945/01edad1a-a76e-11e6-83ed-3cd0245ae2d2.png">
 
-	<img width="730" alt="forked result" src="https://cloud.githubusercontent.com/assets/1511528/20475569/7f60d6cc-b007-11e6-870b-87ae0d7b238f.png">
+	<img width="730" alt="Forked result" src="https://cloud.githubusercontent.com/assets/1511528/20475569/7f60d6cc-b007-11e6-870b-87ae0d7b238f.png">
 
-# Getting started on Bluemix
-- [Setup guide on Bluemix](docs/Bluemix.md)
+# Three ways for deployment
 
-# Setup local environment
-- [Setup guide on local machine](docs/local.md)
+- [Hosting Chatbot on docker](docs/DOCKER.md)
+- [Setup guide for Bluemix](docs/BLUEMIX.md)
+- [Setup guide for local machine](docs/LOCAL.md)
 
 # Dependencies
 * Apache Common Codec
@@ -33,13 +33,6 @@ Build your own chatbot on the Innovation Day
 * The way of obtaining token is not secured, do not use it on Production
 
 # Sample data for Conversation
-**City entities and company locations**
-* **Shenzhen**: Technology Building II, No.1057, Nanhai Avenue
-* **Shanghai**: KIC Technology Center
-* **Dalian**: Hi-Tech Zone District, TianDi Software Park
-* **Wuhan**: Donghu HiTech Development Zone
-* **Chengdu**: Tianfu Software Park
-* **Beijing**: Pangudaguan Building
 
 **Ice cream flavour entities**
 * Chocolate
@@ -49,12 +42,6 @@ Build your own chatbot on the Innovation Day
 * Strawberry
 * Black sesame
 * Red beans
-
-**Direction entities**
-* forward
-* backward
-* left
-* right
 
 # License
 Copyright 2016 GCG GBS CTO Office under [the Apache 2.0 license](LICENSE).
