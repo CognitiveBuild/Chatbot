@@ -70,6 +70,8 @@
 
 ### Run
 
+- Run the command: 
+
 	`docker run -d -p 8888:9080 chatbot`
 
 ##### Now you can visit your Chatbot web application via [http://localhost:8888](http://localhost:8888)
