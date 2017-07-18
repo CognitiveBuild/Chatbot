@@ -8,14 +8,8 @@ Build your own chatbot on the Innovation Day
 
 # Prerequisite
 * Register your [Bluemix](https://bluemix.net) account
-* Register your [Github](https://github.com) account 
-* Fork this repository and remember the link of forked application
 
-	<img width="730" alt="Fork GitHub" src="https://cloud.githubusercontent.com/assets/1511528/20171945/01edad1a-a76e-11e6-83ed-3cd0245ae2d2.png">
-
-	<img width="730" alt="Forked result" src="https://cloud.githubusercontent.com/assets/1511528/20475569/7f60d6cc-b007-11e6-870b-87ae0d7b238f.png">
-
-# Three ways for deployment
+# Three ways for the practice
 
 - [Hosting Chatbot on docker](docs/DOCKER.md)
 - [Setup guide for Bluemix](docs/BLUEMIX.md)
