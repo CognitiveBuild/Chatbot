@@ -3,21 +3,33 @@
 Before start, install the Docker for this practice, see the references [here](https://www.docker.com/community-edition#/download) about how to install the Docker for different platforms
 
 ### Prepare Bluemix and Docker environments
+
+##### Download this repository
+- Go to [https://ibm.biz/webchatbot](https://ibm.biz/webchatbot)
+- Click on `Download ZIP` to download the Chatbot project
+
+	<img width="730" alt="Download" src="https://user-images.githubusercontent.com/1511528/28299055-8a5477c4-6ba9-11e7-928e-0f770f99824e.png">
+
+- After downloading, unzip file `Chatbot-master.zip`
+	
+	<img width="614" alt="Unzip" src="https://user-images.githubusercontent.com/1511528/28299126-e3292778-6ba9-11e7-84b7-5e833e3bbafa.png">
+
 ##### Acquire `Visual Recognition` service on Bluemix
+- After register the Bluemix account, then sign in
 - Go to [Bluemix catalog](https://console.bluemix.net/catalog/), search for `Visual Recognition`
 
 	<img width="730" alt="Catalog" src="https://user-images.githubusercontent.com/1511528/28259910-40f3f71a-6b0b-11e7-922b-7701af5ae174.png">
 
-- Click `Create` button after selecting the Free plan
-	
-	<img width="730" alt="Creating Visual Recognition service" src="https://user-images.githubusercontent.com/1511528/28259941-5eb843a0-6b0b-11e7-9c0d-a493b5498948.png">
+- Click `Create` button after selecting the `Free plan`
+
+	<img width="801" alt="Create Visual Recognition service" src="https://user-images.githubusercontent.com/1511528/28299281-df67a460-6baa-11e7-96e7-cfcac15cf301.png">
 	<img width="730" alt="Created Visual Recognition service" src="https://user-images.githubusercontent.com/1511528/28259972-792e5e18-6b0b-11e7-9fd9-b03dda33f515.png">
 
 ##### Get API key from tab of `Service credentials` then apply it in `/Chatbot/docker/Dockerfile`.
 
-- Click on `Service credentials` tab
+- Click on `Service credentials` tab, then select credential dropdown button
 
-	<img width="730" alt="Service credentials" src="https://user-images.githubusercontent.com/1511528/28298260-c01bed92-6ba4-11e7-9905-80555ff2f9ca.png">
+	<img width="730" alt="Service credentials" src="https://user-images.githubusercontent.com/1511528/28299355-491d1052-6bab-11e7-964c-565caf9027fe.png">
 
 - Update `/Chatbot/docker/Dockerfile`
 
@@ -31,9 +43,11 @@ Before start, install the Docker for this practice, see the references [here](ht
 	<img width="730" alt="Tooling interface" src="https://user-images.githubusercontent.com/1511528/28261103-7a47890a-6b10-11e7-80e1-61874862802a.png">
 	<img width="730" alt="Tooling interface for training" src="https://user-images.githubusercontent.com/1511528/28261149-a2382546-6b10-11e7-806d-e6a51e693aee.png">
 
-##### Choose training zip files from `/Chatbot/trainings` folder
+##### Upload training images
 
-<img width="730" alt="Tooling for training" src="https://user-images.githubusercontent.com/1511528/28261230-f0844bb2-6b10-11e7-9680-4d77d44244e0.png">
+- Choose training zip files from `/Chatbot/trainings` folder
+
+	<img width="730" alt="Tooling for training" src="https://user-images.githubusercontent.com/1511528/28261230-f0844bb2-6b10-11e7-9680-4d77d44244e0.png">
 
 - Name each of the classes
  
@@ -52,7 +66,7 @@ Before start, install the Docker for this practice, see the references [here](ht
 
 ### Build docker image
 ##### Go to `/Chatbot/docker/` folder under the Chatbot project root folder from the `Terminal` or `cmd`
-	
+
 - Find your `Terminal` from `macOS`
 
 	<img width="336" alt="Terminal" src="https://user-images.githubusercontent.com/1511528/28262080-5ba1002c-6b14-11e7-9522-aa395d4cf35e.png">
@@ -67,11 +81,11 @@ Before start, install the Docker for this practice, see the references [here](ht
 
 	`cd /path/to/Chatbot/docker`
 
-- Run the command: 
+- To build the docker image, run the command: 
 
 	`docker build -t chatbot -f Dockerfile .`
 
-### Run
+### Run the docker image on a new container
 
 - Run the command: 
 

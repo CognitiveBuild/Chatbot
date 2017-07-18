@@ -7,6 +7,7 @@ Build your own chatbot on the Innovation Day
 [![GitHub license](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://raw.githubusercontent.com/CognitiveBuild/Chatbot/master/LICENSE)
 
 # Prerequisite
+
 * Register your [Bluemix](https://bluemix.net) account
 
 # Three ways for the practice
@@ -16,6 +17,7 @@ Build your own chatbot on the Innovation Day
 - [Setup guide for local machine](docs/LOCAL.md)
 
 # Dependencies
+
 * Apache Common Codec
 * Apache HTTP Client
 * FastJSON
