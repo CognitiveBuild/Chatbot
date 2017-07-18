@@ -22,32 +22,41 @@ Before start, install the Docker for this practice, see the references [here](ht
 
 - Click `Create` button after selecting the `Free plan`
 
-	<img width="801" alt="Create Visual Recognition service" src="https://user-images.githubusercontent.com/1511528/28299281-df67a460-6baa-11e7-96e7-cfcac15cf301.png">
+	<img width="730" alt="Create Visual Recognition service" src="https://user-images.githubusercontent.com/1511528/28299281-df67a460-6baa-11e7-96e7-cfcac15cf301.png">
 	<img width="730" alt="Created Visual Recognition service" src="https://user-images.githubusercontent.com/1511528/28259972-792e5e18-6b0b-11e7-9fd9-b03dda33f515.png">
 
 ##### Get API key from tab of `Service credentials` then apply it in `/Chatbot/docker/Dockerfile`.
 
-- Click on `Service credentials` tab, then select credential dropdown button
+- Click on `Service credentials` tab, then select credential dropdown button, copy `api_key`
 
 	<img width="730" alt="Service credentials" src="https://user-images.githubusercontent.com/1511528/28299355-491d1052-6bab-11e7-964c-565caf9027fe.png">
 
-- Update `/Chatbot/docker/Dockerfile`
+- Update `/Chatbot/docker/Dockerfile`, paste copied `api_key` to `Dockerfile`
 
 	<img width="730" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28260413-8a190e38-6b0d-11e7-8f4e-d2aafdf1cedc.png">
 
 ##### Train `Visual Recognition` API with the training files, get new trained classifier ID then apply it in `/Chatbot/docker/Dockerfile`
 
-- Go back to Bluemix console, go back to `Manage` tab then click on `Visual Recognition Tool (Beta)` button
+- Go back to Bluemix console, go back to `Manage` tab then click on `Visual Recognition Tool (Beta)` button to launch the `Visual Recognition Tool`
 
 	<img width="730" alt="Tooling for Visual Recognition" src="https://user-images.githubusercontent.com/1511528/28261034-3bf6882c-6b10-11e7-9bed-5dc613b3ed48.png">
+
+- Due to the GFW blocked the unsecured connection of Bluemix as below, use [https://visual-recognition-tooling.mybluemix.net/](https://visual-recognition-tooling.mybluemix.net/)
+ 
+	<img width="712" alt="Broken link" src="https://user-images.githubusercontent.com/1511528/28299839-f086d13c-6bad-11e7-896c-6ee4438d06f4.png">
+	<img width="610" alt="Use HTTPS" src="https://user-images.githubusercontent.com/1511528/28299997-00373378-6baf-11e7-8201-b032152c0173.png">
 	<img width="730" alt="Tooling interface" src="https://user-images.githubusercontent.com/1511528/28261103-7a47890a-6b10-11e7-80e1-61874862802a.png">
+
+- You will see this page, go to next step refer to following step
+
 	<img width="730" alt="Tooling interface for training" src="https://user-images.githubusercontent.com/1511528/28261149-a2382546-6b10-11e7-806d-e6a51e693aee.png">
 
 ##### Upload training images
 
-- Choose training zip files from `/Chatbot/trainings` folder
+- Choose training zip files from `/Chatbot/trainings` folder, then choose `ALL` of them according to the class names including the negative sample
 
 	<img width="730" alt="Tooling for training" src="https://user-images.githubusercontent.com/1511528/28261230-f0844bb2-6b10-11e7-9680-4d77d44244e0.png">
+	<img width="730" alt="Tooling" src="https://user-images.githubusercontent.com/1511528/28304118-dd7f290c-6bc8-11e7-9ea6-17a2c40146a1.png">	
 
 - Name each of the classes
  
@@ -62,6 +71,12 @@ Before start, install the Docker for this practice, see the references [here](ht
 
 	<img width="730" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28261700-e16dadd8-6b12-11e7-9626-6476f2e8c514.png">
 
+###### Add other Watson services
+
+- Go to [Bluemix catalog](https://console.bluemix.net/catalog/), search for `Conversation`
+
+	<img width="730" alt="Search Conversation service" src="https://user-images.githubusercontent.com/1511528/28298707-69b3b626-6ba7-11e7-8674-4dfc295fe976.png">
+
 ##### After installing the Docker, open `Terminal` on **macOS** or `cmd` on **Windows**
 
 ### Build docker image
@@ -70,7 +85,7 @@ Before start, install the Docker for this practice, see the references [here](ht
 - Find your `Terminal` from `macOS`
 
 	<img width="336" alt="Terminal" src="https://user-images.githubusercontent.com/1511528/28262080-5ba1002c-6b14-11e7-9522-aa395d4cf35e.png">
-	<img width="572" alt="screen shot 2017-07-17 at 17 39 40" src="https://user-images.githubusercontent.com/1511528/28262785-f3775b24-6b16-11e7-8e50-51b2e853ad64.png">
+	<img width="572" alt="cmd" src="https://user-images.githubusercontent.com/1511528/28262785-f3775b24-6b16-11e7-8e50-51b2e853ad64.png">
 
 - Find your `cmd` from `Windows`
 
@@ -92,4 +107,3 @@ Before start, install the Docker for this practice, see the references [here](ht
 	`docker run -d -p 8888:9080 chatbot`
 
 ##### Now you can visit your Chatbot web application via [http://localhost:8888](http://localhost:8888)
-
