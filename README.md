@@ -11,7 +11,7 @@ Build your own chatbot on the Innovation Day
 
 # Three ways for the practice
 
-- [Hosting Chatbot on docker](docs/DOCKER.md)
+- [Hosting Chatbot on docker (2017 Innovation Day)](docs/DOCKER.md)
 - [Setup guide for Bluemix](docs/BLUEMIX.md)
 - [Setup guide for local machine](docs/LOCAL.md)
 
