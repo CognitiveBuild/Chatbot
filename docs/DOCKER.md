@@ -15,6 +15,8 @@ Before start, install the Docker for this practice, see the references [here](ht
 
 ##### Get API key from tab of `Service credentials` then apply it in `/Chatbot/docker/Dockerfile`.
 
+- Click on `Service credentials` tab
+
 	<img width="730" alt="Service credentials" src="https://user-images.githubusercontent.com/1511528/28260214-8e67fb9e-6b0c-11e7-8c59-3dc5c0ae35fe.png">
 
 - Update `/Chatbot/docker/Dockerfile`
