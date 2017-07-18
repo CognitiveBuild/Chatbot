@@ -17,7 +17,7 @@ Before start, install the Docker for this practice, see the references [here](ht
 
 - Click on `Service credentials` tab
 
-	<img width="730" alt="Service credentials" src="https://user-images.githubusercontent.com/1511528/28260214-8e67fb9e-6b0c-11e7-8c59-3dc5c0ae35fe.png">
+	<img width="730" alt="Service credentials" src="https://user-images.githubusercontent.com/1511528/28298260-c01bed92-6ba4-11e7-9905-80555ff2f9ca.png">
 
 - Update `/Chatbot/docker/Dockerfile`
 
