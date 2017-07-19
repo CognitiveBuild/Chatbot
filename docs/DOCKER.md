@@ -15,8 +15,10 @@ Before start, install the Docker for this practice, see the references [here](ht
 	<img width="614" alt="Unzip" src="https://user-images.githubusercontent.com/1511528/28299126-e3292778-6ba9-11e7-84b7-5e833e3bbafa.png">
 
 ##### Acquire `Visual Recognition` service on Bluemix
+
 - After register the Bluemix account, then sign in
-- Go to [Bluemix catalog](https://console.bluemix.net/catalog/), search for `Visual Recognition`
+
+- Go to [Bluemix catalog](https://console.bluemix.net/catalog/), search `Visual Recognition`
 
 	<img width="730" alt="Catalog" src="https://user-images.githubusercontent.com/1511528/28259910-40f3f71a-6b0b-11e7-922b-7701af5ae174.png">
 
@@ -81,7 +83,7 @@ Before start, install the Docker for this practice, see the references [here](ht
 
 ###### Add other Watson services
 
-- Go to [Bluemix catalog](https://console.bluemix.net/catalog/), search for `Conversation`
+- Go to [Bluemix catalog](https://console.bluemix.net/catalog/), search `Conversation`
 
 	<img width="730" alt="Search Conversation service" src="https://user-images.githubusercontent.com/1511528/28298707-69b3b626-6ba7-11e7-8674-4dfc295fe976.png">
 
@@ -98,6 +100,43 @@ Before start, install the Docker for this practice, see the references [here](ht
 
 	<img width="730" alt="Username" src="https://user-images.githubusercontent.com/1511528/28349917-38c6f3d0-6c78-11e7-9239-7ec3e3882651.png">
 	<img width="730" alt="Password" src="https://user-images.githubusercontent.com/1511528/28349918-38c9aba2-6c78-11e7-9fd5-ae7f6b2b9098.png">
+
+- Go to [Bluemix catalog](https://console.bluemix.net/catalog/), search `Speech to Text`
+
+	<img width="730" alt="Speech-to-Text" src="https://user-images.githubusercontent.com/1511528/28350215-fd66d966-6c79-11e7-8af0-ab3ab33b7b64.png">
+
+- Name service as you want, and make sure there is a `Credential name` available then click on `Create` button
+
+	<img width="730" alt="Create Speech-to-Text service" src="https://user-images.githubusercontent.com/1511528/28353115-bcd7d306-6c8c-11e7-9d98-a96cf96eedd2.png">
+
+- Then you will see this page below, go to next step refer to following step
+
+	<img width="730" alt="Create Speech-to-Text service" src="https://user-images.githubusercontent.com/1511528/28353005-2c19fc68-6c8c-11e7-8f86-d39dd269bebb.png">
+
+- Copy username and password, paste them to `Dockerfile` and save the file
+
+	<img width="730" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28349917-38c6f3d0-6c78-11e7-9239-7ec3e3882651.png">
+	<img width="730" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28349918-38c9aba2-6c78-11e7-9fd5-ae7f6b2b9098.png">
+
+- Go to [Bluemix catalog](https://console.bluemix.net/catalog/), search `Text to Speech`
+	
+	<img width="798" alt="Search Text to Speech" src="https://user-images.githubusercontent.com/1511528/28355571-292f501a-6c97-11e7-8339-d6dbcba0dfbb.png">
+
+- Then you will see this page below, go to next step refer to following step, then copy username and password
+
+	<img width="730" alt="Create Text to Speech service" src="https://user-images.githubusercontent.com/1511528/28353603-1786802a-6c8f-11e7-9a31-4d5d8e9fad71.png">
+	<img width="730" alt="Service credentials" src="https://user-images.githubusercontent.com/1511528/28355711-b5905fb8-6c97-11e7-8c16-a84a0f82aa92.png">
+
+- Paste username and password in `/Chatbot/docker/Dockerfile`
+
+	<img width="692" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28355888-7d1b5ba0-6c98-11e7-9a2d-7b07b038a12b.png">
+	<img width="692" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28356038-1c0527d2-6c99-11e7-824d-5564364cf699.png">
+
+###### Update `/Chatbot/docker/Dockerfile` with your Blockchain service URL - replace `your_block_chain_service` to actual one
+
+
+	`ENV APPLICATION_API_URL https://your_block_chain_service.mybluemix.net/api/order/newinfo`
+
 
 ##### After installing the Docker, open `Terminal` on **macOS** or `cmd` on **Windows**
 

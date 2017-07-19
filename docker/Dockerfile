@@ -1,14 +1,8 @@
-FROM websphere-liberty:webProfile7
+FROM websphere-liberty:latest
 ADD payload/Chatbot.war /config/dropins/
-COPY payload/server.xml /config/
-ARG REPOSITORIES_PROPERTIES=""
 
-RUN if [ ! -z $REPOSITORIES_PROPERTIES ]; then echo $REPOSITORIES_PROPERTIES > /opt/ibm/wlp/etc/repositories.properties; fi \
-    && installUtility install --acceptLicense appSecurityClient-1.0 javaee-7.0 javaeeClient-7.0 \
-    && if [ ! -z $REPOSITORIES_PROPERTIES ] ; then rm /opt/ibm/wlp/etc/repositories.properties; fi \
-    && rm -rf /output/workarea /output/logs
 EXPOSE 9080
-ENV APPLICATION_API_URL https://blockchainlab01.mybluemix.net/api/order/newinfo
+ENV APPLICATION_API_URL https://your_block_chain_service.mybluemix.net/api/order/newinfo
 
 ENV TEXT_TO_SPEECH_USERNAME your_username
 ENV TEXT_TO_SPEECH_PASSWORD your_password
