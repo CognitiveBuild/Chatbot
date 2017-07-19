@@ -6,7 +6,7 @@ Before start, install the Docker for this practice, see the references [here](ht
 
 Below is the guide especially for `Windows 10` as the `macOS` one is very easy and straightforward:
 
-1) In order to use docker, disable `Hyper-v` on `Windows 10`   
+1) In order to use docker, disable `Hyper-v` on `Windows 10`:   
 
 	bcdedit /set hypervisorlaunchtype off
 
