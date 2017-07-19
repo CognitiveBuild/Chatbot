@@ -1,6 +1,35 @@
 # Hosting Chatbot on Docker
 
+### Install docker
+
 Before start, install the Docker for this practice, see the references [here](https://www.docker.com/community-edition#/download) about how to install the Docker for different platforms
+
+Below is the guide especially for `Windows 10` as the `macOS` one is very easy and straightforward:
+
+1) In order to use docker, disable `Hyper-v` on `Windows 10`   
+
+	bcdedit /set hypervisorlaunchtype off
+
+In case you want to re-enable it after practice, here is the command:
+
+	bcdedit /set hypervisorlaunchtype auto
+
+2) Make sure the `Virtualization` is enabled in windows. You can read [this](https://docs.docker.com/toolbox/toolbox_install_windows/) for reference.
+
+3) After installing the docker Toolbox, click the `Quick Start Terminal` on the desktop. If you have passed previous 2 steps, you will see a page for downloading one `boot2docker.iso` file. You can manually download and put it into `C:\Users\your_username\.docker\machine\cache` folder. (Copy the `boot2docker.iso` from the USB provided on the class)
+
+
+4) You can close the `Quick Start Terminal` window, then use `cmd` (refer to `Build docker image` section on this page). Run a command:  
+
+	docker-machine ls
+
+Then you should be able to see the default virtual machine.
+
+6) Run `docker-machine env default`. It will show some information about your environment. Choose the last row and run it manually. Then you will be able to run docker in your `cmd` window.
+
+7)	Remember the IP address in 2nd line as on Windows, you will use it to access the application you're deploying on docker. 
+
+You cannot just use localhost to access the service. Use the IP instead. The reason is there is a boot2docker VM running by VMBox. Docker connect with the VM directly. The IP is for the VM.
 
 ### Prepare Bluemix and Docker environments
 
@@ -120,7 +149,7 @@ Before start, install the Docker for this practice, see the references [here](ht
 
 - Go to [Bluemix catalog](https://console.bluemix.net/catalog/), search `Text to Speech`
 	
-	<img width="798" alt="Search Text to Speech" src="https://user-images.githubusercontent.com/1511528/28355571-292f501a-6c97-11e7-8339-d6dbcba0dfbb.png">
+	<img width="730" alt="Search Text to Speech" src="https://user-images.githubusercontent.com/1511528/28355571-292f501a-6c97-11e7-8339-d6dbcba0dfbb.png">
 
 - Then you will see this page below, go to next step refer to following step, then copy username and password
 
@@ -132,7 +161,7 @@ Before start, install the Docker for this practice, see the references [here](ht
 	<img width="692" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28355888-7d1b5ba0-6c98-11e7-9a2d-7b07b038a12b.png">
 	<img width="692" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28356038-1c0527d2-6c99-11e7-824d-5564364cf699.png">
 
-###### Update `/Chatbot/docker/Dockerfile` with your Blockchain service URL - replace `your_block_chain_service` to actual one
+###### Update `/Chatbot/docker/Dockerfile` with your Blockchain service URL - replace `your_block_chain_service` to actual one (refer to Blockchain practice)
 
 	ENV APPLICATION_API_URL https://your_block_chain_service.mybluemix.net/api/order/newinfo
 
@@ -155,32 +184,30 @@ Now you're ready for building the docker image.
 
 - Find your project folder, e.g. `/path/to/Chatbot/docker`, then run the command
 
-	`cd /path/to/Chatbot/docker`
+	cd /path/to/Chatbot/docker
 
 - To build the docker image, run the command: 
 
-	`docker build -t chatbot -f Dockerfile .`
+	docker build -t chatbot -f Dockerfile .
 
 ### Run the docker image on a new container
 
 - Run the command: 
 
-	`docker run -d -p 8888:9080 chatbot`
+	docker run -d -p 8888:9080 chatbot
 
 ##### Now you can visit your Chatbot web application via [http://localhost:8888](http://localhost:8888)
 
 ### Possible issues
 If you encounter an issue like the output from `Terminal` or `cmd` as below
 
-```shell
-Sending build context to Docker daemon  4.246MB
-Step 1/15 : FROM websphere-liberty:webProfile7
 
+	Sending build context to Docker daemon  4.246MB
+	Step 1/15 : FROM websphere-liberty:webProfile7
 
-Get https://registry-1.docker.io/v2/library/websphere-liberty/manifests/webProfile7: unauthorized: incorrect username or password
-```
+	Get https://registry-1.docker.io/v2/library/websphere-liberty/manifests/webProfile7: unauthorized: incorrect username or password
 
 Please run this command: 
-	
-	`docker logout`
+
+	docker logout
 d
