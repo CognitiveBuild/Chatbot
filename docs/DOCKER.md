@@ -168,3 +168,19 @@ Now you're ready for building the docker image.
 	`docker run -d -p 8888:9080 chatbot`
 
 ##### Now you can visit your Chatbot web application via [http://localhost:8888](http://localhost:8888)
+
+### Possible issues
+If you encounter an issue like the output from `Terminal` or `cmd` as below
+
+```shell
+Sending build context to Docker daemon  4.246MB
+Step 1/15 : FROM websphere-liberty:webProfile7
+
+
+Get https://registry-1.docker.io/v2/library/websphere-liberty/manifests/webProfile7: unauthorized: incorrect username or password
+```
+
+Please run this command: 
+	
+	`docker logout`
+d
