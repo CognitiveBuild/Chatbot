@@ -45,6 +45,14 @@ Before start, install the Docker for this practice, see the references [here](ht
  
 	<img width="712" alt="Broken link" src="https://user-images.githubusercontent.com/1511528/28299839-f086d13c-6bad-11e7-896c-6ee4438d06f4.png">
 	<img width="610" alt="Use HTTPS" src="https://user-images.githubusercontent.com/1511528/28299997-00373378-6baf-11e7-8201-b032152c0173.png">
+	
+- For the first time visit of this tool, the API key is needed for authentication 
+
+	<img width="575" alt="First time visit" src="https://user-images.githubusercontent.com/1511528/28349236-20dcba60-6c74-11e7-9b42-34fbadda1990.png">
+	<img width="683" alt="Sign in using API key" src="https://user-images.githubusercontent.com/1511528/28349251-38d1d9de-6c74-11e7-803f-5d1e84765ec5.png">
+
+- Then click on `Create` button to get started 
+
 	<img width="730" alt="Tooling interface" src="https://user-images.githubusercontent.com/1511528/28261103-7a47890a-6b10-11e7-80e1-61874862802a.png">
 
 - You will see this page, go to next step refer to following step
@@ -76,6 +84,20 @@ Before start, install the Docker for this practice, see the references [here](ht
 - Go to [Bluemix catalog](https://console.bluemix.net/catalog/), search for `Conversation`
 
 	<img width="730" alt="Search Conversation service" src="https://user-images.githubusercontent.com/1511528/28298707-69b3b626-6ba7-11e7-8674-4dfc295fe976.png">
+
+- Name service as you want, and make sure there is a `Credential name` available then click on `Create` button
+
+	<img width="730" alt="Create Conversation service" src="https://user-images.githubusercontent.com/1511528/28304658-3996964c-6bcb-11e7-8478-b9501eaaf5ed.png">
+
+- Then you will see this page, and click on `Service credentials`, then copy username and password
+	
+	<img width="730" alt="Conversation interface" src="https://user-images.githubusercontent.com/1511528/28349466-94688e18-6c75-11e7-917f-a15f34f21148.png">
+	<img width="730" alt="Service credentials" src="https://user-images.githubusercontent.com/1511528/28349662-bcb1bf2e-6c76-11e7-8aed-4b907b8c302c.png">
+
+- Paste username and password in `/Chatbot/docker/Dockerfile`
+
+	<img width="730" alt="Username" src="https://user-images.githubusercontent.com/1511528/28349917-38c6f3d0-6c78-11e7-9239-7ec3e3882651.png">
+	<img width="730" alt="Password" src="https://user-images.githubusercontent.com/1511528/28349918-38c9aba2-6c78-11e7-9fd5-ae7f6b2b9098.png">
 
 ##### After installing the Docker, open `Terminal` on **macOS** or `cmd` on **Windows**
 
