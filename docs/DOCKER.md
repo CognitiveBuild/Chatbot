@@ -134,9 +134,9 @@ Before start, install the Docker for this practice, see the references [here](ht
 
 ###### Update `/Chatbot/docker/Dockerfile` with your Blockchain service URL - replace `your_block_chain_service` to actual one
 
+	ENV APPLICATION_API_URL https://your_block_chain_service.mybluemix.net/api/order/newinfo
 
-	`ENV APPLICATION_API_URL https://your_block_chain_service.mybluemix.net/api/order/newinfo`
-
+Now you're ready for building the docker image.
 
 ##### After installing the Docker, open `Terminal` on **macOS** or `cmd` on **Windows**
 
