@@ -8,7 +8,7 @@ Below is the guide especially for `Windows 10` as the `macOS` one is very easy a
 
 1) In order to use docker, disable `Hyper-v` on `Windows 10`:   
 
-	bcdedit /set hypervisorlaunchtype off
+	`bcdedit /set hypervisorlaunchtype off`
 
 In case you want to re-enable it after practice, here is the command:
 
@@ -21,7 +21,7 @@ In case you want to re-enable it after practice, here is the command:
 
 4) You can close the `Quick Start Terminal` window, then use `cmd` (refer to `Build docker image` section on this page). Run a command:  
 
-	docker-machine ls
+	`docker-machine ls`
 
 Then you should be able to see the default virtual machine.
 
