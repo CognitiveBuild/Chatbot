@@ -35,6 +35,8 @@ Then you should be able to see the default virtual machine.
 
 5) Run `docker-machine env default`. It will show some information about your environment. Choose the last row and run it manually. Then you will be able to run docker in your `cmd` window.
 
+![docker](https://user-images.githubusercontent.com/1511528/28406219-2e20f0c6-6d62-11e7-8282-673a1947f36d.png)
+
 6)	Remember the `IP address` in 2nd line as on `Windows`, you will use it to access the application you're deploying on docker. 
 
 You cannot just use localhost to access the service. Use the IP instead. The reason is there is a boot2docker VM running by VMBox. Docker connect with the VM directly. The IP is for the VM.
@@ -114,11 +116,11 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 	 <img width="730" alt="Tooling for training" src="https://user-images.githubusercontent.com/1511528/28261359-7ec60564-6b11-11e7-93ca-f02b87be47a6.png">
 	 <img width="498" alt="Training in progress" src="https://user-images.githubusercontent.com/1511528/28261426-d72dc980-6b11-11e7-9406-8a12d23be525.png">
 
-- Copy the classifier ID
+- Copy the `classifier ID`
 
 	 <img width="645" alt="Trained classifier" src="https://user-images.githubusercontent.com/1511528/28261513-313ea8a4-6b12-11e7-9f0b-ddd68537c643.png">
 
-- Paste classifier ID in `/Chatbot/docker/Dockerfile`
+- Paste `classifier ID` in `/Chatbot/docker/Dockerfile`
 
 	<img width="730" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28261700-e16dadd8-6b12-11e7-9626-6476f2e8c514.png">
 
@@ -137,10 +139,35 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 	<img width="730" alt="Conversation interface" src="https://user-images.githubusercontent.com/1511528/28349466-94688e18-6c75-11e7-917f-a15f34f21148.png">
 	<img width="730" alt="Service credentials" src="https://user-images.githubusercontent.com/1511528/28349662-bcb1bf2e-6c76-11e7-8aed-4b907b8c302c.png">
 
-- Paste username and password in `/Chatbot/docker/Dockerfile`
+- Paste `username` and `password` in `/Chatbot/docker/Dockerfile`
 
 	<img width="730" alt="Username" src="https://user-images.githubusercontent.com/1511528/28349917-38c6f3d0-6c78-11e7-9239-7ec3e3882651.png">
 	<img width="730" alt="Password" src="https://user-images.githubusercontent.com/1511528/28349918-38c9aba2-6c78-11e7-9fd5-ae7f6b2b9098.png">
+
+- Start creating a new `Conversation`, click on `Manage` menu on the left then click on `Launch tool`
+
+	<img width="730" alt="Conversation" src="https://user-images.githubusercontent.com/1511528/28403835-2d98c538-6d59-11e7-8c96-6a542cb14569.png">
+
+- For the first time visit of this tool, the IBM ID is needed for authentication, but as long as you've authenticated by Bluemix, it will treat you as a authorized user after clicking on the `Log in with IBM ID` by default. Otherwise you can try to sign in again with your Bluemix credentials
+
+	<img width="427" alt="Conversation" src="https://user-images.githubusercontent.com/1511528/28404804-553486b4-6d5d-11e7-9078-45eac305dad1.png">
+	
+- Click on `Upload` icon to upload the training file, to locate the training file, go to `/Chatbot/trainings/conversation` folder, find `innovation-day.json` file
+
+	<img width="590" alt="Conversation" src="https://user-images.githubusercontent.com/1511528/28404805-5593bc6a-6d5d-11e7-8a95-b4a35e912000.png">
+	<img width="652" alt="Upload popup" src="https://user-images.githubusercontent.com/1511528/28405189-e1af84bc-6d5e-11e7-88a6-6a67abe0a81f.png">
+	<img width="614" alt="Select training file" src="https://user-images.githubusercontent.com/1511528/28405188-e1af5096-6d5e-11e7-8739-bea4db674ed2.png">
+	<img width="636" alt="Import (upload)" src="https://user-images.githubusercontent.com/1511528/28405190-e1e35eea-6d5e-11e7-96be-13a47e981926.png">
+
+- There will be one more panal named `iChat`, click on the menu on the top right, then select `View details` in order to copy workspace ID
+
+	<img width="436" alt="Created conversation workspace" src="https://user-images.githubusercontent.com/1511528/28405683-250e78a2-6d60-11e7-8874-5d2379887ac8.png">
+	<img width="437" alt="Workspace menu" src="https://user-images.githubusercontent.com/1511528/28405684-250f608c-6d60-11e7-8c8f-5492e2e3b8f8.png">
+	<img width="482" alt="View details and copy workspace ID" src="https://user-images.githubusercontent.com/1511528/28405685-251641d6-6d60-11e7-83a5-1be11daa8850.png">
+
+- Paste `workspace ID` in `/Chatbot/docker/Dockerfile`
+
+	<img width="574" alt="Update Workspace ID" src="https://user-images.githubusercontent.com/1511528/28405937-0163c96a-6d61-11e7-9e3e-dcaa2a621423.png">
 
 - Go to [Bluemix catalog](https://console.bluemix.net/catalog/), search `Speech to Text`
 
@@ -154,7 +181,7 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 
 	<img width="730" alt="Create Speech-to-Text service" src="https://user-images.githubusercontent.com/1511528/28353005-2c19fc68-6c8c-11e7-8f86-d39dd269bebb.png">
 
-- Copy username and password, paste them to `Dockerfile` and save the file
+- Copy `username` and `password`, paste them to `Dockerfile` and save the file
 
 	<img width="730" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28349917-38c6f3d0-6c78-11e7-9239-7ec3e3882651.png">
 	<img width="730" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28349918-38c9aba2-6c78-11e7-9fd5-ae7f6b2b9098.png">
@@ -168,7 +195,7 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 	<img width="730" alt="Create Text to Speech service" src="https://user-images.githubusercontent.com/1511528/28353603-1786802a-6c8f-11e7-9a31-4d5d8e9fad71.png">
 	<img width="730" alt="Service credentials" src="https://user-images.githubusercontent.com/1511528/28355711-b5905fb8-6c97-11e7-8c16-a84a0f82aa92.png">
 
-- Paste username and password in `/Chatbot/docker/Dockerfile`
+- Paste `username` and `password` in `/Chatbot/docker/Dockerfile`
 
 	<img width="692" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28355888-7d1b5ba0-6c98-11e7-9a2d-7b07b038a12b.png">
 	<img width="692" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28356038-1c0527d2-6c99-11e7-824d-5564364cf699.png">
@@ -214,8 +241,8 @@ Now you're ready for building the docker image.
 
 ##### Now you can visit your Chatbot web application via 
 
-- macOS: [http://localhost:8888](http://localhost:8888)
-- Windows:  Refer to section `Install docker on Windows 10 (5, 6)`
+- macOS: [http://localhost:8888/Chatbot](http://localhost:8888/Chatbot)
+- Windows:  Refer to section `Install docker on Windows 10 (5, 6)`, so the format of the URL would be like `http://xxx.xxx.x.x:8888/Chatbot`
 
 ### Possible issues
 If you encounter an issue like the output from `Terminal` or `cmd` as below
