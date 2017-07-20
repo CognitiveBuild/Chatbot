@@ -223,7 +223,9 @@ Now you're ready for building the docker image.
 
 - Find your project folder, e.g. `/path/to/Chatbot/docker`, then run the command
 
+```shell
 	cd /path/to/Chatbot/docker
+```
 
 - To build the docker image, run the command: 
 
