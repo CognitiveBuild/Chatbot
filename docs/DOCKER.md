@@ -4,15 +4,21 @@
 
 Before start, install the Docker for this practice, see the references [here](https://www.docker.com/community-edition#/download) about how to install the Docker for different platforms
 
+###### Install docker on Windows 10
+
 Below is the guide especially for `Windows 10` as the `macOS` one is very easy and straightforward:
 
-1) In order to use docker, disable `Hyper-v` on `Windows 10`:   
+1) In order to use docker, disable `Hyper-v` on `Windows 10`:
 
-	`bcdedit /set hypervisorlaunchtype off`
+```shell
+	bcdedit /set hypervisorlaunchtype off
+```
 
 In case you want to re-enable it after practice, here is the command:
 
+```shell
 	bcdedit /set hypervisorlaunchtype auto
+```
 
 2) Make sure the `Virtualization` is enabled in windows. You can read [this](https://docs.docker.com/toolbox/toolbox_install_windows/) for reference.
 
@@ -25,11 +31,15 @@ In case you want to re-enable it after practice, here is the command:
 
 Then you should be able to see the default virtual machine.
 
-6) Run `docker-machine env default`. It will show some information about your environment. Choose the last row and run it manually. Then you will be able to run docker in your `cmd` window.
+5) Run `docker-machine env default`. It will show some information about your environment. Choose the last row and run it manually. Then you will be able to run docker in your `cmd` window.
 
-7)	Remember the IP address in 2nd line as on Windows, you will use it to access the application you're deploying on docker. 
+6)	Remember the `IP address` in 2nd line as on `Windows`, you will use it to access the application you're deploying on docker. 
 
 You cannot just use localhost to access the service. Use the IP instead. The reason is there is a boot2docker VM running by VMBox. Docker connect with the VM directly. The IP is for the VM.
+
+###### Install docker on macOS
+
+- Please refer the doc [here](https://store.docker.com/editions/community/docker-ce-desktop-mac)
 
 ### Prepare Bluemix and Docker environments
 
@@ -196,7 +206,10 @@ Now you're ready for building the docker image.
 
 	docker run -d -p 8888:9080 chatbot
 
-##### Now you can visit your Chatbot web application via [http://localhost:8888](http://localhost:8888)
+##### Now you can visit your Chatbot web application via 
+
+- macOS: [http://localhost:8888](http://localhost:8888)
+- Windows:  Refer to section [Install docker on Windows 10 (5, 6)](#Install docker on Windows 10)
 
 ### Possible issues
 If you encounter an issue like the output from `Terminal` or `cmd` as below
@@ -210,4 +223,4 @@ If you encounter an issue like the output from `Terminal` or `cmd` as below
 Please run this command: 
 
 	docker logout
-d
+
