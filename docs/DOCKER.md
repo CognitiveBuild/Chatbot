@@ -27,7 +27,9 @@ In case you want to re-enable it after practice, here is the command:
 
 4) You can close the `Quick Start Terminal` window, then use `cmd` (refer to `Build docker image` section on this page). Run a command:  
 
-	`docker-machine ls`
+```shell
+	docker-machine ls
+```
 
 Then you should be able to see the default virtual machine.
 
@@ -198,22 +200,25 @@ Now you're ready for building the docker image.
 
 - To build the docker image, run the command: 
 
-	docker build -t chatbot -f Dockerfile .
+```shell
+	docker build -t chatbot -f Dockerfile ./
+```
 
 ### Run the docker image on a new container
 
 - Run the command: 
 
+```shell
 	docker run -d -p 8888:9080 chatbot
+```
 
 ##### Now you can visit your Chatbot web application via 
 
 - macOS: [http://localhost:8888](http://localhost:8888)
-- Windows:  Refer to section [Install docker on Windows 10 (5, 6)](#Install docker on Windows 10)
+- Windows:  Refer to section `Install docker on Windows 10 (5, 6)`
 
 ### Possible issues
 If you encounter an issue like the output from `Terminal` or `cmd` as below
-
 
 	Sending build context to Docker daemon  4.246MB
 	Step 1/15 : FROM websphere-liberty:webProfile7
@@ -222,5 +227,7 @@ If you encounter an issue like the output from `Terminal` or `cmd` as below
 
 Please run this command: 
 
+```shell
 	docker logout
+```
 
