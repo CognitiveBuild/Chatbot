@@ -1,18 +1,20 @@
 # Hosting Chatbot on Docker
 
-### Install docker
+### Install Docker
 
-Before start, install the Docker for this practice, see the references [here](https://www.docker.com/community-edition#/download) about how to install the Docker for different platforms
+Before start, install the Docker for this practice, see the references [here](https://www.docker.com/community-edition#/download) about how to install the Docker for different platforms.
 
-###### Install docker on Windows 10
+**After installing the Docker, make sure the Docker service is up and running.**
+
+###### Install Docker on Windows 10
 
 Below is the guide especially for `Windows 10` as the `macOS` one is very easy and straightforward:
 
-1) In order to use docker, disable `Hyper-v` on `Windows 10`:
+1) In order to use Docker, disable `Hyper-v` on `Windows 10`:
 
-```shell
-	bcdedit /set hypervisorlaunchtype off
-```
+	```shell
+bcdedit /set hypervisorlaunchtype off
+	```
 
 In case you want to re-enable it after practice, here is the command:
 
@@ -20,12 +22,11 @@ In case you want to re-enable it after practice, here is the command:
 	bcdedit /set hypervisorlaunchtype auto
 ```
 
-2) Make sure the `Virtualization` is enabled in windows. You can read [this](https://docs.docker.com/toolbox/toolbox_install_windows/) for reference.
+2) Make sure the `Virtualization` is enabled on `Windows`. You can read [this](https://docs.docker.com/toolbox/toolbox_install_windows/) for reference.
 
-3) After installing the docker Toolbox, click the `Quick Start Terminal` on the desktop. If you have passed previous 2 steps, you will see a page for downloading one `boot2docker.iso` file. You can manually download and put it into `C:\Users\your_username\.docker\machine\cache` folder. (Copy the `boot2docker.iso` from the USB provided on the class)
+3) After installing the Docker Toolbox, click the `Quick Start Terminal` on the desktop. If you have passed previous 2 steps, you will see a page for downloading one `boot2docker.iso` file. You can manually download and put it into `C:\Users\your_username\.docker\machine\cache` folder. (Copy the `boot2docker.iso` from the USB provided on the class)
 
-
-4) You can close the `Quick Start Terminal` window, then use `cmd` (refer to `Build docker image` section on this page). Run a command:  
+4) You can close the `Quick Start Terminal` window, then use `cmd` (refer to `Build Docker image` section on this page). Run a command:  
 
 ```shell
 	docker-machine ls
@@ -33,15 +34,15 @@ In case you want to re-enable it after practice, here is the command:
 
 Then you should be able to see the default virtual machine.
 
-5) Run `docker-machine env default`. It will show some information about your environment. Choose the last row and run it manually. Then you will be able to run docker in your `cmd` window.
+5) Run `docker-machine env default`. It will show some information about your environment. Choose the last row and run it manually. Then you will be able to run Docker in your `cmd` window.
 
-![docker](https://user-images.githubusercontent.com/1511528/28406219-2e20f0c6-6d62-11e7-8282-673a1947f36d.png)
+![Docker](https://user-images.githubusercontent.com/1511528/28406219-2e20f0c6-6d62-11e7-8282-673a1947f36d.png)
 
-6)	Remember the `IP address` in 2nd line as on `Windows`, you will use it to access the application you're deploying on docker. 
+6)	Remember the `IP address` in 2nd line as on `Windows`, you will use it to access the application you're deploying on Docker. 
 
 You cannot just use localhost to access the service. Use the IP instead. The reason is there is a boot2docker VM running by VMBox. Docker connect with the VM directly. The IP is for the VM.
 
-###### Install docker on macOS
+###### Install Docker on macOS
 
 - Please refer the doc [here](https://store.docker.com/editions/community/docker-ce-desktop-mac)
 
@@ -204,11 +205,11 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 
 	ENV APPLICATION_API_URL https://your_block_chain_service.mybluemix.net/api/order/newinfo
 
-Now you're ready for building the docker image.
+Now you're ready for building the Docker image.
 
 ##### After installing the Docker, open `Terminal` on **macOS** or `cmd` on **Windows**
 
-### Build docker image
+### Build Docker image
 ##### Go to `/Chatbot/docker/` folder under the Chatbot project root folder from the `Terminal` or `cmd`
 
 - Find your `Terminal` from `macOS`
@@ -227,13 +228,13 @@ Now you're ready for building the docker image.
 	cd /path/to/Chatbot/docker
 ```
 
-- To build the docker image, run the command: 
+- To build the Docker image, run the command: 
 
 ```shell
 	docker build -t chatbot -f Dockerfile ./
 ```
 
-### Run the docker image on a new container
+### Run the Docker image on a new container
 
 - Run the command: 
 
