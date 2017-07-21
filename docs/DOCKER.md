@@ -12,15 +12,11 @@ Below is the guide especially for `Windows 10` as the `macOS` one is very easy a
 
 1) In order to use Docker, disable `Hyper-v` on `Windows 10`:
 
-	```shell
-bcdedit /set hypervisorlaunchtype off
-	```
+    `bcdedit /set hypervisorlaunchtype off`
 
-In case you want to re-enable it after practice, here is the command:
+   In case you want to re-enable it after practice, here is the command:
 
-```shell
-	bcdedit /set hypervisorlaunchtype auto
-```
+    `bcdedit /set hypervisorlaunchtype auto`
 
 2) Make sure the `Virtualization` is enabled on `Windows`. You can read [this](https://docs.docker.com/toolbox/toolbox_install_windows/) for reference.
 
@@ -28,9 +24,8 @@ In case you want to re-enable it after practice, here is the command:
 
 4) You can close the `Quick Start Terminal` window, then use `cmd` (refer to `Build Docker image` section on this page). Run a command:  
 
-```shell
-	docker-machine ls
-```
+    `docker-machine ls`
+
 
 Then you should be able to see the default virtual machine.
 
@@ -38,7 +33,7 @@ Then you should be able to see the default virtual machine.
 
 ![Docker](https://user-images.githubusercontent.com/1511528/28406219-2e20f0c6-6d62-11e7-8282-673a1947f36d.png)
 
-6)	Remember the `IP address` in 2nd line as on `Windows`, you will use it to access the application you're deploying on Docker. 
+6) Remember the `IP address` in 2nd line as on `Windows`, you will use it to access the application you're deploying on Docker. 
 
 You cannot just use localhost to access the service. Use the IP instead. The reason is there is a boot2docker VM running by VMBox. Docker connect with the VM directly. The IP is for the VM.
 
@@ -203,7 +198,7 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 
 ###### Update `/Chatbot/docker/Dockerfile` with your Blockchain service URL - replace `your_block_chain_service` to actual one (refer to Blockchain practice)
 
-	ENV APPLICATION_API_URL https://your_block_chain_service.mybluemix.net/api/order/newinfo
+    ENV APPLICATION_API_URL https://your_block_chain_service.mybluemix.net/api/order/newinfo
 
 Now you're ready for building the Docker image.
 
@@ -222,25 +217,20 @@ Now you're ready for building the Docker image.
 	<img width="730" alt="Command" src="https://user-images.githubusercontent.com/1511528/28262556-f55a4fec-6b15-11e7-93b2-2d81ee7cd3d3.png">
 	<img width="730" alt="Command" src="https://user-images.githubusercontent.com/1511528/28262716-9c734888-6b16-11e7-831b-8c6d870d0a22.png">
 
-- Find your project folder, e.g. `/path/to/Chatbot/docker`, then run the command
+- Find your project folder, e.g. `/path/to/Chatbot/docker`, then run the command:
 
-```shell
-	cd /path/to/Chatbot/docker
-```
+    `cd /path/to/Chatbot/docker`
 
 - To build the Docker image, run the command: 
 
-```shell
-	docker build -t chatbot -f Dockerfile ./
-```
+    `docker build -t chatbot -f Dockerfile ./`
 
 ### Run the Docker image on a new container
 
 - Run the command: 
 
-```shell
-	docker run -d -p 8888:9080 chatbot
-```
+    `docker run -d -p 8888:9080 chatbot`
+
 
 ##### Now you can visit your Chatbot web application via 
 
@@ -248,16 +238,16 @@ Now you're ready for building the Docker image.
 - Windows:  Refer to section `Install docker on Windows 10 (5, 6)`, so the format of the URL would be like `http://xxx.xxx.x.x:8888/Chatbot`
 
 ### Possible issues
-If you encounter an issue like the output from `Terminal` or `cmd` as below
+- If you encounter an issue like the output from `Terminal` or `cmd` as below
 
+	```
 	Sending build context to Docker daemon  4.246MB
 	Step 1/15 : FROM websphere-liberty:webProfile7
 
 	Get https://registry-1.docker.io/v2/library/websphere-liberty/manifests/webProfile7: unauthorized: incorrect username or password
+	```
 
-Please run this command: 
+- Please run this command: 
 
-```shell
-	docker logout
-```
+    `docker logout`
 
