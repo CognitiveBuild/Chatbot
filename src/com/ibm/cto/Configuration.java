@@ -52,7 +52,13 @@ public class Configuration {
 			if(CONVERSATION_WORKSPACE_STRING == null) {
 				System.out.println("### No environment variables, using default hardcode settings ###");
 
-				// TODO: If you're testing this application locally, please get the credentials from Bluemix
+				// TODO: [Required] Blockchain API Endpoint
+				instance.APPLICATION_API_URL = "https://webchatbot-blockchain.mybluemix.net/api/order/newinfo";
+				// TODO: [Required] Visual Recognition API key and trained classifier ID
+				instance.VISUAL_RECOGNITION_API_KEY = "";
+				instance.VISUAL_RECOGNITION_CLASSIFIER_ID = "";
+
+				// [Optional] If you're testing this application locally, please get the credentials from Bluemix
 				instance.TEXT_TO_SPEECH_USERNAME = "";
 				instance.TEXT_TO_SPEECH_PASSWORD = "";
 				instance.SPEECH_TO_TEXT_USERNAME = "";
@@ -60,11 +66,6 @@ public class Configuration {
 				instance.CONVERSATION_USERNAME = "";
 				instance.CONVERSATION_PASSWORD = "";
 				instance.CONVERSATION_WORKSPACE_ID = "";
-
-				// Blockchain URL:
-				instance.APPLICATION_API_URL = "https://blockchainlab01.mybluemix.net/api/order/newinfo";
-				instance.VISUAL_RECOGNITION_API_KEY = "";
-				instance.VISUAL_RECOGNITION_CLASSIFIER_ID = "";
 
 				return instance;
 			}
@@ -164,12 +165,19 @@ public class Configuration {
 	
 	public String getLayout() {
 		if(instance.TEXT_TO_SPEECH_USERNAME == "" ||
-		instance.TEXT_TO_SPEECH_PASSWORD == "" || 
+				instance.TEXT_TO_SPEECH_USERNAME == "your_username" ||
+		instance.TEXT_TO_SPEECH_PASSWORD == "" ||
+				instance.TEXT_TO_SPEECH_PASSWORD == "your_password" ||
 		instance.SPEECH_TO_TEXT_USERNAME == "" ||
+				instance.SPEECH_TO_TEXT_USERNAME == "your_username" ||
 		instance.SPEECH_TO_TEXT_PASSWORD == "" ||
+				instance.SPEECH_TO_TEXT_PASSWORD == "your_password" ||
 		instance.CONVERSATION_USERNAME == "" ||
+				instance.CONVERSATION_USERNAME == "your_username" ||
 		instance.CONVERSATION_PASSWORD == "" ||
-		instance.CONVERSATION_WORKSPACE_ID  == "") 
+				instance.CONVERSATION_PASSWORD == "your_password" ||
+		instance.CONVERSATION_WORKSPACE_ID  == "" || 
+			instance.CONVERSATION_WORKSPACE_ID  == "your_work_space_id") 
 		{
 			return "non-conversation";
 		}
