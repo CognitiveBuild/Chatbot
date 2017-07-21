@@ -43,13 +43,11 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 
 ### Prepare Bluemix and Docker environments
 
-##### Download this repository
-- Go to [https://ibm.biz/webchatbot](https://ibm.biz/webchatbot)
-- Click on `Download ZIP` to download the Chatbot project
+##### Download `docker branch` of this repository
 
-	<img width="730" alt="Download" src="https://user-images.githubusercontent.com/1511528/28299055-8a5477c4-6ba9-11e7-928e-0f770f99824e.png">
+- [Click here](https://github.com/CognitiveBuild/Chatbot/archive/docker.zip) to download the `docker branch`
 
-- After downloading, unzip file `Chatbot-master.zip`
+- After downloading, unzip file `Chatbot-docker.zip`
 	
 	<img width="614" alt="Unzip" src="https://user-images.githubusercontent.com/1511528/28299126-e3292778-6ba9-11e7-84b7-5e833e3bbafa.png">
 
