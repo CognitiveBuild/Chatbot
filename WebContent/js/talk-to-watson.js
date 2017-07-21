@@ -69,7 +69,7 @@ var flavours = [
 		console.log('### remove ###');
 		window.localStorage.removeItem(key);
 	}
-};
+}, start_button_producing_text = 'Produce', start_button_loading_text = 'Please wait...';
 
 // conversation variables
 var conversation_result, is_wating = false, controls = {
@@ -145,34 +145,36 @@ var conversation_result, is_wating = false, controls = {
 		var contextToCommand = function(conversation_result) {
 
 			var context = conversation_result.context;
-			if(context.flavour) {
-				order.flavour = context.flavour;
-				controls.$flavour.find('option[data-name="'+order.flavour+'"]').prop('selected', true).trigger('change');
-			}
+			if(context) {
+				if(context.flavour) {
+					order.flavour = context.flavour;
+					controls.$flavour.find('option[data-name="'+order.flavour+'"]').prop('selected', true).trigger('change');
+				}
 
-			if(context.amount) {
-				order.amount = context.amount;
-				controls.$qty.val(order.amount).trigger('change');
-			}
+				if(context.amount) {
+					order.amount = context.amount;
+					controls.$qty.val(order.amount).trigger('change');
+				}
 
-			if(context.location) {
-				order.location = context.location;
-				controls.$address.val(order.location).trigger('change');
-			}
+				if(context.location) {
+					order.location = context.location;
+					controls.$address.val(order.location).trigger('change');
+				}
 
-			if(context.consignee) {
-				order.consignee = context.consignee;
-				controls.$consignee.val(order.consignee).trigger('change');
-			}
+				if(context.consignee) {
+					order.consignee = context.consignee;
+					controls.$consignee.val(order.consignee).trigger('change');
+				}
 
-			if(context.reset) {
-				conversation_result.context.flavour = order.flavour = null;
-				conversation_result.context.amount = order.amount = 0;
-				conversation_result.context.location = order.location = null;
-			}
+				if(context.reset) {
+					conversation_result.context.flavour = order.flavour = null;
+					conversation_result.context.amount = order.amount = 0;
+					conversation_result.context.location = order.location = null;
+				}
 
-			if(context.placeorder) {
-				controls.$start.trigger('click');
+				if(context.placeorder) {
+					controls.$start.trigger('click');
+				}
 			}
 		};
 
@@ -438,6 +440,8 @@ var conversation_result, is_wating = false, controls = {
 			var total = (qty * price).toFixed(2);
 			var address = controls.$address.val();
 			var consignee = controls.$consignee.val();
+			
+			
 
 			var sn = storage.get('SN');
 
@@ -454,6 +458,7 @@ var conversation_result, is_wating = false, controls = {
 				consignee_address: address, 
 				consignee_phone: '+86 8888888888',
 				timestamp: new Date().getTime(),
+				// typo: should be `environment_limit`
 				enviorment_limit: {
 					temperature_low: -30, 
 					temperature_high: 0, 
@@ -463,6 +468,7 @@ var conversation_result, is_wating = false, controls = {
 			}
 		};
 
+		controls.$start.val(start_button_producing_text);
 		controls.$start.on('click', function(evt) {
 			console.log('### submit ###');
 			var iceCream = getIceCream();
@@ -478,20 +484,27 @@ var conversation_result, is_wating = false, controls = {
 				controls.$consignee.focus();
 				return null;
 			}
+			
+			if(controls.$start.val() === start_button_producing_text) {
+				controls.$start.val(start_button_loading_text);
 
-			sendRequest('icecream', JSON.stringify(iceCream)).then(function(xhr, status, code) {
-				console.log('### service response ###');
-				console.log(xhr);
-				var json = JSON.parse(xhr);
-				console.log('### /service response ###');
-				var obj = $('a[href="#vr-panel"]');
-				obj.trigger('click');
-				
-			}, function(error) {
-				console.log('### error ###');
-				console.log(error);
-				console.log('### /error ###');
-			});
+				sendRequest('icecream', JSON.stringify(iceCream)).then(function(xhr, status, code) {
+					console.log('### service response ###');
+					console.log(xhr);
+					var json = JSON.parse(xhr);
+					console.log('### /service response ###');
+					var obj = $('a[href="#vr-panel"]');
+					obj.trigger('click');
+					controls.$start.val(start_button_producing_text);
+					
+				}, function(error) {
+					console.log('### error ###');
+					console.log(error);
+					controls.$start.val(startText);
+					console.log('### /error ###');
+				});
+			}
+
 		});
 
 		controls.$qty.on('change', function(evt) {
@@ -583,14 +596,14 @@ var conversation_result, is_wating = false, controls = {
 	}, 
 	init: function() {
 		var sn = storage.get('SN');
-		var name = storage.get('NAME');
-		var phone = storage.get('PHONE');
+		consigner_name = storage.get('NAME');
+		consigner_phone = storage.get('PHONE');
 
-		if(sn && name && phone) {
+		if(sn && consigner_name && consigner_phone) {
 			methods.start();
 			controls.$sn.val(sn);
-			controls.$name.val(name);
-			controls.$phone.val(phone);
+			controls.$name.val(consigner_name);
+			controls.$phone.val(consigner_phone);
 		}
 		else {
 			methods.end();
