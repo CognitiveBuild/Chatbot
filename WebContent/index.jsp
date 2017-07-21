@@ -141,7 +141,7 @@
 									</div>
 	
 									<div class="form-item">
-										<input type="button" value="Start" class="input button-submit button-start" />
+										<input type="button" value="" class="input button-submit button-start" />
 									</div>
 								</div>
 
