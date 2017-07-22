@@ -4,9 +4,7 @@
 
 Before start, install the Docker for this practice, see the references [here](https://www.docker.com/community-edition#/download) about how to install the Docker for different platforms.
 
-**After installing the Docker, make sure the Docker service is up and running.**
-
-###### Install Docker on Windows 10
+#### Install Docker on Windows 10
 
 Below is the guide especially for `Windows 10` as the `macOS` one is very easy and straightforward:
 
@@ -18,14 +16,13 @@ Below is the guide especially for `Windows 10` as the `macOS` one is very easy a
 
     `bcdedit /set hypervisorlaunchtype auto`
 
-2) Make sure the `Virtualization` is enabled on `Windows`. You can read [this](https://docs.docker.com/toolbox/toolbox_install_windows/) for reference.
+2) Install the Docker Toolbox, and make sure the `Virtualization` is enabled on `Windows`. You can read [this](https://docs.docker.com/toolbox/toolbox_install_windows/) for reference, then click on `Get Docker Toolbox for Windows` to [start downloading the installer](https://download.docker.com/win/stable/DockerToolbox.exe).
 
 3) After installing the Docker Toolbox, click the `Quick Start Terminal` on the desktop. If you have passed previous 2 steps, you will see a page for downloading one `boot2docker.iso` file. You can manually download and put it into `C:\Users\your_username\.docker\machine\cache` folder. (Copy the `boot2docker.iso` from the USB provided on the class)
 
 4) You can close the `Quick Start Terminal` window, then use `cmd` (refer to `Build Docker image` section on this page). Run a command:  
 
     `docker-machine ls`
-
 
 Then you should be able to see the default virtual machine.
 
@@ -37,23 +34,26 @@ Then you should be able to see the default virtual machine.
 
 You cannot just use localhost to access the service. Use the IP instead. The reason is there is a boot2docker VM running by VMBox. Docker connect with the VM directly. The IP is for the VM.
 
-###### Install Docker on macOS
+#### Install Docker on macOS
 
 - Please refer the doc [here](https://store.docker.com/editions/community/docker-ce-desktop-mac)
+- Find `Docker` app in the macOS's Launchpad, then click on it to start it
+
+	<img width="354" alt="Docker" src="https://user-images.githubusercontent.com/1511528/28486956-bc904e16-6eba-11e7-97fc-acf197192861.png">
+	<img width="498" alt="Docker started" src="https://user-images.githubusercontent.com/1511528/28487013-acdb2562-6ebb-11e7-899c-a1718cbbd9b8.png">
 
 ### Prepare Bluemix and Docker environments
 
-##### Download this repository
-- Go to [https://ibm.biz/webchatbot](https://ibm.biz/webchatbot)
-- Click on `Download ZIP` to download the Chatbot project
+#### Download `docker branch` of this repository
 
-	<img width="730" alt="Download" src="https://user-images.githubusercontent.com/1511528/28299055-8a5477c4-6ba9-11e7-928e-0f770f99824e.png">
+- [Click here](https://github.com/CognitiveBuild/Chatbot/archive/docker.zip) to download the `docker branch`
 
-- After downloading, unzip file `Chatbot-master.zip`
+- After downloading, unzip file `Chatbot-docker.zip`
 	
-	<img width="614" alt="Unzip" src="https://user-images.githubusercontent.com/1511528/28299126-e3292778-6ba9-11e7-84b7-5e833e3bbafa.png">
+	<img width="408" alt="Unzip" src="https://user-images.githubusercontent.com/1511528/28470872-bc9c7f44-6e6d-11e7-9c9f-5fa440f24f26.png">
 
-##### Acquire `Visual Recognition` service on Bluemix
+
+#### Acquire `Visual Recognition` service on Bluemix
 
 - After register the Bluemix account, then sign in
 
@@ -66,17 +66,17 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 	<img width="730" alt="Create Visual Recognition service" src="https://user-images.githubusercontent.com/1511528/28299281-df67a460-6baa-11e7-96e7-cfcac15cf301.png">
 	<img width="730" alt="Created Visual Recognition service" src="https://user-images.githubusercontent.com/1511528/28259972-792e5e18-6b0b-11e7-9fd9-b03dda33f515.png">
 
-##### Get API key from tab of `Service credentials` then apply it in `/Chatbot/docker/Dockerfile`.
+#### Get API key from tab of `Service credentials` then apply it in `/Chatbot-docker/docker/Dockerfile`.
 
 - Click on `Service credentials` tab, then select credential dropdown button, copy `api_key`
 
 	<img width="730" alt="Service credentials" src="https://user-images.githubusercontent.com/1511528/28299355-491d1052-6bab-11e7-964c-565caf9027fe.png">
 
-- Update `/Chatbot/docker/Dockerfile`, paste copied `api_key` to `Dockerfile`
+- Update `/Chatbot-docker/docker/Dockerfile`, paste copied `api_key` to `Dockerfile`
 
 	<img width="730" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28260413-8a190e38-6b0d-11e7-8f4e-d2aafdf1cedc.png">
 
-##### Train `Visual Recognition` API with the training files, get new trained classifier ID then apply it in `/Chatbot/docker/Dockerfile`
+#### Train `Visual Recognition` API with the training files, get new trained classifier ID then apply it in `/Chatbot-docker/docker/Dockerfile`
 
 - Go back to Bluemix console, go back to `Manage` tab then click on `Visual Recognition Tool (Beta)` button to launch the `Visual Recognition Tool`
 
@@ -100,9 +100,9 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 
 	<img width="730" alt="Tooling interface for training" src="https://user-images.githubusercontent.com/1511528/28261149-a2382546-6b10-11e7-806d-e6a51e693aee.png">
 
-##### Upload training images
+#### Upload training images
 
-- Choose training zip files from `/Chatbot/trainings` folder, then choose `ALL` of them according to the class names including the negative sample
+- Choose training zip files from `/Chatbot-docker/trainings` folder, then choose `ALL` of them according to the class names including the negative sample
 
 	<img width="730" alt="Tooling for training" src="https://user-images.githubusercontent.com/1511528/28261230-f0844bb2-6b10-11e7-9680-4d77d44244e0.png">
 	<img width="730" alt="Tooling" src="https://user-images.githubusercontent.com/1511528/28304118-dd7f290c-6bc8-11e7-9ea6-17a2c40146a1.png">	
@@ -116,11 +116,11 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 
 	 <img width="645" alt="Trained classifier" src="https://user-images.githubusercontent.com/1511528/28261513-313ea8a4-6b12-11e7-9f0b-ddd68537c643.png">
 
-- Paste `classifier ID` in `/Chatbot/docker/Dockerfile`
+- Paste `classifier ID` in `/Chatbot-docker/docker/Dockerfile`
 
 	<img width="730" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28261700-e16dadd8-6b12-11e7-9626-6476f2e8c514.png">
 
-###### Add other Watson services
+#### Add other Watson services
 
 - Go to [Bluemix catalog](https://console.bluemix.net/catalog/), search `Conversation`
 
@@ -135,7 +135,7 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 	<img width="730" alt="Conversation interface" src="https://user-images.githubusercontent.com/1511528/28349466-94688e18-6c75-11e7-917f-a15f34f21148.png">
 	<img width="730" alt="Service credentials" src="https://user-images.githubusercontent.com/1511528/28349662-bcb1bf2e-6c76-11e7-8aed-4b907b8c302c.png">
 
-- Paste `username` and `password` in `/Chatbot/docker/Dockerfile`
+- Paste `username` and `password` in `/Chatbot-docker/docker/Dockerfile`
 
 	<img width="730" alt="Username" src="https://user-images.githubusercontent.com/1511528/28349917-38c6f3d0-6c78-11e7-9239-7ec3e3882651.png">
 	<img width="730" alt="Password" src="https://user-images.githubusercontent.com/1511528/28349918-38c9aba2-6c78-11e7-9fd5-ae7f6b2b9098.png">
@@ -148,7 +148,7 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 
 	<img width="427" alt="Conversation" src="https://user-images.githubusercontent.com/1511528/28404804-553486b4-6d5d-11e7-9078-45eac305dad1.png">
 	
-- Click on `Upload` icon to upload the training file, to locate the training file, go to `/Chatbot/trainings/conversation` folder, find `innovation-day.json` file
+- Click on `Upload` icon to upload the training file, to locate the training file, go to `/Chatbot-docker/trainings/conversation` folder, find `innovation-day.json` file
 
 	<img width="590" alt="Conversation" src="https://user-images.githubusercontent.com/1511528/28404805-5593bc6a-6d5d-11e7-8a95-b4a35e912000.png">
 	<img width="652" alt="Upload popup" src="https://user-images.githubusercontent.com/1511528/28405189-e1af84bc-6d5e-11e7-88a6-6a67abe0a81f.png">
@@ -161,7 +161,7 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 	<img width="437" alt="Workspace menu" src="https://user-images.githubusercontent.com/1511528/28405684-250f608c-6d60-11e7-8c8f-5492e2e3b8f8.png">
 	<img width="482" alt="View details and copy workspace ID" src="https://user-images.githubusercontent.com/1511528/28405685-251641d6-6d60-11e7-83a5-1be11daa8850.png">
 
-- Paste `workspace ID` in `/Chatbot/docker/Dockerfile`
+- Paste `workspace ID` in `/Chatbot-docker/docker/Dockerfile`
 
 	<img width="574" alt="Update Workspace ID" src="https://user-images.githubusercontent.com/1511528/28405937-0163c96a-6d61-11e7-9e3e-dcaa2a621423.png">
 
@@ -191,21 +191,21 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 	<img width="730" alt="Create Text to Speech service" src="https://user-images.githubusercontent.com/1511528/28353603-1786802a-6c8f-11e7-9a31-4d5d8e9fad71.png">
 	<img width="730" alt="Service credentials" src="https://user-images.githubusercontent.com/1511528/28355711-b5905fb8-6c97-11e7-8c16-a84a0f82aa92.png">
 
-- Paste `username` and `password` in `/Chatbot/docker/Dockerfile`
+- Paste `username` and `password` in `/Chatbot-docker/docker/Dockerfile`
 
 	<img width="692" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28355888-7d1b5ba0-6c98-11e7-9a2d-7b07b038a12b.png">
 	<img width="692" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28356038-1c0527d2-6c99-11e7-824d-5564364cf699.png">
 
-###### Update `/Chatbot/docker/Dockerfile` with your Blockchain service URL - replace `your_block_chain_service` to actual one (refer to Blockchain practice)
+#### Update `/Chatbot-docker/docker/Dockerfile` with your Blockchain service URL - replace `your_block_chain_service` to actual one (refer to Blockchain practice)
 
     ENV APPLICATION_API_URL https://your_block_chain_service.mybluemix.net/api/order/newinfo
 
 Now you're ready for building the Docker image.
 
-##### After installing the Docker, open `Terminal` on **macOS** or `cmd` on **Windows**
+#### After installing the Docker, open `Terminal` on **macOS** or `cmd` on **Windows**
 
 ### Build Docker image
-##### Go to `/Chatbot/docker/` folder under the Chatbot project root folder from the `Terminal` or `cmd`
+#### Go to `/Chatbot-docker/docker/` folder under the Chatbot project root folder from the `Terminal` or `cmd`
 
 - Find your `Terminal` from `macOS`
 
@@ -217,9 +217,9 @@ Now you're ready for building the Docker image.
 	<img width="730" alt="Command" src="https://user-images.githubusercontent.com/1511528/28262556-f55a4fec-6b15-11e7-93b2-2d81ee7cd3d3.png">
 	<img width="730" alt="Command" src="https://user-images.githubusercontent.com/1511528/28262716-9c734888-6b16-11e7-831b-8c6d870d0a22.png">
 
-- Find your project folder, e.g. `/path/to/Chatbot/docker`, then run the command:
+- Find your project folder, e.g. `/path/to/Chatbot-docker/docker`, then run the command:
 
-    `cd /path/to/Chatbot/docker`
+    `cd /path/to/Chatbot-docker/docker`
 
 - To build the Docker image, run the command: 
 
@@ -231,14 +231,14 @@ Now you're ready for building the Docker image.
 
     `docker run -d -p 8888:9080 chatbot`
 
-
-##### Now you can visit your Chatbot web application via 
+#### Now you can visit your Chatbot web application via 
 
 - macOS: [http://localhost:8888/Chatbot](http://localhost:8888/Chatbot)
 - Windows:  Refer to section `Install docker on Windows 10 (5, 6)`, so the format of the URL would be like `http://xxx.xxx.x.x:8888/Chatbot`
 
 ### Possible issues
-- If you encounter an issue like the output from `Terminal` or `cmd` as below
+
+- If you encounter an issue like the output from `Terminal` or `cmd` as below after running the `docker build` command:
 
 	```
 	Sending build context to Docker daemon  4.246MB
@@ -251,3 +251,4 @@ Now you're ready for building the Docker image.
 
     `docker logout`
 
+Then try to re-build the Docker.
