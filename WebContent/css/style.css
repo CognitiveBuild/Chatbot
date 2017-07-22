@@ -1411,4 +1411,6 @@ progress {
 	width: 100%;
 }
 
-
+.ui-app-link a {
+	color: #0055ff;
+}

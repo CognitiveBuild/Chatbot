@@ -1,5 +1,7 @@
 package com.ibm.cto;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Set;
 
 import com.alibaba.fastjson.JSONArray;
@@ -162,7 +164,17 @@ public class Configuration {
 		sysEnv = JSONObject.parseObject(envServices);
 		return sysEnv;
 	}
-	
+	public String getAppURL() {
+		
+		try {
+			URI url = new URI(instance.APPLICATION_API_URL);
+			return url.getScheme() + "://" + url.getHost();
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "-";
+	}
 	public String getLayout() {
 		if(instance.TEXT_TO_SPEECH_USERNAME == "" ||
 				instance.TEXT_TO_SPEECH_USERNAME == "your_username" ||

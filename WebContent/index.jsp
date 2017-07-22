@@ -151,6 +151,13 @@
 						<div id="vr-panel" class="tab-panels--tab-pane" role="tab-panel">
 							<form class="vr-controller" enctype="multipart/form-data">
 								<h2>Verify your cooler box after delivery</h2>
+
+								<div>
+									<label>Blockchain service URL:</label>
+									<div class="ui-app-link">
+										<a href="<%=com.ibm.cto.Configuration.getInstance().getAppURL() %>" target="webchatbot"><%=com.ibm.cto.Configuration.getInstance().getAppURL() %></a>
+									</div>
+								</div>
 								<div class="form-ice-cream">
 									<div class="form-item">
 										<label class="note">Take a photo of the cooler box then upload it after delivery: </label>
