@@ -1379,6 +1379,10 @@ pre[class*=" language-"] {
 			._container--sn .sn-form-container .sn-form-cell .sn-button input {
 				margin-top: 0px;
 			}
+			
+			._container--sn .sn-form-container .sn-form-cell .input-go{
+				background: #fff;
+			}
 
 progress {
 	width: 100%;
@@ -1406,3 +1410,5 @@ progress {
 .non-conversation ._content--data {
 	width: 100%;
 }
+
+
