@@ -42,6 +42,8 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 	<img width="354" alt="Docker" src="https://user-images.githubusercontent.com/1511528/28486956-bc904e16-6eba-11e7-97fc-acf197192861.png">
 	<img width="498" alt="Docker started" src="https://user-images.githubusercontent.com/1511528/28487013-acdb2562-6ebb-11e7-899c-a1718cbbd9b8.png">
 
+### Stop here and follow the `Blockchain` practice first.
+
 ### Prepare Bluemix and Docker environments
 
 #### Download `docker branch` of this repository
@@ -50,8 +52,7 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 
 - After downloading, unzip file `Chatbot-docker.zip`
 	
-	<img width="408" alt="Unzip" src="https://user-images.githubusercontent.com/1511528/28470872-bc9c7f44-6e6d-11e7-9c9f-5fa440f24f26.png">
-
+	<img width="410" alt="Unzip" src="https://user-images.githubusercontent.com/1511528/28488824-7f07b2de-6ee5-11e7-9df2-61667682bb48.png">
 
 #### Acquire `Visual Recognition` service on Bluemix
 
