@@ -34,6 +34,13 @@ Then you should be able to see the default virtual machine.
 
 You cannot just use localhost to access the service. Use the IP instead. The reason is there is a boot2docker VM running by VMBox. Docker connect with the VM directly. The IP is for the VM.
 
+Note: You can use virtual box to check your docker-machine instance.  if you are experiencing the VT-x problem,   please enable the virtualization in your BIOS. 
+Reference Link: http://jingyan.baidu.com/article/fc07f98976710e12ffe519de.html
+
+Someone may need "this kernel requires an x86-64 CPU, but only detects an i686 CPU, unable to boot" problem. 
+please follow this guide https://askubuntu.com/questions/308937/cannot-install-ubuntu-in-virtualbox-due-to-this-kernel-requires-an-x86-64-cpu
+
+
 #### Install Docker on macOS
 
 - Please refer the doc [here](https://store.docker.com/editions/community/docker-ce-desktop-mac)
