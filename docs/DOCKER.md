@@ -34,6 +34,9 @@ Then you should be able to see the default virtual machine.
 
 You cannot just use localhost to access the service. Use the IP instead. The reason is there is a boot2docker VM running by VMBox. Docker connect with the VM directly. The IP is for the VM.
 
+Hint:  if you meet problem about VT-X disable, please enable the VT-x in your BIOS.  
+Reference Link : http://jingyan.baidu.com/article/fc07f98976710e12ffe519de.html
+
 #### Install Docker on macOS
 
 - Please refer the doc [here](https://store.docker.com/editions/community/docker-ce-desktop-mac)
