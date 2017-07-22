@@ -6,7 +6,7 @@ Before start, install the Docker for this practice, see the references [here](ht
 
 **After installing the Docker, make sure the Docker service is up and running.**
 
-###### Install Docker on Windows 10
+#### Install Docker on Windows 10
 
 Below is the guide especially for `Windows 10` as the `macOS` one is very easy and straightforward:
 
@@ -26,7 +26,6 @@ Below is the guide especially for `Windows 10` as the `macOS` one is very easy a
 
     `docker-machine ls`
 
-
 Then you should be able to see the default virtual machine.
 
 5) Run `docker-machine env default`. It will show some information about your environment. Choose the last row and run it manually. Then you will be able to run Docker in your `cmd` window.
@@ -37,13 +36,17 @@ Then you should be able to see the default virtual machine.
 
 You cannot just use localhost to access the service. Use the IP instead. The reason is there is a boot2docker VM running by VMBox. Docker connect with the VM directly. The IP is for the VM.
 
-###### Install Docker on macOS
+#### Install Docker on macOS
 
 - Please refer the doc [here](https://store.docker.com/editions/community/docker-ce-desktop-mac)
+- Find `Docker` app in the macOS's Launchpad, then click on it to start it
+
+	<img width="354" alt="Docker" src="https://user-images.githubusercontent.com/1511528/28486956-bc904e16-6eba-11e7-97fc-acf197192861.png">
+	<img width="498" alt="Docker started" src="https://user-images.githubusercontent.com/1511528/28487013-acdb2562-6ebb-11e7-899c-a1718cbbd9b8.png">
 
 ### Prepare Bluemix and Docker environments
 
-##### Download `docker branch` of this repository
+#### Download `docker branch` of this repository
 
 - [Click here](https://github.com/CognitiveBuild/Chatbot/archive/docker.zip) to download the `docker branch`
 
@@ -51,7 +54,7 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 	
 	<img width="614" alt="Unzip" src="https://user-images.githubusercontent.com/1511528/28299126-e3292778-6ba9-11e7-84b7-5e833e3bbafa.png">
 
-##### Acquire `Visual Recognition` service on Bluemix
+#### Acquire `Visual Recognition` service on Bluemix
 
 - After register the Bluemix account, then sign in
 
@@ -64,7 +67,7 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 	<img width="730" alt="Create Visual Recognition service" src="https://user-images.githubusercontent.com/1511528/28299281-df67a460-6baa-11e7-96e7-cfcac15cf301.png">
 	<img width="730" alt="Created Visual Recognition service" src="https://user-images.githubusercontent.com/1511528/28259972-792e5e18-6b0b-11e7-9fd9-b03dda33f515.png">
 
-##### Get API key from tab of `Service credentials` then apply it in `/Chatbot/docker/Dockerfile`.
+#### Get API key from tab of `Service credentials` then apply it in `/Chatbot/docker/Dockerfile`.
 
 - Click on `Service credentials` tab, then select credential dropdown button, copy `api_key`
 
@@ -74,7 +77,7 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 
 	<img width="730" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28260413-8a190e38-6b0d-11e7-8f4e-d2aafdf1cedc.png">
 
-##### Train `Visual Recognition` API with the training files, get new trained classifier ID then apply it in `/Chatbot/docker/Dockerfile`
+#### Train `Visual Recognition` API with the training files, get new trained classifier ID then apply it in `/Chatbot/docker/Dockerfile`
 
 - Go back to Bluemix console, go back to `Manage` tab then click on `Visual Recognition Tool (Beta)` button to launch the `Visual Recognition Tool`
 
@@ -98,7 +101,7 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 
 	<img width="730" alt="Tooling interface for training" src="https://user-images.githubusercontent.com/1511528/28261149-a2382546-6b10-11e7-806d-e6a51e693aee.png">
 
-##### Upload training images
+#### Upload training images
 
 - Choose training zip files from `/Chatbot/trainings` folder, then choose `ALL` of them according to the class names including the negative sample
 
@@ -118,7 +121,7 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 
 	<img width="730" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28261700-e16dadd8-6b12-11e7-9626-6476f2e8c514.png">
 
-###### Add other Watson services
+#### Add other Watson services
 
 - Go to [Bluemix catalog](https://console.bluemix.net/catalog/), search `Conversation`
 
@@ -194,16 +197,16 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 	<img width="692" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28355888-7d1b5ba0-6c98-11e7-9a2d-7b07b038a12b.png">
 	<img width="692" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28356038-1c0527d2-6c99-11e7-824d-5564364cf699.png">
 
-###### Update `/Chatbot/docker/Dockerfile` with your Blockchain service URL - replace `your_block_chain_service` to actual one (refer to Blockchain practice)
+#### Update `/Chatbot/docker/Dockerfile` with your Blockchain service URL - replace `your_block_chain_service` to actual one (refer to Blockchain practice)
 
     ENV APPLICATION_API_URL https://your_block_chain_service.mybluemix.net/api/order/newinfo
 
 Now you're ready for building the Docker image.
 
-##### After installing the Docker, open `Terminal` on **macOS** or `cmd` on **Windows**
+#### After installing the Docker, open `Terminal` on **macOS** or `cmd` on **Windows**
 
 ### Build Docker image
-##### Go to `/Chatbot/docker/` folder under the Chatbot project root folder from the `Terminal` or `cmd`
+#### Go to `/Chatbot/docker/` folder under the Chatbot project root folder from the `Terminal` or `cmd`
 
 - Find your `Terminal` from `macOS`
 
@@ -230,7 +233,7 @@ Now you're ready for building the Docker image.
     `docker run -d -p 8888:9080 chatbot`
 
 
-##### Now you can visit your Chatbot web application via 
+#### Now you can visit your Chatbot web application via 
 
 - macOS: [http://localhost:8888/Chatbot](http://localhost:8888/Chatbot)
 - Windows:  Refer to section `Install docker on Windows 10 (5, 6)`, so the format of the URL would be like `http://xxx.xxx.x.x:8888/Chatbot`
