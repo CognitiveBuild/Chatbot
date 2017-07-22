@@ -52,7 +52,8 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 
 - After downloading, unzip file `Chatbot-docker.zip`
 	
-	<img width="614" alt="Unzip" src="https://user-images.githubusercontent.com/1511528/28299126-e3292778-6ba9-11e7-84b7-5e833e3bbafa.png">
+	<img width="408" alt="Unzip" src="https://user-images.githubusercontent.com/1511528/28470872-bc9c7f44-6e6d-11e7-9c9f-5fa440f24f26.png">
+
 
 #### Acquire `Visual Recognition` service on Bluemix
 
