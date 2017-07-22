@@ -1355,7 +1355,7 @@ pre[class*=" language-"] {
 	}
 		._container--sn .sn-form-container .sn-form-cell {
 			display: block;
-		    width: 600px;
+		    width: 100%;
 		    margin: 40px auto;
 		    box-shadow: 0px 0px 3px #ddd;
 		    padding: 50px;

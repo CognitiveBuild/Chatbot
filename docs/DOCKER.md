@@ -4,8 +4,6 @@
 
 Before start, install the Docker for this practice, see the references [here](https://www.docker.com/community-edition#/download) about how to install the Docker for different platforms.
 
-**After installing the Docker, make sure the Docker service is up and running.**
-
 #### Install Docker on Windows 10
 
 Below is the guide especially for `Windows 10` as the `macOS` one is very easy and straightforward:
@@ -18,7 +16,7 @@ Below is the guide especially for `Windows 10` as the `macOS` one is very easy a
 
     `bcdedit /set hypervisorlaunchtype auto`
 
-2) Make sure the `Virtualization` is enabled on `Windows`. You can read [this](https://docs.docker.com/toolbox/toolbox_install_windows/) for reference.
+2) Install the Docker Toolbox, and make sure the `Virtualization` is enabled on `Windows`. You can read [this](https://docs.docker.com/toolbox/toolbox_install_windows/) for reference, then click on `Get Docker Toolbox for Windows` to [start downloading the installer](https://download.docker.com/win/stable/DockerToolbox.exe).
 
 3) After installing the Docker Toolbox, click the `Quick Start Terminal` on the desktop. If you have passed previous 2 steps, you will see a page for downloading one `boot2docker.iso` file. You can manually download and put it into `C:\Users\your_username\.docker\machine\cache` folder. (Copy the `boot2docker.iso` from the USB provided on the class)
 
