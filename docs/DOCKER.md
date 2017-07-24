@@ -20,15 +20,19 @@ Below is the guide especially for `Windows 10` as the `macOS` one is very easy a
 
 3) After installing the Docker Toolbox, click the `Quick Start Terminal` on the desktop. If you have passed previous 2 steps, you will see a page for downloading one `boot2docker.iso` file. You can manually download and put it into `C:\Users\your_username\.docker\machine\cache` folder. (Copy the `boot2docker.iso` from the USB provided on the class)
 
-4) You can close the `Quick Start Terminal` window, then use `cmd` (refer to `Build Docker image` section on this page). Run a command:  
+4) You can close the `Quick Start Terminal` window, then use `cmd` (refer to `Build Docker image` section on this page). Run a command:
 
     `docker-machine ls`
 
 Then you should be able to see the default virtual machine.
 
-5) Run `docker-machine env default`. It will show some information about your environment. Choose the last row and run it manually. Then you will be able to run Docker in your `cmd` window.
+5) Run `docker-machine env default` command. It will show some information about your environment. Choose the last row and run it manually. Then you will be able to run Docker in your `cmd` window, so here are the commands you need to execute:
 
-![Docker](https://user-images.githubusercontent.com/1511528/28406219-2e20f0c6-6d62-11e7-8282-673a1947f36d.png)
+	`docker-machine env default`
+
+	`@FOR /f "TOKENS=*" %i IN ('docker-machine env default') DO %i`
+
+	![Docker](https://user-images.githubusercontent.com/1511528/28406219-2e20f0c6-6d62-11e7-8282-673a1947f36d.png)
 
 6) Remember the `IP address` in 2nd line as on `Windows`, you will use it to access the application you're deploying on Docker. 
 
