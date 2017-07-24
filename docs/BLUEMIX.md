@@ -49,7 +49,14 @@
 	
 	<img width="730" alt="Sign in conversation" src="https://cloud.githubusercontent.com/assets/1511528/20182253/1d6586fc-a79c-11e6-8423-af8dc921eb2d.png">
 
-* Setup a `Workspace` of `Watson Conversation` and define dialogs (We will do it together on the Innovation Day)
+* Click on `Upload` icon to upload the training file, to locate the training file, go to `/Chatbot-docker/trainings/conversation` folder, find `innovation-day.json` file
+
+	<img width="590" alt="Conversation" src="https://user-images.githubusercontent.com/1511528/28404805-5593bc6a-6d5d-11e7-8a95-b4a35e912000.png">
+	<img width="652" alt="Upload popup" src="https://user-images.githubusercontent.com/1511528/28405189-e1af84bc-6d5e-11e7-88a6-6a67abe0a81f.png">
+	<img width="614" alt="Select training file" src="https://user-images.githubusercontent.com/1511528/28405188-e1af5096-6d5e-11e7-8739-bea4db674ed2.png">
+	<img width="636" alt="Import (upload)" src="https://user-images.githubusercontent.com/1511528/28405190-e1e35eea-6d5e-11e7-96be-13a47e981926.png">
+
+* There will be one more panel named `iChat`
 
 # Bluemix DevOps guide
 * Register your [Github](https://github.com) account
@@ -95,7 +102,7 @@
 	
 	<img width="730" alt="Verify Pipeline Configuration" src="https://cloud.githubusercontent.com/assets/1511528/20589470/b4bb3c84-b257-11e6-8ed4-edc5179805e1.png">
 
-* On this step, assuming you have already created one Watson Conversation, so switch back to Watson Conversation website, copy `Workspace ID` from the created `Workspace` by clicking on the menu on the top right of the `Workspace panel`, then click on `View details` and copy the `Workspace ID`
+* On this step, switch back to Watson Conversation website, copy `Workspace ID` from the created `Workspace` by clicking on the menu on the top right of the `Workspace panel`, then click on `View details` and copy the `Workspace ID`
 
 	<img width="488" alt="Conversation Workplace" src="https://cloud.githubusercontent.com/assets/1511528/20168895/6beab0d2-a75f-11e6-9acc-d55aa6be15ac.png">
 

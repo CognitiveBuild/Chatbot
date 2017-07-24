@@ -148,7 +148,7 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 - For the first time visit of this tool, the IBM ID is needed for authentication, but as long as you've authenticated by Bluemix, it will treat you as a authorized user after clicking on the `Log in with IBM ID` by default. Otherwise you can try to sign in again with your Bluemix credentials
 
 	<img width="427" alt="Conversation" src="https://user-images.githubusercontent.com/1511528/28404804-553486b4-6d5d-11e7-9078-45eac305dad1.png">
-	
+
 - Click on `Upload` icon to upload the training file, to locate the training file, go to `/Chatbot-docker/trainings/conversation` folder, find `innovation-day.json` file
 
 	<img width="590" alt="Conversation" src="https://user-images.githubusercontent.com/1511528/28404805-5593bc6a-6d5d-11e7-8a95-b4a35e912000.png">
@@ -156,7 +156,7 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 	<img width="614" alt="Select training file" src="https://user-images.githubusercontent.com/1511528/28405188-e1af5096-6d5e-11e7-8739-bea4db674ed2.png">
 	<img width="636" alt="Import (upload)" src="https://user-images.githubusercontent.com/1511528/28405190-e1e35eea-6d5e-11e7-96be-13a47e981926.png">
 
-- There will be one more panal named `iChat`, click on the menu on the top right, then select `View details` in order to copy workspace ID
+- There will be one more panel named `iChat`, click on the menu on the top right, then select `View details` in order to copy workspace ID
 
 	<img width="436" alt="Created conversation workspace" src="https://user-images.githubusercontent.com/1511528/28405683-250e78a2-6d60-11e7-8874-5d2379887ac8.png">
 	<img width="437" alt="Workspace menu" src="https://user-images.githubusercontent.com/1511528/28405684-250f608c-6d60-11e7-8c8f-5492e2e3b8f8.png">
@@ -190,7 +190,7 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 - Then you will see this page below, go to next step refer to following step, then copy username and password
 
 	<img width="730" alt="Create Text to Speech service" src="https://user-images.githubusercontent.com/1511528/28353603-1786802a-6c8f-11e7-9a31-4d5d8e9fad71.png">
-	<img width="730" alt="Service credentials" src="https://user-images.githubusercontent.com/1511528/28355711-b5905fb8-6c97-11e7-8c16-a84a0f82aa92.png">
+	<img width="730" alt="Service credentials" src="https://user-images.githubusercontent.com/1511528/28489652-1183dade-6efa-11e7-8c2d-59341d82775c.png">
 
 - Paste `username` and `password` in `/Chatbot-docker/docker/Dockerfile`
 
