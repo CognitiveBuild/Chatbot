@@ -459,7 +459,7 @@ var conversation_result, is_wating = false, controls = {
 				consignee_phone: '+86 8888888888',
 				timestamp: new Date().getTime(),
 				// typo: should be `environment_limit`
-				enviorment_limit: {
+				environment_limit: {
 					temperature_low: -30, 
 					temperature_high: 0, 
 					humidity_low: 20, 
