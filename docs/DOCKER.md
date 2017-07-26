@@ -191,8 +191,9 @@ If there is an error of "this kernel requires an x86-64 CPU, but only detects an
 
 - Copy `username` and `password`, paste them to `Dockerfile` and save the file
 
-	<img width="730" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28349917-38c6f3d0-6c78-11e7-9239-7ec3e3882651.png">
-	<img width="730" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28349918-38c9aba2-6c78-11e7-9fd5-ae7f6b2b9098.png">
+	<img width="650" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28612787-f13348ec-7222-11e7-972f-e44dd711ced8.png">
+	<img width="632" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28612788-f1a7fac0-7222-11e7-8a41-8e43847df8f5.png">
+
 
 - Go to [Bluemix catalog](https://console.bluemix.net/catalog/), search `Text to Speech`
 	
