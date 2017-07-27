@@ -40,8 +40,8 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 
 Note: You can use Virtual Box to check your `docker-machine` instance. If you are experiencing the `VT-x` problem, please enable the `Virtualization` in the BIOS, read the docs below about how to enable virtualization: 
 
-	![vmbox1](https://user-images.githubusercontent.com/1511528/28660510-cca3bd86-72e5-11e7-8a32-5ffc1430955a.png)
-	![vmbox2](https://user-images.githubusercontent.com/1511528/28660509-cca2773c-72e5-11e7-8864-d904ad6a37a1.png)
+	<img width="730" alt="Docker" src="https://user-images.githubusercontent.com/1511528/28660510-cca3bd86-72e5-11e7-8a32-5ffc1430955a.png">
+	<img width="730" alt="Docker" src="https://user-images.githubusercontent.com/1511528/28660509-cca2773c-72e5-11e7-8864-d904ad6a37a1.png">
 
 - [English version](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Virtualization/sect-Virtualization-Troubleshooting-Enabling_Intel_VT_and_AMD_V_virtualization_hardware_extensions_in_BIOS.html)
 - [Chinese version](http://jingyan.baidu.com/article/fc07f98976710e12ffe519de.html)
@@ -228,9 +228,13 @@ Please [read this reference](https://github.com/yidlhu/blockchaindemo/blob/maste
 	<img width="692" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28355888-7d1b5ba0-6c98-11e7-9a2d-7b07b038a12b.png">
 	<img width="692" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28356038-1c0527d2-6c99-11e7-824d-5564364cf699.png">
 
-#### Update `/Chatbot-docker/docker/Dockerfile` with your Blockchain service URL - replace `your_block_chain_service` to actual one (refer to Blockchain practice)
+#### Update `/Chatbot-docker/docker/Dockerfile` with your Blockchain service UR, replace it with actual one if you're hosting the Blockchain service on the Bluemix (refer to Blockchain practice)
 
-    ENV APPLICATION_API_URL https://your_block_chain_service.mybluemix.net/api/order/newinfo
+    ENV APPLICATION_API_URL https://your_block_chain_service.mybluemix.net
+    
+If you are hosting the Blockchain service locally, replace the URL with the localhost service URL
+
+	ENV APPLICATION_API_URL http://localhost:3000
 
 Now you're ready for building the Docker image.
 
