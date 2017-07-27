@@ -2,7 +2,7 @@ FROM websphere-liberty:latest
 ADD payload/Chatbot.war /config/dropins/
 
 EXPOSE 9080
-ENV APPLICATION_API_URL https://your_block_chain_service.mybluemix.net/api/order/newinfo
+ENV APPLICATION_API_URL https://your_block_chain_service.mybluemix.net
 
 ENV TEXT_TO_SPEECH_USERNAME your_username
 ENV TEXT_TO_SPEECH_PASSWORD your_password

@@ -12,32 +12,9 @@ Build your own chatbot on the Innovation Day
 
 # Three ways for the practice
 
-- [Hosting Chatbot on docker (2017 Innovation Day)](docs/DOCKER.md)
-- [Setup guide for Bluemix](docs/BLUEMIX.md)
-- [Setup guide for local machine](docs/LOCAL.md)
-
-# Dependencies
-
-* Apache Common Codec
-* Apache HTTP Client
-* FastJSON
-* Watson Java SDK
-* Watson Speech JavaScript SDK
-
-# Issues
-* Watson JavaScript Speech SDK does not support **Safari**
-* The way of obtaining token is not secured, do not use it on Production
-
-# Sample data for Conversation
-
-**Ice cream flavour entities**
-* Chocolate
-* Vanilla
-* Coffee
-* Mango
-* Strawberry
-* Black sesame
-* Red beans
+- [Hosting Chatbot on docker (2017 Innovation Day)](https://github.com/CognitiveBuild/Chatbot/blob/master/docs/DOCKER.md)
+- [Setup guide for Bluemix](https://github.com/CognitiveBuild/Chatbot/blob/master/docs/BLUEMIX.md)
+- [Setup guide for local machine](https://github.com/CognitiveBuild/Chatbot/blob/master/docs/LOCAL.md)
 
 # License
 Copyright 2016 GCG GBS CTO Office under [the Apache 2.0 license](LICENSE).
