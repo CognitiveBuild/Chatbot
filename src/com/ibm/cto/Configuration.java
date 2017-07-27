@@ -55,7 +55,7 @@ public class Configuration {
 				System.out.println("### No environment variables, using default hardcode settings ###");
 
 				// TODO: [Required] Blockchain API Endpoint
-				instance.APPLICATION_API_URL = "https://webchatbot-blockchain.mybluemix.net/api/order/newinfo";
+				instance.APPLICATION_API_URL = "https://webchatbot-blockchain.mybluemix.net";
 				// TODO: [Required] Visual Recognition API key and trained classifier ID
 				instance.VISUAL_RECOGNITION_API_KEY = "";
 				instance.VISUAL_RECOGNITION_CLASSIFIER_ID = "";
@@ -165,15 +165,7 @@ public class Configuration {
 		return sysEnv;
 	}
 	public String getAppURL() {
-		
-		try {
-			URI url = new URI(instance.APPLICATION_API_URL);
-			return url.getScheme() + "://" + url.getHost();
-		} catch (URISyntaxException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return "-";
+		return instance.APPLICATION_API_URL;
 	}
 	public String getLayout() {
 		if(instance.TEXT_TO_SPEECH_USERNAME == "" ||
