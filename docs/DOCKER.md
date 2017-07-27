@@ -38,7 +38,7 @@ Then you should be able to see the default virtual machine.
 
 You cannot just use localhost to access the service. Use the IP instead. The reason is there is a boot2docker VM running by VMBox. Docker connect with the VM directly. The IP is for the VM.
 
-Note: You can use Virtual Box to check your `docker-machine` instance. If you are experiencing the `VT-x` problem, please enable the `Virtualization` in the BIOS, read the docs below about how to enable virtualization: 
+* Note: You can use Virtual Box to check your `docker-machine` instance. If you are experiencing the `VT-x` problem, please enable the `Virtualization` in the BIOS, read the docs below about how to enable virtualization: 
 
 	<img width="730" alt="Docker" src="https://user-images.githubusercontent.com/1511528/28660510-cca3bd86-72e5-11e7-8a32-5ffc1430955a.png">
 	<img width="730" alt="Docker" src="https://user-images.githubusercontent.com/1511528/28660509-cca2773c-72e5-11e7-8864-d904ad6a37a1.png">
