@@ -48,16 +48,22 @@ public class Application extends HttpServlet {
 
 		switch(category) {
 			case "icecream":
+			case "delivery":
+			case "wipe":
 				String payload = request.getParameter("payload");
-				// @TODO: This `APPLICATION_API_URL` should be changed to real IBM Blockchain API endpoint 
-				String url = Configuration.getInstance().APPLICATION_API_URL+"?category="+category;
+				// @TODO: This `APPLICATION_API_URL` should be changed to real IBM Blockchain API endpoint
+				String url = Configuration.getInstance().APPLICATION_API_URL + (category.equals("delivery") ? "/api/sensor/newinfo" : (category.equals("wipe") ? "/api/sensor/ResetIOTTable" : "/api/order/newinfo")) + "?category="+category;
+				String method = "POST";
+				if(category.equals("wipe")) {
+					method = "GET";
+				}
 				System.out.println("### Request ###");
 				System.out.println(url);
 				System.out.println(category);
 				System.out.println(payload);
 				System.out.println("### /Request ###");
 				try {
-					String result = sendRequest(url, payload);
+					String result = sendRequest(url, payload, method);
 					System.out.println(result);
 					response.getWriter().append(result);
 					response.getWriter().flush();
@@ -97,14 +103,19 @@ public class Application extends HttpServlet {
 		}
 	}
 
-	private String sendRequest(String url, String payload) throws Exception {
+	private String sendRequest(String url, String payload, String method) throws Exception {
 		URI converseURI = new URI(url).normalize();
-//		BasicNameValuePair params = new BasicNameValuePair("payload", payload);
 		
 		StringEntity entity = new StringEntity(payload);
-		
 
-		Request request = Request.Post(converseURI).body(entity).addHeader("Content-Type", "application/json");
+		Request request;
+
+		if(method == "POST") {
+			request = Request.Post(converseURI).body(entity).addHeader("Content-Type", "application/json");
+		}
+		else {
+			request = Request.Get(converseURI).addHeader("Content-Type", "application/json");
+		}
 		
 		HttpResponse httpResponse = Utility.invokeRequest(request, url.startsWith("https"));
 		int code = httpResponse.getStatusLine().getStatusCode();
