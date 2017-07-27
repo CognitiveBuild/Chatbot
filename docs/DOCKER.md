@@ -40,6 +40,9 @@ You cannot just use localhost to access the service. Use the IP instead. The rea
 
 Note: You can use Virtual Box to check your `docker-machine` instance. If you are experiencing the `VT-x` problem, please enable the `Virtualization` in the BIOS, read the docs below about how to enable virtualization: 
 
+	![vmbox1](https://user-images.githubusercontent.com/1511528/28660510-cca3bd86-72e5-11e7-8a32-5ffc1430955a.png)
+	![vmbox2](https://user-images.githubusercontent.com/1511528/28660509-cca2773c-72e5-11e7-8864-d904ad6a37a1.png)
+
 - [English version](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Virtualization/sect-Virtualization-Troubleshooting-Enabling_Intel_VT_and_AMD_V_virtualization_hardware_extensions_in_BIOS.html)
 - [Chinese version](http://jingyan.baidu.com/article/fc07f98976710e12ffe519de.html)
 
@@ -54,6 +57,8 @@ If there is an error of "this kernel requires an x86-64 CPU, but only detects an
 	<img width="498" alt="Docker started" src="https://user-images.githubusercontent.com/1511528/28487013-acdb2562-6ebb-11e7-899c-a1718cbbd9b8.png">
 
 ### Stop here and follow the `Blockchain` practice first.
+
+Please [read this reference](https://github.com/yidlhu/blockchaindemo/blob/master/README.md) carefully, and finish the Blockchain practice.
 
 ### Prepare Bluemix and Docker environments
 
@@ -87,6 +92,20 @@ If there is an error of "this kernel requires an x86-64 CPU, but only detects an
 - Update `/Chatbot-docker/docker/Dockerfile`, paste copied `api_key` to `Dockerfile`
 
 	<img width="730" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28260413-8a190e38-6b0d-11e7-8f4e-d2aafdf1cedc.png">
+
+* Please be aware of the variables of the values DO NOT HAVE quotes
+
+	- Good example:
+
+		```Dockerfile
+		ENV VISUAL_RECOGNITION_API_KEY abcdefghijklmnopqrstuvwxyz12345678901234
+		```
+	
+	- Bad example
+
+		```Dockerfile
+		ENV VISUAL_RECOGNITION_API_KEY "abcdefghijklmnopqrstuvwxyz12345678901234"
+		```
 
 #### Train `Visual Recognition` API with the training files, get new trained classifier ID then apply it in `/Chatbot-docker/docker/Dockerfile`
 
