@@ -52,6 +52,14 @@ var flavours = [
 		name: 'Red beans', 
 		price: 10.00
 	}
+], cities = [ 
+	{ name: 'Dalian', driver: 'Zhao' }, 
+	{ name: 'Shenyang', driver: 'Qian' }, 
+	{ name: 'Beijing', driver: 'Sun' }, 
+	{ name: 'Wuhan', driver: 'Lee' }, 
+	{ name: 'Chengdu', driver: 'Zhou' }, 
+	{ name: 'Shanghai', driver: 'Wu' }, 
+	{ name: 'Shenzhen', driver: 'Zheng' }
 ], order = {
 	flavour: null, 
 	amount: 0, 
@@ -69,7 +77,7 @@ var flavours = [
 		console.log('### remove ###');
 		window.localStorage.removeItem(key);
 	}
-}, start_button_producing_text = 'Produce', start_button_loading_text = 'Please wait...';
+}, button_producing_text = 'Produce', button_simulate_text = 'Deliver', button_wipe_text = 'Finish and clear history', button_loading_text = 'Please wait...', button_delivering_text = 'Delivering to ';
 
 // conversation variables
 var conversation_result, is_wating = false, controls = {
@@ -85,8 +93,25 @@ var conversation_result, is_wating = false, controls = {
 	$start: $('.button-start'), 
 	$price: $('.price-number'), 
 	$verify: $('.button-verify'), 
+	$simulator: $('.button-simulator'), 
+	$transit: $('.input-transit'),
+	$shipping: $('.input-shipping-method'), 
+	$temperature: $('.input-temperature'), 
+	$time: $('.input-time'), 
 	$jsonPanel: $('#json-panel .base--textarea')
 }, methods = {
+	sendRequest: function(category, payload) {
+		console.log('### payload ###');
+		console.log(payload);
+		return $.ajax({
+			url : 'Application',
+			method: 'POST', 
+			data : {
+				payload: payload,
+				category : category
+			}
+		});
+	},
 	sn: function() {
 		controls.$go.on('click', function() {
 			serial_number = controls.$sn.val();
@@ -126,6 +151,21 @@ var conversation_result, is_wating = false, controls = {
 		storage.remove('NAME');
 		storage.remove('PHONE');
 	}, 
+	isTransit: function(location) {
+		// Validate conversation payload
+		var result = cities.findIndex(i => i.name.toLowerCase() === location.toLowerCase()) !== -1;
+
+		if(result) {
+			if(conversation_result && conversation_result.context) {
+				conversation_result.context.location = order.location = null;
+			}
+			console.log('### Transit ###');
+			return true;
+		}
+		console.log('### Not Transit ###');
+		order.location = location;
+		return false;
+	}, 
 	chatbot: function () {
 		var $chatInput = $('.chat-window--message-input'),
 		
@@ -158,6 +198,7 @@ var conversation_result, is_wating = false, controls = {
 
 				if(context.location) {
 					order.location = context.location;
+					methods.isTransit(order.location);
 					controls.$address.val(order.location).trigger('change');
 				}
 
@@ -213,6 +254,9 @@ var conversation_result, is_wating = false, controls = {
 		    var params = { message : userText };
 
 		    if (conversation_result) {
+		    	if(conversation_result.context && conversation_result.context.location) {
+		    		methods.isTransit(conversation_result.context.location);
+		    	}
 		    	params.context = JSON.stringify(conversation_result.context);
 		    }
 
@@ -416,17 +460,6 @@ var conversation_result, is_wating = false, controls = {
 		var getQty = function() {
 			var qty = controls.$qty.val();
 			return qty;
-		}, sendRequest = function(category, payload) {
-			console.log('### payload ###');
-			console.log(payload);
-			return $.ajax({
-				url : 'Application',
-				method: 'POST', 
-				data : {
-					payload: payload,
-					category : category
-				}
-			});
 		};
 
 		var getIceCream = function() {
@@ -440,8 +473,6 @@ var conversation_result, is_wating = false, controls = {
 			var total = (qty * price).toFixed(2);
 			var address = controls.$address.val();
 			var consignee = controls.$consignee.val();
-			
-			
 
 			var sn = storage.get('SN');
 
@@ -458,7 +489,6 @@ var conversation_result, is_wating = false, controls = {
 				consignee_address: address, 
 				consignee_phone: '+86 8888888888',
 				timestamp: new Date().getTime(),
-				// typo: should be `environment_limit`
 				environment_limit: {
 					temperature_low: -30, 
 					temperature_high: 0, 
@@ -468,11 +498,16 @@ var conversation_result, is_wating = false, controls = {
 			}
 		};
 
-		controls.$start.val(start_button_producing_text);
+		controls.$start.val(button_producing_text);
 		controls.$start.on('click', function(evt) {
 			console.log('### submit ###');
+			
 			var iceCream = getIceCream();
 			
+			if(methods.isTransit(iceCream.consignee_address)) {
+				iceCream.consignee_address = '';
+			}
+
 			controls.$jsonPanel.html(JSON.stringify(iceCream, null, 2));
 
 			if(iceCream.consignee_address === '') {
@@ -485,17 +520,17 @@ var conversation_result, is_wating = false, controls = {
 				return null;
 			}
 			
-			if(controls.$start.val() === start_button_producing_text) {
-				controls.$start.val(start_button_loading_text);
+			if(controls.$start.val() === button_producing_text) {
+				controls.$start.val(button_loading_text);
 
-				sendRequest('icecream', JSON.stringify(iceCream)).then(function(xhr, status, code) {
+				methods.sendRequest('icecream', JSON.stringify(iceCream)).then(function(xhr, status, code) {
 					console.log('### service response ###');
 					console.log(xhr);
 					var json = JSON.parse(xhr);
 					console.log('### /service response ###');
-					var obj = $('a[href="#vr-panel"]');
+					var obj = $('a[href="#simulator-panel"]');
 					obj.trigger('click');
-					controls.$start.val(start_button_producing_text);
+					controls.$start.val(button_producing_text);
 					
 				}, function(error) {
 					console.log('### error ###');
@@ -593,6 +628,120 @@ var conversation_result, is_wating = false, controls = {
 			$(idName).addClass('active');
 		});
 
+	}, simulator: function() {
+		if(GLOBAL_APP_URL !== '') {
+			var position = 0;
+			var clicks = 0;
+			var wipe = false;
+			controls.$simulator.val(button_simulate_text);
+			controls.$simulator.on('click', function(evt) {
+
+				if(order.location == null || order.location === '' || order.location.length === 0) {
+					console.log(order.location);
+					return;
+				}
+
+				if(wipe) {
+					controls.$shipping.val('');
+					controls.$transit.val('');
+					controls.$temperature.val('');
+					controls.$time.val('')
+					controls.$simulator.val(button_loading_text);
+					methods.sendRequest('wipe', '{}').then(function(xhr, status, code) {
+						console.log('### service response ###');
+						console.log(xhr);
+						var json = JSON.parse(xhr);
+						console.log('### /service response ###');
+						controls.$simulator.val(button_simulate_text);
+						wipe = false;
+					}, function(error) {
+						console.log('### error ###');
+						console.log(error);
+						controls.$simulator.val(button_simulate_text);
+						wipe = false;
+						console.log('### /error ###');
+					});
+					return;
+				}
+				
+				if (button_simulate_text === controls.$simulator.val()) {
+
+					var logistic_list = [ 
+						{ id: 'vehicle',  name: 'Vehicle',  prefix: 'V' }, 
+						{ id: 'ship',     name: 'Ship',     prefix: 'S' },  
+						{ id: 'train',    name: 'Train',    prefix: 'G' }, 
+						{ id: 'airplane', name: 'Airplane', prefix: 'A' } 
+					];
+	
+					var city_list = [];
+					for(var i in cities) {
+						city_list.push(cities[i]);
+					}
+					city_list.push({ name: order.location, driver: 'Wang' });
+
+					var logistic_index = Math.floor(Math.random() * logistic_list.length);
+					var logistic = logistic_list[logistic_index];
+					var city = city_list[position];
+					var date = new Date();
+	
+					var sensorPayload = {
+					  "logistic_type": logistic.id,
+					  "location": city.name,
+					  "sensor_info": {
+					    "pressure": 800 + Math.random() * 300,
+					    "record_timestamp": date.getTime() / 1000,
+					    "humidity": 10  + Math.random() * 90,
+					    "temperature": Math.random() * 30 - 30,
+					    "brightness": 100 + Math.random() * 500
+					  },
+					  "transportation_no": logistic.prefix + Math.round(Math.random() * 9999)
+					};
+	
+					if(logistic.name === 'Vehicle') {
+						sensorPayload.driver_phone = "+86 18888888888";
+						sensorPayload.driver_name = "Driver " + city.driver;
+					}
+
+					console.log(sensorPayload);
+
+					controls.$shipping.val(logistic.name);
+					controls.$transit.val(city.name);
+					controls.$temperature.val(sensorPayload.sensor_info.temperature.toFixed(2) + unescape('%B0')+'C');
+					controls.$time.val(date.toString())
+					controls.$simulator.val(button_delivering_text + city.name + ' by ' + logistic.name);
+	
+					methods.sendRequest('delivery', JSON.stringify(sensorPayload)).then(function(xhr, status, code) {
+						console.log('### service response ###');
+						console.log(xhr);
+						var json = JSON.parse(xhr);
+						console.log('### /service response ###');
+
+						if(wipe) {
+							controls.$simulator.val(button_wipe_text);
+						}
+						else {
+							controls.$simulator.val(button_simulate_text);
+						}
+					}, function(error) {
+						console.log('### error ###');
+						console.log(error);
+						controls.$simulator.val(button_simulate_text);
+						console.log('### /error ###');
+					});
+	
+					clicks++;
+					if(clicks % 2 === 0) {
+						position++;
+						if(position >= city_list.length) {
+							position = 0;
+							clicks = 0;
+							wipe = true;
+							controls.$simulator.val(button_wipe_text);
+						}
+					}
+				}
+			});
+		}
 	}, 
 	init: function() {
 		var sn = storage.get('SN');
@@ -610,6 +759,7 @@ var conversation_result, is_wating = false, controls = {
 		}
 		methods.sn();
 		methods.icecream();
+		methods.simulator();
 	}
 };
 

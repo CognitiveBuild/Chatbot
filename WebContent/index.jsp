@@ -7,8 +7,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" href="css/style.css" />
+<%
+	String appUrl = com.ibm.cto.Configuration.getInstance().getAppURL();
+%>
 <script>
 	var GLOBAL_LAYOUT = '<%=com.ibm.cto.Configuration.getInstance().getLayout() %>';
+	var GLOBAL_APP_URL = '<%=appUrl %>';
 </script>
 </head>
 <body class="<%=com.ibm.cto.Configuration.getInstance().getLayout() %>">
@@ -87,7 +91,10 @@
 							<a class="tab-panels--tab base--a active" href="#control-panel" aria-controls="control" role="tab">Manufacture</a>
 						</li>
 						<li class="tab-panels--tab-list-item base-li" role="presentation">
-							<a class="tab-panels--tab base--a" href="#vr-panel" aria-controls="json" role="tab" class="">Verification</a>
+							<a class="tab-panels--tab base--a" href="#simulator-panel" aria-controls="simulator" role="tab" class="">Simulator</a>
+						</li>
+						<li class="tab-panels--tab-list-item base-li" role="presentation">
+							<a class="tab-panels--tab base--a" href="#vr-panel" aria-controls="vr" role="tab" class="">Verification</a>
 						</li>
 						<li class="tab-panels--tab-list-item base-li" role="presentation">
 							<a class="tab-panels--tab base--a" href="#json-panel" aria-controls="vr" role="tab">JSON</a>
@@ -147,17 +154,58 @@
 
 							</form>
 						</div>
-					
+
+						<div id="simulator-panel" class="tab-panels--tab-pane" role="tab-panel">
+							<form class="simulator-controller">
+								<h2>Send out data of sensors</h2>
+
+								<div class="form-item">
+									<label class="note">Shipping to: </label>
+									<div>
+										<input type="text" readonly="readonly" placeholder="Transit / Destination" class="input input-transit" />
+									</div>
+								</div>
+								
+								<div class="form-item">
+									<label class="note">Shipping method: </label>
+									<div>
+										<input type="text" readonly="readonly" placeholder="Shipping method" class="input input-shipping-method" />
+									</div>
+								</div>
+								
+								<div class="form-item">
+									<label class="note">Temperature: </label>
+									<div>
+										<input type="text" readonly="readonly" placeholder="Temperature" class="input input-temperature" />
+									</div>
+								</div>
+								
+								<div class="form-item">
+									<label class="note">Time: </label>
+									<div>
+										<input type="text" readonly="readonly" placeholder="Time" class="input input-time" />
+									</div>
+								</div>
+
+								<div class="form-item">
+									<input type="button" value="Send" class="input button-submit button-simulator" />
+								</div>
+							</form>
+						</div>
+
 						<div id="vr-panel" class="tab-panels--tab-pane" role="tab-panel">
 							<form class="vr-controller" enctype="multipart/form-data">
 								<h2>Verify your cooler box after delivery</h2>
 
+								<% if(appUrl != "") { %>
 								<div>
 									<label>Blockchain service URL:</label>
 									<div class="ui-app-link">
-										<a href="<%=com.ibm.cto.Configuration.getInstance().getAppURL() %>" target="webchatbot"><%=com.ibm.cto.Configuration.getInstance().getAppURL() %></a>
+										<a href="<%=appUrl %>" target="webchatbot"><%=appUrl %></a>
 									</div>
 								</div>
+								<% } %>
+
 								<div class="form-ice-cream">
 									<div class="form-item">
 										<label class="note">Take a photo of the cooler box then upload it after delivery: </label>
@@ -185,6 +233,7 @@
 								</div>
 							</form>
 						</div>
+
 					</div>
 				</div>
 			

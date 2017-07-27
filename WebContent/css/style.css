@@ -1267,7 +1267,7 @@ pre[class*=" language-"] {
 	background:#fafafa;
 }
 
-.icecream-controller, .vr-controller {
+.icecream-controller, .vr-controller, .simulator-controller {
 	margin-top: 0rem;
     min-height: 29rem;
 
@@ -1292,7 +1292,9 @@ pre[class*=" language-"] {
 	display:block;
 }
 
-.icecream-controller .input, .vr-controller .input {
+.icecream-controller .input, 
+.vr-controller .input, 
+.simulator-controller .input {
 	display:block;
 	width: 100%;
 	padding: 10px;
@@ -1311,7 +1313,9 @@ pre[class*=" language-"] {
     	font-weight: bold;
 	}
 
-.icecream-controller .button-submit, .vr-controller .button-submit {
+.icecream-controller .button-submit, 
+.vr-controller .button-submit, 
+.simulator-controller .button-submit {
 	background: #eee;
 	border: 1px solid #ccc;
 	padding: 10px;
@@ -1321,12 +1325,14 @@ pre[class*=" language-"] {
 	display: none;
 }
 
-.icecream-controller .form-item > div {
+.icecream-controller .form-item > div, 
+.simulator-controller .form-item > div {
 	padding: 0px;
 	margin: 0px;
 }
 
-.icecream-controller .form-item > label {
+.icecream-controller .form-item > label, 
+.simulator-controller .form-item > label {
 	margin-bottom: 5px;
 	display: block;
 	font-weight: 400;
