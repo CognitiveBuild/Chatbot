@@ -1,5 +1,7 @@
 FROM websphere-liberty:latest
 ADD payload/Chatbot.war /config/dropins/
+COPY payload/server.xml /config/
+RUN installUtility install --acceptLicense defaultServer
 
 EXPOSE 9080
 ENV APPLICATION_API_URL https://your_block_chain_service.mybluemix.net
