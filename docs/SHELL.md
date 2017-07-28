@@ -1,4 +1,4 @@
-# Host your Chatbot on Docker (
+# Host your Chatbot on Docker
 
 This is the guide for preparing Bluemix and Docker environments
 
@@ -30,7 +30,7 @@ This is the guide for preparing Bluemix and Docker environments
 
 ### Pull Docker image
 
-	`docker pull cognitivecoe/webchatbot:latest`
+	docker pull cognitivecoe/webchatbot:latest
 
 ### Environment settings
 
@@ -103,6 +103,9 @@ This is the guide for preparing Bluemix and Docker environments
 ### Download training images and unzip it
 
 - [Download training files here](https://github.com/CognitiveBuild/Chatbot/archive/training.zip)
+- Unzip the `Chatbot-training.zip` file to `Chatbot-training`
+
+	<img width="423" alt="Unzip" src="https://user-images.githubusercontent.com/1511528/28726154-ac8e9a12-73f2-11e7-838a-6851d36d9a29.png">
 
 ### Upload training images
 
@@ -200,10 +203,9 @@ This is the guide for preparing Bluemix and Docker environments
 	<img width="730" alt="Update Docker.env" src="https://user-images.githubusercontent.com/1511528/28723824-9759ced0-73ea-11e7-9a6b-d7ba31a190eb.png">
 	<img width="730" alt="Update Docker.env" src="https://user-images.githubusercontent.com/1511528/28723848-ab4c8d4c-73ea-11e7-9610-bc11b86801d4.png">
 
-
 - Update `/Chatbot-shell/Docker.env` with your Blockchain service UR, replace it with actual one if you're hosting the Blockchain service on the Bluemix (refer to Blockchain practice)
 
-    APPLICATION_API_URL=https://your_block_chain_service.mybluemix.net
+    `APPLICATION_API_URL=https://your_block_chain_service.mybluemix.net`
 
 If you are hosting the Blockchain service locally, replace the URL with the localhost service URL:
 
