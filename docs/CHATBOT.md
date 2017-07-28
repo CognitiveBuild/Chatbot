@@ -8,7 +8,7 @@ This is the guide for preparing Bluemix and Docker environments
 
 - After downloading, unzip file `Chatbot-docker.zip`
 	
-	<img width="410" alt="Unzip" src="https://user-images.githubusercontent.com/1511528/28488824-7f07b2de-6ee5-11e7-9df2-61667682bb48.png">
+	<img width="410" alt="Unzip" src="https://user-images.githubusercontent.com/1511528/28727457-72a25f32-73f7-11e7-8c90-4b82ee5bb37a.png">
 
 ### Acquire `Visual Recognition` service on Bluemix
 
@@ -71,9 +71,16 @@ This is the guide for preparing Bluemix and Docker environments
 
 	<img width="730" alt="Tooling interface for training" src="https://user-images.githubusercontent.com/1511528/28261149-a2382546-6b10-11e7-806d-e6a51e693aee.png">
 
+### Download training images and unzip it
+
+- [Download training files here](https://github.com/CognitiveBuild/Chatbot/archive/training.zip)
+- Unzip the `Chatbot-training.zip` file to `/Chatbot-training`
+
+	<img width="423" alt="Unzip" src="https://user-images.githubusercontent.com/1511528/28726154-ac8e9a12-73f2-11e7-838a-6851d36d9a29.png">
+
 ### Upload training images
 
-- Choose training zip files from `/Chatbot-docker/trainings` folder, then choose `ALL` of them according to the class names including the negative sample
+- Choose training zip files from `/Chatbot-training` folder, then choose `ALL` of them according to the class names including the negative sample
 
 	<img width="730" alt="Tooling for training" src="https://user-images.githubusercontent.com/1511528/28261230-f0844bb2-6b10-11e7-9680-4d77d44244e0.png">
 	<img width="730" alt="Tooling" src="https://user-images.githubusercontent.com/1511528/28304118-dd7f290c-6bc8-11e7-9ea6-17a2c40146a1.png">	
