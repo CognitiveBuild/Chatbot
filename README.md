@@ -9,11 +9,15 @@ Build your own chatbot on the Innovation Day
 # Prerequisite
 
 * Register your [Bluemix](https://bluemix.net) account
-* [Install Docker (2017 Innovation Day)](docs/DOCKER.md)
+* [Install Docker](docs/DOCKER.md)
 
-# Three ways for the practice
+# Docker Practice for the 2017 Innovation Day (Choose one)
 
 - [Host your Chatbot on Docker (2017 Innovation Day)](docs/CHATBOT.md)
+- [Host your Chatbot on Docker (Pre-built image)](docs/SHELL.md)
+
+# Cloud / Local Deployment
+
 - [Setup guide for Bluemix](docs/BLUEMIX.md)
 - [Setup guide for local machine](docs/LOCAL.md)
 
