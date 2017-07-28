@@ -1,17 +1,1 @@
-FROM websphere-liberty:latest
-ADD payload/Chatbot.war /config/dropins/
-COPY payload/server.xml /config/
-RUN installUtility install --acceptLicense defaultServer
-
-EXPOSE 9080
-ENV APPLICATION_API_URL https://your_block_chain_service.mybluemix.net
-
-ENV TEXT_TO_SPEECH_USERNAME your_username
-ENV TEXT_TO_SPEECH_PASSWORD your_password
-ENV SPEECH_TO_TEXT_USERNAME your_username
-ENV SPEECH_TO_TEXT_PASSWORD your_password
-ENV CONVERSATION_USERNAME your_username
-ENV CONVERSATION_PASSWORD your_password
-ENV CONVERSATION_WORKSPACE_ID your_work_space_id
-ENV VISUAL_RECOGNITION_API_KEY your_api_key
-ENV VISUAL_RECOGNITION_CLASSIFIER_ID your_classfier_id
+FROM cognitivecoe/webchatbot:latest
