@@ -535,7 +535,7 @@ var conversation_result, is_wating = false, controls = {
 				}, function(error) {
 					console.log('### error ###');
 					console.log(error);
-					controls.$start.val(startText);
+					controls.$start.val(button_producing_text);
 					console.log('### /error ###');
 				});
 			}
