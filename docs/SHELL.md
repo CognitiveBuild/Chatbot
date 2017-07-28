@@ -215,7 +215,7 @@ Now you're ready for building the `Docker` image.
 
 ### Build Docker image
 
-	`docker run -p 8888:9080 --env-file Docker.env cognitivecoe/webchatbot`
+	docker run -p 8888:9080 --env-file Docker.env cognitivecoe/webchatbot
 
 ### Launch
 
