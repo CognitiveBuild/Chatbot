@@ -10,6 +10,7 @@ Build your own chatbot on the Innovation Day
 
 * Register your [Bluemix](https://bluemix.net) account
 * [Install Docker](docs/DOCKER.md)
+* [Complete Blockchain practice](https://github.com/yidlhu/blockchaindemo/blob/master/README.md)
 
 # Docker Practice for the 2017 Innovation Day (Choose one)
 
