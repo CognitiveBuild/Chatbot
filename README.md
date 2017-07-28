@@ -13,7 +13,7 @@ Build your own chatbot on the Innovation Day
 
 # Docker Practice for the 2017 Innovation Day (Choose one)
 
-- [Host your Chatbot on Docker (2017 Innovation Day)](docs/CHATBOT.md)
+- [Host your Chatbot on Docker](docs/CHATBOT.md)
 - [Host your Chatbot on Docker (Pre-built image)](docs/SHELL.md)
 
 # Cloud / Local Deployment
