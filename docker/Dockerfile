@@ -1,1 +1,0 @@
-FROM cognitivecoe/webchatbot:latest
