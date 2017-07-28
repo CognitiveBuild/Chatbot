@@ -1,9 +1,0 @@
----
-applications:
-- name: webchatbot
-  path: target/Chatbot-0.0.2.war
-  buildpack: liberty-for-java
-  env:
-    CONVERSATION_WORKSPACE_ID: 2e38d5ef-7506-4e38-804e-e83f3cbe6926
-    APPLICATION_API_URL: https://webchatbot-blockchain.mybluemix.net
-    VISUAL_RECOGNITION_CLASSIFIER_ID: Coolers_27195735
