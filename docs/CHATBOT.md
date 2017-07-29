@@ -31,7 +31,7 @@ This is the guide for preparing Bluemix and Docker environments
 
 - Update `/Chatbot-docker/docker/Dockerfile`, paste copied `api_key` to `Dockerfile`
 
-	<img width="730" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28260413-8a190e38-6b0d-11e7-8f4e-d2aafdf1cedc.png">
+	<img width="730" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28741272-3d8fa3ec-7445-11e7-9c74-7968cb486686.png">
 
 * Please be aware of the variables of the values DO NOT HAVE quotes
 
@@ -96,7 +96,7 @@ This is the guide for preparing Bluemix and Docker environments
 
 - Paste `classifier ID` in `/Chatbot-docker/docker/Dockerfile`
 
-	<img width="730" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28261700-e16dadd8-6b12-11e7-9626-6476f2e8c514.png">
+	<img width="730" alt="Update Dockerfile" src="https://user-images.githubusercontent.com/1511528/28741288-99ad058e-7445-11e7-8878-c367dbba7b27.png">
 
 ### Add other Watson services
 
