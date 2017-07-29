@@ -2,11 +2,11 @@
 
 Before start, install the Docker for this practice, see the references [here](https://www.docker.com/community-edition#/download) about how to install the Docker for different platforms.
 
-### Install Docker on Windows 10
+### Install Docker on Windows
 
-Below is the guide especially for `Windows 10` as the `macOS` one is very easy and straightforward:
+Below is the guide especially for `Windows` as the `macOS` one is very easy and straightforward:
 
-1) In order to use Docker, disable `Hyper-v` on `Windows 10`:
+1) In order to use Docker, disable `Hyper-v` by using `cmd` `(Windows 10 only)`:
 
     `bcdedit /set hypervisorlaunchtype off`
 
