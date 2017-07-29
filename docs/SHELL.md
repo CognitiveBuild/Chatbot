@@ -207,9 +207,19 @@ This is the guide for preparing Bluemix and Docker environments
 
     `APPLICATION_API_URL=https://your_block_chain_service.mybluemix.net`
 
-If you are hosting the Blockchain service locally, replace the URL with the localhost service URL:
 
-	APPLICATION_API_URL=http://localhost:3000
+If you are hosting the Blockchain service locally, obtain IP address first:
+
+- macOS: Go to `System Preferences` -> `Network`, then copy your IP address
+
+	<img width="664" alt="IP Address" src="https://user-images.githubusercontent.com/1511528/28741947-99ec3dd0-7454-11e7-81a5-a1234f35f6b2.png">
+	<img width="664" alt="IP Address" src="https://user-images.githubusercontent.com/1511528/28741956-c4d1a24c-7454-11e7-813e-7dd71fc14d50.png">
+
+- Windows: [Refer this guide](https://github.com/CognitiveBuild/Chatbot/blob/master/docs/DOCKER.md#install-docker-on-windows) to get the IP address
+
+- Replace the URL with service URL (with your `IP` address)
+
+	ENV APPLICATION_API_URL http://xxx.xxx.xxx.xxx:3000
 
 Now you're ready for building the `Docker` image.
 
