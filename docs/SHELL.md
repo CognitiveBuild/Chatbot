@@ -159,7 +159,7 @@ This is the guide for preparing Bluemix and Docker environments
 
 	<img width="590" alt="Conversation" src="https://user-images.githubusercontent.com/1511528/28404805-5593bc6a-6d5d-11e7-8a95-b4a35e912000.png">
 	<img width="652" alt="Upload popup" src="https://user-images.githubusercontent.com/1511528/28405189-e1af84bc-6d5e-11e7-88a6-6a67abe0a81f.png">
-	<img width="614" alt="Select training file" src="https://user-images.githubusercontent.com/1511528/28405188-e1af5096-6d5e-11e7-8739-bea4db674ed2.png">
+	<img width="625" alt="Select training file" src="https://user-images.githubusercontent.com/1511528/28741085-74688d7e-7441-11e7-8792-c8743656e873.png">
 	<img width="636" alt="Import (upload)" src="https://user-images.githubusercontent.com/1511528/28405190-e1e35eea-6d5e-11e7-96be-13a47e981926.png">
 
 - There will be one more panel named `iChat`, click on the menu on the top right, then select `View details` in order to copy workspace ID
