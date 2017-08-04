@@ -7,23 +7,23 @@ Build your own chatbot on the Innovation Day
 [![GitHub license](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://raw.githubusercontent.com/CognitiveBuild/Chatbot/master/LICENSE)
 
 # Prerequisite
-
 * Register your [Bluemix](https://bluemix.net) account
-* [Install Docker](docs/DOCKER.md)
-* [Complete Blockchain practice](https://github.com/yidlhu/blockchaindemo/blob/master/README.md)
+* [Install VirtualBox](https://github.com/yidlhu/blockchaindemo/blob/master/GuideForVirtualBoxVM.MD)
+* [Complete Node-Red and Blockchain practice](https://github.com/yidlhu/blockchaindemo/blob/master/README.md)
 
-# Docker Practice for the 2017 Innovation Day (Choose one)
+# Chatbot practice (2017 Innovation Day)
+- [Configure and Run the Chatbot on Virtual Machine](docs/VM.md) (Provided image on Innovation Day only)
 
+# Setup guide for the other environments
+### Docker (Choose one)
 - [Host your Chatbot on Docker](docs/CHATBOT.md)
 - [Host your Chatbot on Docker (Pre-built image)](docs/SHELL.md)
 
-# Cloud / Local Deployment
-
+### Cloud / Local Deployment
 - [Setup guide for Bluemix](docs/BLUEMIX.md)
 - [Setup guide for local machine](docs/LOCAL.md)
 
 # Dependencies
-
 * Apache Common Codec
 * Apache HTTP Client
 * FastJSON
@@ -35,7 +35,6 @@ Build your own chatbot on the Innovation Day
 * The way of obtaining token is not secured, do not use it on Production
 
 # Sample data for Conversation
-
 **Ice cream flavour entities**
 * Chocolate
 * Vanilla
@@ -46,4 +45,4 @@ Build your own chatbot on the Innovation Day
 * Red beans
 
 # License
-Copyright 2016 GCG GBS CTO Office under [the Apache 2.0 license](LICENSE).
+Copyright 2017 GCG GBS CTO Office under [the Apache 2.0 license](LICENSE).
