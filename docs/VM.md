@@ -185,23 +185,18 @@ This is the guide for preparing Bluemix and Docker environments
 	<img width="730" alt="Update Docker.env" src="https://user-images.githubusercontent.com/1511528/28723824-9759ced0-73ea-11e7-9a6b-d7ba31a190eb.png">
 	<img width="730" alt="Update Docker.env" src="https://user-images.githubusercontent.com/1511528/28723848-ab4c8d4c-73ea-11e7-9610-bc11b86801d4.png">
 
-- Update `~/Desktop/Chatbot/Docker.env` with your Blockchain service UR, replace it with actual one if you're hosting the Blockchain service on the Bluemix (refer to Blockchain practice)
+- Update `~/Desktop/Chatbot/Docker.env` with your Blockchain service URL, replace it with actual one if you're hosting the Blockchain service on the Bluemix (refer to Blockchain practice)
 
     `APPLICATION_API_URL=https://your_block_chain_service.mybluemix.net`
 
+- Get `IP` address from the Virtual Machine
 
-If you are hosting the Blockchain service locally, obtain IP address first:
+	<img width="711" alt="Connection Information" src="https://user-images.githubusercontent.com/1511528/28973810-e7d176fc-7966-11e7-9d4c-eebda7f16ac5.png">
+	<img width="710" alt="Connection Information" src="https://user-images.githubusercontent.com/1511528/28973832-f997d6b0-7966-11e7-871e-2818edeafc74.png">
 
-- macOS: Go to `System Preferences` -> `Network`, then copy your IP address
+- In Virtual Machine, replace the URL with service URL with your `IP` address and Blockchain service port, assume it is `http://10.0.2.15:3000`
 
-	<img width="664" alt="IP Address" src="https://user-images.githubusercontent.com/1511528/28741947-99ec3dd0-7454-11e7-81a5-a1234f35f6b2.png">
-	<img width="664" alt="IP Address" src="https://user-images.githubusercontent.com/1511528/28741956-c4d1a24c-7454-11e7-813e-7dd71fc14d50.png">
-
-- Windows: [Refer this guide](https://github.com/CognitiveBuild/Chatbot/blob/master/docs/DOCKER.md#install-docker-on-windows) to get the IP address
-
-- Replace the URL with service URL (with your `IP` address)
-
-	ENV APPLICATION_API_URL http://xxx.xxx.xxx.xxx:3000
+	ENV APPLICATION_API_URL http://10.0.2.15:3000
 
 Now you're ready for building the `Docker` image.
 
