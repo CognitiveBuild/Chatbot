@@ -167,8 +167,8 @@ This is the guide for preparing Bluemix and Docker environments
 
 - Copy `username` and `password`, paste them to `~/Desktop/Chatbot/Docker.env` and save the file
 
-	<img width="730" alt="Username" src="https://user-images.githubusercontent.com/1511528/28992118-e5e19cf4-79c6-11e7-9db7-89ee564ccd67.png">
-	<img width="730" alt="Password" src="https://user-images.githubusercontent.com/1511528/28992127-1d09c9cc-79c7-11e7-931e-6632bc63b8f5.png">
+	<img width="730" alt="Speech-to-Text-Username" src="https://user-images.githubusercontent.com/1511528/28992357-f6ea44a6-79cb-11e7-8c10-dec578ee01b4.png">
+	<img width="730" alt="Speech-to-Text-Password" src="https://user-images.githubusercontent.com/1511528/28992359-fd4c451a-79cb-11e7-96c2-906165656a06.png">
 
 - Go to [Bluemix catalog](https://console.bluemix.net/catalog/), search `Text to Speech`
 	
@@ -177,6 +177,7 @@ This is the guide for preparing Bluemix and Docker environments
 - Then you will see this page below, go to next step refer to following step, then copy username and password
 
 	<img width="730" alt="Create Text to Speech service" src="https://user-images.githubusercontent.com/1511528/28353603-1786802a-6c8f-11e7-9a31-4d5d8e9fad71.png">
+	<img width="730" alt="Text to Speech" src="https://user-images.githubusercontent.com/1511528/28992322-3be955a2-79cb-11e7-96c0-bc912e6c4edb.png">
 	<img width="730" alt="Service credentials" src="https://user-images.githubusercontent.com/1511528/28489652-1183dade-6efa-11e7-8c2d-59341d82775c.png">
 
 - Paste `username` and `password` in `~/Desktop/Chatbot/Docker.env`
@@ -201,7 +202,11 @@ Now you're ready for building the `Docker` image.
 
 ### Build Docker image
 
-	docker run -p 8888:9080 --env-file ~/Desktop/Chatbot/Docker.env chatbot
+- Open the `Terminal` and run the Docker build command 
+
+	`docker run -p 8888:9080 --env-file ~/Desktop/Chatbot/Docker.env chatbot`
+
+	<img width="730" alt="Terminal" src="https://user-images.githubusercontent.com/1511528/28992274-28d266e4-79ca-11e7-9438-89765c3c936f.png">
 
 ### Launch
 
@@ -211,5 +216,4 @@ Now after getting this message `The server defaultServer is ready to run a smart
 
 	<img width="730" alt="Chatbot" src="https://user-images.githubusercontent.com/1511528/28991383-3f72c72e-79b9-11e7-8400-34ce2b9f7875.png">
 
-* Note that the Shipping address `CAN NOT` be `Beijing`, `Shanghai`, `Wuhan`, `Chengdu`, `Dalian`, or `Shenzhen` as they are treated as `transit`. Use other cities in the world, like `Tokyo`, or some other locations you like.
-
+* Note that the **Shipping address** `CAN NOT` be `Beijing`, `Shanghai`, `Wuhan`, `Chengdu`, `Dalian`, or `Shenzhen` as they are treated as `transit`. Use other cities in the world, like `Tokyo`, or some other locations you like.
