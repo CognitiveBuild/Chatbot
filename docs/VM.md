@@ -55,8 +55,7 @@ This is the guide for preparing Bluemix and Docker environments
 
 - Update `~/Desktop/Chatbot/Docker.env`, paste copied `api_key` to `Docker.env`
 
-	<img width="726" alt="Update Docker.env" src="https://user-images.githubusercontent.com/1511528/28721601-8593f1be-73e3-11e7-91ec-5b9b2a0b2158.png">
-	<img width="730" alt="Update Docker.env" src="https://user-images.githubusercontent.com/1511528/28721651-a62d3b10-73e3-11e7-8f48-7f29c4ad1bf3.png">
+	<img width="730" alt="" src="https://user-images.githubusercontent.com/1511528/28991644-40bc651e-79bd-11e7-8f8b-0aaa80853961.png">
 
 ### Train `Visual Recognition` API with the training files, get new trained classifier ID then apply it in `~/Desktop/Chatbot/Docker.env`
 
@@ -107,7 +106,7 @@ This is the guide for preparing Bluemix and Docker environments
 
 - Paste `classifier ID` in `~/Desktop/Chatbot/Docker.env`
 
-	<img width="707" alt="Update Docker.env" src="https://user-images.githubusercontent.com/1511528/28722326-ee4c505a-73e5-11e7-9f60-cef377cc63ad.png">
+	<img width="730" alt="Update Docker.env" src="https://user-images.githubusercontent.com/1511528/28991686-9629ab8c-79be-11e7-805d-32104806a072.png">
 
 ### Add other Watson services
 
@@ -126,8 +125,8 @@ This is the guide for preparing Bluemix and Docker environments
 
 - Paste `username` and `password` in `~/Desktop/Chatbot/Docker.env`
 
-	<img width="730" alt="Username" src="https://user-images.githubusercontent.com/1511528/28722741-463d59ca-73e7-11e7-9015-8e5a89cb596d.png">
-	<img width="730" alt="Password" src="https://user-images.githubusercontent.com/1511528/28722881-ad7906de-73e7-11e7-8e2f-4db0683526ba.png">
+	<img width="730" alt="Username" src="https://user-images.githubusercontent.com/1511528/28991867-9e82d5e4-79c1-11e7-9399-393115e00e01.png">
+	<img width="730" alt="Password" src="https://user-images.githubusercontent.com/1511528/28991895-fa6d8b56-79c1-11e7-935f-c7cad54d5ce1.png">
 
 - Start creating a new `Conversation`, click on `Manage` menu on the left then click on `Launch tool`
 
@@ -152,7 +151,7 @@ This is the guide for preparing Bluemix and Docker environments
 
 - Paste `workspace ID` in `~/Desktop/Chatbot/Docker.env`
 
-	<img width="662" alt="Update Workspace ID" src="https://user-images.githubusercontent.com/1511528/28723298-e90bb394-73e8-11e7-8560-c804c78dfbe9.png">
+	<img width="796" alt="Update Workspace ID" src="https://user-images.githubusercontent.com/1511528/28991983-e70866d8-79c3-11e7-9914-7262cd6906e6.png">
 
 - Go to [Bluemix catalog](https://console.bluemix.net/catalog/), search `Speech to Text`
 
@@ -168,8 +167,8 @@ This is the guide for preparing Bluemix and Docker environments
 
 - Copy `username` and `password`, paste them to `~/Desktop/Chatbot/Docker.env` and save the file
 
-	<img width="730" alt="Update Docker.env" src="https://user-images.githubusercontent.com/1511528/28723656-fd6b8642-73e9-11e7-835a-69348a34e394.png">
-	<img width="730" alt="Update Docker.env" src="https://user-images.githubusercontent.com/1511528/28723670-0f508826-73ea-11e7-8fd6-6b30e5c12574.png">
+	<img width="730" alt="Username" src="https://user-images.githubusercontent.com/1511528/28992118-e5e19cf4-79c6-11e7-9db7-89ee564ccd67.png">
+	<img width="730" alt="Password" src="https://user-images.githubusercontent.com/1511528/28992127-1d09c9cc-79c7-11e7-931e-6632bc63b8f5.png">
 
 - Go to [Bluemix catalog](https://console.bluemix.net/catalog/), search `Text to Speech`
 	
@@ -182,8 +181,8 @@ This is the guide for preparing Bluemix and Docker environments
 
 - Paste `username` and `password` in `~/Desktop/Chatbot/Docker.env`
 
-	<img width="730" alt="Update Docker.env" src="https://user-images.githubusercontent.com/1511528/28723824-9759ced0-73ea-11e7-9a6b-d7ba31a190eb.png">
-	<img width="730" alt="Update Docker.env" src="https://user-images.githubusercontent.com/1511528/28723848-ab4c8d4c-73ea-11e7-9610-bc11b86801d4.png">
+	<img width="730" alt="Username" src="https://user-images.githubusercontent.com/1511528/28992158-e96de62e-79c7-11e7-9167-43df3ca52ea1.png">
+	<img width="730" alt="Password" src="https://user-images.githubusercontent.com/1511528/28992173-29b99282-79c8-11e7-842f-39469664bf07.png">
 
 - Update `~/Desktop/Chatbot/Docker.env` with your Blockchain service URL, replace it with actual one if you're hosting the Blockchain service on the Bluemix (refer to Blockchain practice)
 
@@ -206,4 +205,7 @@ Now you're ready for building the `Docker` image.
 
 ### Launch
 
-Now after getting this message `The server defaultServer is ready to run a smarter planet.`, you can visit your Chatbot web application via [http://localhost:8888/](http://localhost:8888/)
+Now after getting this message `The server defaultServer is ready to run a smarter planet.`, you can visit your Chatbot web application via [http://10.0.2.15:8888/](http://10.0.2.15:8888/)
+
+	<img width="730" alt="Chatbot" src="https://user-images.githubusercontent.com/1511528/28991383-3f72c72e-79b9-11e7-8400-34ce2b9f7875.png">
+
