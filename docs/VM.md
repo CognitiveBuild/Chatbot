@@ -196,7 +196,7 @@ This is the guide for preparing Bluemix and Docker environments
 
 - In Virtual Machine, replace the URL with service URL with your `IP` address and Blockchain service port, assume it is `http://10.0.2.15:3000`
 
-	ENV APPLICATION_API_URL http://10.0.2.15:3000
+	APPLICATION_API_URL=http://10.0.2.15:3000
 
 Now you're ready for building the `Docker` image.
 
