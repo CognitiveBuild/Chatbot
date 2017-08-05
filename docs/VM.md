@@ -210,9 +210,11 @@ Now you're ready for building the `Docker` image.
 
 ### Launch
 
-Now after getting this message `The server defaultServer is ready to run a smarter planet.`, you can visit your Chatbot web application via [http://10.0.2.15:8888/](http://10.0.2.15:8888/)
+- Wait for the message `The server defaultServer is ready to run a smarter planet.`
 
-- Now start producing your ice creams
+	<img width="730" alt="Terminal Output" src="https://user-images.githubusercontent.com/1511528/28992422-94a73126-79cd-11e7-90ce-aa9ad7047124.png">
+
+- Now you can visit the Chatbot web application via [http://10.0.2.15:8888/](http://10.0.2.15:8888/)
 
 	<img width="730" alt="Chatbot" src="https://user-images.githubusercontent.com/1511528/28991383-3f72c72e-79b9-11e7-8400-34ce2b9f7875.png">
 
