@@ -207,5 +207,9 @@ Now you're ready for building the `Docker` image.
 
 Now after getting this message `The server defaultServer is ready to run a smarter planet.`, you can visit your Chatbot web application via [http://10.0.2.15:8888/](http://10.0.2.15:8888/)
 
+- Now start producing your ice creams
+
 	<img width="730" alt="Chatbot" src="https://user-images.githubusercontent.com/1511528/28991383-3f72c72e-79b9-11e7-8400-34ce2b9f7875.png">
+
+* Note that the Shipping address `CAN NOT` be `Beijing`, `Shanghai`, `Wuhan`, `Chengdu`, `Dalian`, or `Shenzhen` as they are treated as `transit`. Use other cities in the world, like `Tokyo`, or some other locations you like.
 
