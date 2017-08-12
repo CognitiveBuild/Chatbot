@@ -1420,3 +1420,7 @@ progress {
 .ui-app-link a {
 	color: #0055ff;
 }
+
+.ui-input-message {
+	padding-right: 85px;
+}
