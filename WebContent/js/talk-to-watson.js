@@ -138,6 +138,9 @@ var conversation_result, is_wating = false, controls = {
 	start: function() {
 		$('._container--sn').addClass('hidden');
 		$('._demo--content').removeClass('hidden');
+
+		$('.ui-inputs').removeClass('hidden');
+
 		controls.$signout.removeClass('hidden');
 		if(GLOBAL_LAYOUT === 'conversation') {
 			methods.chatbot();
@@ -147,6 +150,7 @@ var conversation_result, is_wating = false, controls = {
 		$('._container--sn').removeClass('hidden');
 		$('._demo--content').addClass('hidden');
 		controls.$signout.addClass('hidden');
+		$('.ui-inputs').addClass('hidden');
 		storage.remove('SN');
 		storage.remove('NAME');
 		storage.remove('PHONE');

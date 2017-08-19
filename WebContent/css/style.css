@@ -1034,7 +1034,7 @@ pre[class*=" language-"] {
   border: 2px solid #ececec;
   padding: 0 1rem 1rem;
   margin-top: 2rem;
-  min-height: 30rem; }
+  min-height: 36rem; }
   .tab-panels--tab-list {
     border-bottom: 2px solid #ececec; }
   .tab-panels--tab-list-item {
@@ -1074,7 +1074,7 @@ pre[class*=" language-"] {
 
 .chat-box {
   position: relative;
-  height: 30rem; }
+  height: 36rem; }
   .chat-box--pane {
     position: absolute;
     bottom: 0px;
@@ -1250,7 +1250,7 @@ pre[class*=" language-"] {
 
 .ui-button-microphone:hover,
 .ui-button-microphone.active{
-	width: 99.1%;
+	width: 99.6%;
 	color:#fff;
 	background:#d74108;
 }
@@ -1423,4 +1423,9 @@ progress {
 
 .ui-input-message {
 	padding-right: 85px;
+}
+
+.ui-inputs {
+	position:relative;
+	margin: 4px auto;
 }

@@ -78,9 +78,6 @@
 							</div>
 						</div>
 					</div>
-	
-					<input type="text" placeholder="Type a response and hit enter" value="" autocomplete="off" class="chat-window--message-input base--text-input ui-input-message" />
-					<input type="button" value="Speak" class="base--button ui-button-microphone" />
 				</div>
 			</div>
 
@@ -236,13 +233,17 @@
 
 					</div>
 				</div>
-			
 			</div>
 
 			<div class="ui-transcription"></div>
 		</article>
 
+		<div class="ui-inputs hidden">
+			<input type="text" placeholder="Type a response and hit enter" value="" autocomplete="off" class="chat-window--message-input base--text-input ui-input-message" />
+			<input type="button" value="Speak" class="base--button ui-button-microphone" />
+		</div>
 	</div>
+
 	<script src="js/jquery-3.1.1.min.js"></script>
 	<script src="js/watson-speech.js"></script>
   	<script src="js/talk-to-watson.js"></script>
