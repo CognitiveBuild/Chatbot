@@ -450,10 +450,8 @@ var conversation_result, is_wating = false, controls = {
 		initToken('stt').then(function(t) {
 			sttToken = t;
 			converse('Hi Watson');
-			// var userAgent = window.navigator.userAgent.toLowerCase();
-			// if(userAgent.indexOf('chrome') != -1 || userAgent.indexOf('firefox') != -1){
-			// 	$mic.show();
-			// }
+			var userAgent = window.navigator.userAgent.toLowerCase();
+			$mic.show();
 		});
 		
 		scrollToInput();
