@@ -6,7 +6,7 @@ Build your own chatbot on the Innovation Day
 [![Watson: Text-to-Speech](https://img.shields.io/badge/watson-text--to--speech-994fd7.svg?style=flat)](https://github.com/CognitiveBuild/Chatbot)
 [![GitHub license](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://raw.githubusercontent.com/CognitiveBuild/Chatbot/master/LICENSE)
 
-# Prerequisite
+# Prerequisites
 * Register your [Bluemix](https://bluemix.net) account
 * [Install VirtualBox](https://github.com/yidlhu/blockchaindemo/blob/master/GuideForVirtualBoxVM.MD)
 * [Complete Node-Red and Blockchain practice](https://github.com/yidlhu/blockchaindemo/blob/master/README.md)
@@ -15,7 +15,7 @@ Build your own chatbot on the Innovation Day
 - [Configure and Run the Chatbot on Virtual Machine](docs/VM.md) (Provided image on Innovation Day only)
 
 # Setup guide for the other environments
-### Docker (Choose one)
+### Docker Image (Choose one)
 - [Host your Chatbot on Docker](docs/CHATBOT.md)
 - [Host your Chatbot on Docker (Pre-built image)](docs/SHELL.md)
 
