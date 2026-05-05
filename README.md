@@ -1,3 +1,4 @@
+Copyright 2017 GCG GBS CTO Office under [the Apache 2.0 license](LICENSE).
 # Chatbot
 Build your own chatbot on the Innovation Day
 
@@ -28,7 +29,10 @@ Build your own chatbot on the Innovation Day
 * Apache HTTP Client
 * FastJSON
 * Watson Java SDK
-* Watson Speech JavaScript SDK
+<<<<<<< HEAD
+This is my change for Exp 15
+
+ Watson Speech JavaScript SDK
 
 # Issues
 * Watson JavaScript Speech SDK does not support **Safari**
@@ -45,4 +49,8 @@ Build your own chatbot on the Innovation Day
 * Red beans
 
 # License
-Copyright 2017 GCG GBS CTO Office under [the Apache 2.0 license](LICENSE).
+Copyright 2017 GCG GBS CTO Office under [the Apache 2.0 license](LICENCE)
+This is my change for Exp 15
+Change from main branch
+
+
