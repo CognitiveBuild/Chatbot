@@ -1,3 +1,4 @@
+Copyright 2017 GCG GBS CTO Office under [the Apache 2.0 license](LICENSE).
 # Chatbot
 Build your own chatbot on the Innovation Day
 
@@ -46,3 +47,4 @@ Build your own chatbot on the Innovation Day
 
 # License
 Copyright 2017 GCG GBS CTO Office under [the Apache 2.0 license](LICENSE).
+Change from main branch
